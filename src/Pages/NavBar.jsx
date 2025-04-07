@@ -7,7 +7,15 @@ import {
   Avatar,
 } from "@material-tailwind/react";
 
-import { Home, Gem, PenLine, Sparkles, X, Menu } from "lucide-react";
+import {
+  Home,
+  Gem,
+  PenLine,
+  Sparkles,
+  X,
+  Menu,
+  ShoppingBag,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const LINKS = [
@@ -16,20 +24,21 @@ const LINKS = [
     title: "Home",
     href: "/home",
   },
+
   {
     icon: Gem,
     title: "Luxury Collections",
-    href: "/luxury collections",
+    href: "/luxury-collections",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Store",
+    href: "/products",
   },
   {
     icon: PenLine,
     title: "Blogs",
     href: "/Blogs",
-  },
-  {
-    icon: Sparkles,
-    title: "Exclusives",
-    href: "/Exclusives",
   },
 ];
 

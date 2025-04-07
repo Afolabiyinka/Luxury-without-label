@@ -1,7 +1,7 @@
 import React from "react";
 import CollectionCard from "../../Components/Card";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer"; // Import the hook
+import { useInView } from "react-intersection-observer";
 
 const Collections = () => {
   const collections = [
@@ -20,16 +20,26 @@ const Collections = () => {
       imgSrc:
         "https://images.pexels.com/photos/5264901/pexels-photo-5264901.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
+    {
+      name: "Fragrance Essence",
+      imgSrc:
+        "https://images.pexels.com/photos/15007551/pexels-photo-15007551/free-photo-of-bottles-of-perfumes-displayed-on-black-ba.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
   ];
 
   return (
-    <div className="min-h-screen px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-      {collections.map((collection) => (
-        <CollectionWithAnimation
-          collection={collection}
-          key={collection.name}
-        />
-      ))}
+    <div className="text-center py-2">
+      <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text">
+        Luxury Collections
+      </h1>
+      <div className="min-h-screen px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        {collections.map((collection) => (
+          <CollectionWithAnimation
+            collection={collection}
+            key={collection.name}
+          />
+        ))}
+      </div>
     </div>
   );
 };

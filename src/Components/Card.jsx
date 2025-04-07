@@ -7,10 +7,10 @@ import {
 
 export default function CollectionCard({ collection }) {
   return (
-    <Card className="max-w-sm rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-[#F5DEB3]">
+    <Card className="max-w-sm rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl bg-[#F5DEB3] cursor-pointer active:opacity-80 active:duration-700 ">
       <CardHeader
         floated={false}
-        className="h-96 overflow-hidden rounded-t-2xl"
+        className="h-80 overflow-hidden rounded-t-2xl"
       >
         <img
           src={collection.imgSrc}

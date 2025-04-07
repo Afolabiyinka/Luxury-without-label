@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import NProgress from "nprogress";
-import "nprogress/nprogress.css";
 import "../src/Css/NProgress.css";
 import NavBar from "./Pages/NavBar";
-import HomePage from "./Pages/Subpages/HomePage";
 import Home from "./Pages/Home";
 import Collections from "./Pages/Subpages/Collections";
 import NotFound from "./Pages/NotFound";
 import ScrollToTopButton from "./Components/ScrollBtn";
 import Footer from "./Pages/Footer";
+import Store from "./Pages/Store";
 
 function App() {
   const location = useLocation();
@@ -17,15 +16,16 @@ function App() {
   useEffect(() => {
     NProgress.start();
 
-    const timer = setTimeout(() => {
+    const handleLoad = () => {
       NProgress.done();
-    }, 1000);
+    };
+
+    window.addEventListener("load", handleLoad);
 
     return () => {
-      clearTimeout(timer);
-      NProgress.done(); // Ensure progress is done when component unmounts
+      window.removeEventListener("load", handleLoad);
     };
-  }, [location]); // Only depend on location changes
+  }, [location]);
 
   return (
     <div className="py-2 bg-[#F5DEB3]">
@@ -33,9 +33,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/luxury collections" element={<Collections />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/luxury-collections" element={<Collections />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/products" element={<Store />} />
         </Routes>
       </div>
       <Footer />
