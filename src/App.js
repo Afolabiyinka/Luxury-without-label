@@ -9,10 +9,11 @@ import NotFound from "./Pages/NotFound";
 import ScrollToTopButton from "./Components/ScrollBtn";
 import Footer from "./Pages/Footer";
 import Store from "./Pages/Store";
-
+import Blogs from "./Pages/Subpages/Blogs";
+import Cart from "./Pages/Cart";
+import { CartProvider } from "./Contexts/CartContext";
 function App() {
   const location = useLocation();
-
   useEffect(() => {
     NProgress.start();
 
@@ -27,21 +28,26 @@ function App() {
     };
   }, [location]);
 
+  useEffect(() => {}, []);
   return (
-    <div className="py-2 bg-[#F5DEB3]">
-      <NavBar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/luxury-collections" element={<Collections />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/products" element={<Store />} />
-        </Routes>
+    <CartProvider>
+      <div className="py-2 bg-[#F5DEB3]">
+        <NavBar />
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/luxury-collections" element={<Collections />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/products" element={<Store />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+        <Footer />
+        <ScrollToTopButton />
       </div>
-      <Footer />
-      <ScrollToTopButton />
-    </div>
+    </CartProvider>
   );
 }
 

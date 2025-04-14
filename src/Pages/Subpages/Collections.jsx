@@ -45,10 +45,9 @@ const Collections = () => {
 };
 
 const CollectionWithAnimation = ({ collection }) => {
-  // Using the useInView hook to detect if the collection is in view
   const { ref, inView } = useInView({
-    triggerOnce: true, // Animation will trigger only once when in view
-    threshold: 0.3, // Triggers when 30% of the element is in view
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   return (

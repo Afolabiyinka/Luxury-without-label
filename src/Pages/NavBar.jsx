@@ -1,21 +1,22 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import {
   IconButton,
   Typography,
   Collapse,
   Navbar,
-  Avatar,
+  Badge,
 } from "@material-tailwind/react";
 
 import {
   Home,
   Gem,
   PenLine,
-  Sparkles,
   X,
   Menu,
   ShoppingBag,
+  ShoppingCartIcon,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 const LINKS = [
@@ -53,7 +54,7 @@ function NavList({ onLinkClick }) {
           <li>
             <Typography
               type="medium"
-              className="flex items-center gap-x-2 p-1 hover:text-primary"
+              className="flex items-center gap-x-2 p-1  hover:underline-offset-1"
             >
               <Icon className="h-4 w-4" />
               {title}
@@ -66,18 +67,14 @@ function NavList({ onLinkClick }) {
 }
 
 export default function NavBar() {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
-  const handleLinkClick = () => {
-    setOpenNav(false); // Close the navbar when a link is clicked
-  };
 
   return (
     <Navbar className="mx-auto w-full max-w-screen-xl">
@@ -92,13 +89,8 @@ export default function NavBar() {
         </Typography>
         <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         <div className="hidden lg:block">
-          <NavList onLinkClick={handleLinkClick} />
+          <NavList onLinkClick={() => setOpenNav(false)} />
         </div>
-
-        <Avatar
-          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
-          className="hidden lg:ml-auto lg:inline-block mr-2"
-        />
 
         <IconButton
           size="sm"
@@ -117,7 +109,7 @@ export default function NavBar() {
           transform: openNav ? "translateY(0)" : "translateY(-100%)",
         }}
       >
-        <NavList onLinkClick={handleLinkClick} />
+        <NavList onLinkClick={() => setOpenNav(false)} />
       </Collapse>
     </Navbar>
   );

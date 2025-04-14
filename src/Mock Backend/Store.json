@@ -5,98 +5,112 @@
       "desc": "A stylish and comfortable jacket perfect for chilly weather.",
       "price": 45.99,
       "image_link": "https://images.unsplash.com/photo-1518709268801-169c6a94f777",
-      "category": "men"
+      "category": "men",
+      "id": 1
     },
     {
       "name": "Elegant Dress",
       "desc": "A sleek, elegant dress for evening parties and formal events.",
       "price": 79.99,
       "image_link": "https://images.unsplash.com/photo-1593642634313-d10e1e0384ed",
-      "category": "women"
+      "category": "women",
+      "id": 2
     },
     {
       "name": "Trendy Sneakers",
       "desc": "Comfortable sneakers with a modern twist, perfect for casual wear.",
       "price": 59.99,
       "image_link": "https://images.unsplash.com/photo-1594173977220-4f9ff736f178",
-      "category": "men"
+      "category": "men",
+      "id": 3
     },
     {
       "name": "Casual T-Shirt",
       "desc": "A basic yet stylish t-shirt suitable for everyday wear.",
       "price": 19.99,
       "image_link": "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
-      "category": "women"
+      "category": "women",
+      "id": 4
     },
     {
       "name": "Denim Jeans",
       "desc": "Classic blue denim jeans, comfortable and durable.",
       "price": 39.99,
       "image_link": "https://images.unsplash.com/photo-1517841905240-472988f4e44d",
-      "category": "women"
+      "category": "women",
+      "id": 5
     },
     {
       "name": "Leather Boots",
       "desc": "High-quality leather boots for both style and functionality.",
       "price": 89.99,
       "image_link": "https://images.unsplash.com/photo-1508463683963-92811d2e5504",
-      "category": "men"
+      "category": "men",
+      "id": 6
     },
     {
       "name": "Chic Sunglasses",
       "desc": "Stylish sunglasses that provide full UV protection.",
       "price": 25.99,
       "image_link": "https://images.unsplash.com/photo-1593642532886-0e7ba9a8b1e0",
-      "category": "women"
+      "category": "women",
+      "id": 7
     },
     {
       "name": "Summer Hat",
       "desc": "A wide-brimmed hat to protect you from the sun while keeping you fashionable.",
       "price": 15.99,
       "image_link": "https://images.unsplash.com/photo-1519357367-dc8335d0b18b",
-      "category": "kids"
+      "category": "kids",
+      "id": 8
     },
     {
       "name": "Wool Scarf",
       "desc": "A cozy wool scarf to keep you warm in the winter months.",
       "price": 29.99,
       "image_link": "https://images.unsplash.com/photo-1514353653685-5b15ff745498",
-      "category": "women"
+      "category": "women",
+      "id": 9
     },
     {
       "name": "Slim Fit Blazer",
       "desc": "A sharp, slim-fit blazer for professional or formal occasions.",
       "price": 119.99,
       "image_link": "https://images.unsplash.com/photo-1520900739033-dc46f9f3b17e",
-      "category": "men"
+      "category": "men",
+      "id": 10
     },
     {
       "name": "Kids Graphic T-Shirt",
       "desc": "A fun graphic t-shirt for kids, perfect for casual play.",
       "price": 12.99,
       "image_link": "https://images.unsplash.com/photo-1583936369489-978779a27d55",
-      "category": "kids"
+      "category": "kids",
+      "id": 11
     },
     {
       "name": "Baby Onesie",
       "desc": "Soft and comfortable onesie for babies, available in cute colors.",
       "price": 14.99,
       "image_link": "https://images.unsplash.com/photo-1580918555273-51c6f5e9469b",
-      "category": "kids"
+      "category": "kids",
+      "id": 12
     },
     {
       "name": "Boys Sneakers",
       "desc": "Durable sneakers for boys, perfect for school or outdoor activities.",
       "price": 39.99,
       "image_link": "https://images.unsplash.com/photo-1518919286950-d64f4183bcf2",
-      "category": "kids"
+      "category": "kids",
+      "id": 13
     },
     {
       "name": "Girls Dress",
       "desc": "A colorful dress for girls, ideal for parties or everyday wear.",
       "price": 29.99,
       "image_link": "https://images.unsplash.com/photo-1519239441744-1adf5db6f4d7",
-      "category": "kids"
+      "category": "kids",
+      "id": 14
     }
   ]
 }

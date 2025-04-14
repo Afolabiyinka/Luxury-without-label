@@ -1,0 +1,14 @@
+{
+  "blogs": [
+    {
+      "name": "Trendy Fashion topics",
+      "blog-content": "",
+      "id": 1
+    },
+    {
+      "name": "New Collections this fall",
+      "blog-content": "",
+      "id": 1
+    }
+  ]
+}

@@ -45,7 +45,7 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.5 }}
         >
-          <Link to="/luxury collections">
+          <Link to="/luxury-collections">
             <Button className="text-white bg-black px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out">
               View Collection
             </Button>
