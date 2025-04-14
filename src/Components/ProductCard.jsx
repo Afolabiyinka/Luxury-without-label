@@ -3,12 +3,12 @@ import { Trash } from "lucide-react";
 import { useCartContext } from "../Contexts/CartContext";
 
 export default function ProductCard({ product }) {
-  const { isCart, addToCart, removeFromCart } = useCartContext;
-  const cartIte = isCart(product.id);
+  const { isCart, addToCart, removeFromCart } = useCartContext();
+  const cartItem = isCart(product.id);
 
   function onCartClick(e) {
     e.preventDefault();
-    if (cartIte) removeFromCart(product.id);
+    if (cartItem) removeFromCart(product.id);
     else addToCart(product);
   }
 
@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
       <Card.Header
         as="img"
         src={product.image_link}
-        alt="card-image"
+        alt={product.name} // Added alt text for accessibility
         className="h-80 object-cover"
       />
       <Card.Body>
@@ -34,9 +34,16 @@ export default function ProductCard({ product }) {
           onClick={onCartClick}
           className=" bg-amber-800 text-amber-50 hover:bg-amber-900 transition-colors"
         >
-          Add to Cart
+          {cartItem ? "Remove from Cart" : "Add to Cart"}{" "}
+          {/* Dynamic button text */}
         </Button>
-        <Trash size={35} className="cursor-pointer" />
+        {cartItem && ( // Conditionally render the trash icon if the item is in the cart
+          <Trash
+            size={35}
+            className="cursor-pointer text-red-500 hover:text-red-700 transition-colors"
+            onClick={() => removeFromCart(product.id)} // Added functionality to the trash icon
+          />
+        )}
       </Card.Footer>
     </Card>
   );
