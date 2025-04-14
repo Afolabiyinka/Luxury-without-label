@@ -44,9 +44,6 @@ const LINKS = [
   },
 ];
 
-const date = new Date().getDate();
-const Month = new Date().toLocaleString("default", { month: "long" });
-
 function NavList({ onLinkClick }) {
   return (
     <ul className="mt-4 flex flex-col gap-x-4 gap-y-1.5 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
@@ -69,7 +66,7 @@ function NavList({ onLinkClick }) {
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const { cartItems } = useCartContext(); // Access cartItems from the context
+  const { cartItems } = useCartContext();
 
   useEffect(() => {
     window.addEventListener(
@@ -80,17 +77,15 @@ export default function NavBar() {
 
   return (
     <Navbar className="mx-auto w-full max-w-screen-xl">
-      <div className="flex items-center">
-        <div className="flex items-center flex-grow">
-          {" "}
-          {/* Pushes items to the left */}
+      <div className="flex justify-between">
+        <div className="flex items-center">
           <Typography
             as="a"
             href="/"
             type="large"
-            className="ml-6 mr-6 py-1 font-semibold text-2xl  flex gap-2"
+            className="ml-6 mr-6 py-1 font-semibold text-2xl "
           >
-            {Month} {date}th Collections
+            De Elegance
           </Typography>
           <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
           <div className="hidden lg:block">
@@ -99,9 +94,9 @@ export default function NavBar() {
         </div>
 
         <Link to="/cart">
-          <Badge className="ml-4">
+          <Badge className="ml-4 hidden md:grid">
             <Badge.Content>
-              <IconButton color="secondary">
+              <IconButton color="primary">
                 <ShoppingCartIcon className="h-4 w-4 stroke-2" />
               </IconButton>
             </Badge.Content>

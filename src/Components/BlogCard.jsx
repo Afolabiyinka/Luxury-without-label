@@ -7,7 +7,7 @@ export default function BlogCard({ blog }) {
     <Card className="flex h-full w-full max-w-[48rem] flex-col md:flex-row bg-[#F5DEB3]">
       <Card.Header className="m-0 h-full w-full md:w-2/5 shrink-0 rounded-r-none ">
         <img
-          src={blog1Pic}
+          src={blog.imageUrl}
           alt="Blog"
           className="h-64 w-full object-cover rounded-md"
         />
@@ -16,12 +16,7 @@ export default function BlogCard({ blog }) {
         <Typography type="h5" className="mb-2">
           {blog.name}
         </Typography>
-        <Typography className="mb-8">
-          Like so many organizations these days, Autodesk is a company in
-          transition. It was until recently a traditional boxed software company
-          selling licenses. Yet its own business model disruption is only part
-          of the story
-        </Typography>
+        <Typography className="mb-8">{blog.blogContent}</Typography>
         <Button className="mb-2 flex w-fit items-center gap-2">
           Read More
           <BookIcon size={20} />

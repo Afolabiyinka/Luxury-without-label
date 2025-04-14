@@ -14,7 +14,7 @@ const Blogs = () => {
       className="w-full h-full flex flex-col gap-2 justify-center items-center p-4 "
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.1, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {blogs.map((blog) => (
         <BlogCard blog={blog} />
