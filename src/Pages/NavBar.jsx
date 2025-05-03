@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-import { useCartContext } from "../Contexts/CartContext"; // Import the CartContext
+import { useCartContext } from "../Contexts/CartContext";
 
 const LINKS = [
   {
@@ -46,7 +46,7 @@ const LINKS = [
 
 function NavList({ onLinkClick }) {
   return (
-    <ul className="mt-4 flex flex-col gap-x-4 gap-y-1.5 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
+    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
       {LINKS.map(({ icon: Icon, title, href }) => (
         <Link to={href} key={title} onClick={onLinkClick}>
           <li>
@@ -76,7 +76,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full max-w-screen-xl">
+    <Navbar className="w-full bg-inherit shadow-none border-none">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -108,7 +108,7 @@ export default function NavBar() {
         <IconButton
           size="sm"
           variant="ghost"
-          color="secondary"
+          // color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-4 grid lg:hidden transition-all duration-300 ease-in-out"
         >

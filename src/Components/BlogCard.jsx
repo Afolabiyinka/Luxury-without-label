@@ -1,6 +1,5 @@
 import { Card, Typography, Button, Spinner } from "@material-tailwind/react";
 import { BookIcon } from "lucide-react";
-import blog1Pic from "../Assets/Images/Women clothin.jpg";
 
 export default function BlogCard({ blog }) {
   return (

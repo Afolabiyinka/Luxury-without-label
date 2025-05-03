@@ -12,7 +12,7 @@ const Store = () => {
 
   return (
     <motion.div
-      className="flex justify-center items-center p-5 w-full h-full"
+      className="flex justify-center items-center p-2 w-full h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeIn" }}

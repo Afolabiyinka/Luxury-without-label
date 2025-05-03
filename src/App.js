@@ -12,6 +12,8 @@ import Store from "./Pages/Store";
 import Blogs from "./Pages/Subpages/Blogs";
 import Cart from "./Pages/Cart";
 import { CartProvider } from "./Contexts/CartContext";
+import CreateBlog from "./Pages/Subpages/CreateBlog";
+
 function App() {
   const location = useLocation();
   useEffect(() => {
@@ -42,6 +44,7 @@ function App() {
             <Route path="/products" element={<Store />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/newBlog" element={<CreateBlog />} />
           </Routes>
         </div>
         <Footer />

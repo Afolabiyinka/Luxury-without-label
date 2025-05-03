@@ -6,10 +6,8 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10 gap-5">
-      {/* Left Section */}
+    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-10 gap-5">
       <div className="w-full md:w-1/2 text-center md:text-left">
-        {/* Add motion to this block */}
         <motion.p
           className="text-sm text-black uppercase tracking-widest mb-2"
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +51,6 @@ const HomePage = () => {
         </motion.div>
       </div>
 
-      {/* Right Section */}
       <div className="w-full md:w-1/2 flex items-center justify-center">
         <motion.img
           src={heroModel}

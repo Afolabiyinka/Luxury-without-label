@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
       <Card.Header
         as="img"
         src={product.image_link}
-        alt={product.name} // Added alt text for accessibility
+        alt={product.name}
         className="h-80 object-cover"
       />
       <Card.Body>
@@ -35,13 +35,12 @@ export default function ProductCard({ product }) {
           className=" bg-amber-800 text-amber-50 hover:bg-amber-900 transition-colors"
         >
           {cartItem ? "Remove from Cart" : "Add to Cart"}{" "}
-          {/* Dynamic button text */}
         </Button>
-        {cartItem && ( // Conditionally render the trash icon if the item is in the cart
+        {cartItem && (
           <Trash
             size={35}
-            className="cursor-pointer text-red-500 hover:text-red-700 transition-colors"
-            onClick={() => removeFromCart(product.id)} // Added functionality to the trash icon
+            className="cursor-pointer text-red-500 hover:text-red-700 transition-colors hover:animate-bounce"
+            onClick={() => removeFromCart(product.id)}
           />
         )}
       </Card.Footer>

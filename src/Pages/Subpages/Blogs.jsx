@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import BlogCard from "../../Components/BlogCard";
 import BlogData from "../../Mock Backend/Blogs.json";
+import { Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setBlogs(BlogData.blogs);
@@ -19,6 +22,13 @@ const Blogs = () => {
       {blogs.map((blog) => (
         <BlogCard blog={blog} />
       ))}
+      <Button
+        color="primary"
+        variant="outline"
+        onClick={() => navigate("/newBlog")}
+      >
+        Create a new Blog
+      </Button>
     </motion.div>
   );
 };

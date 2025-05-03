@@ -1,7 +1,7 @@
 import React from "react";
 import { useCartContext } from "../Contexts/CartContext";
 import ProductCard from "../Components/ProductCard";
-import { ShoppingCart } from "lucide-react"; // Importing the empty cart icon
+import { ShoppingCart } from "lucide-react";
 
 const Cart = () => {
   const { cartItems } = useCartContext();
