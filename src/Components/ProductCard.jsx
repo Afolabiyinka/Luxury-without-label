@@ -1,7 +1,7 @@
 import { Card, Typography, IconButton, Button } from "@material-tailwind/react";
 import { Trash } from "lucide-react";
 import { useCartContext } from "../Contexts/CartContext";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaTrash } from "react-icons/fa";
 
 export default function ProductCard({ product }) {
   const { isCart, addToCart, removeFromCart } = useCartContext();
@@ -43,7 +43,7 @@ export default function ProductCard({ product }) {
           onClick={onCartClick}
           className="transition-all duration-300"
         >
-          {cartItem ? <Trash size={24} /> : <FaShoppingCart size={24} />}
+          {cartItem ? <FaTrash size={24} /> : <FaShoppingCart size={24} />}
         </IconButton>
       </Card.Footer>
     </Card>
