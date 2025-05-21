@@ -1,12 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
 import heroModel from "../../Assets/Images/heroModel.png";
 import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-10 gap-5">
+    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-10 gap-10 md:gap-5">
       <div className="w-full md:w-1/2 text-center md:text-left">
         <motion.p
           className="text-sm text-black uppercase tracking-widest mb-2"
@@ -43,9 +43,9 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.5 }}
         >
-          <Link to="/luxury-collections">
+          <Link to="/store">
             <Button className="text-white bg-black px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out">
-              View Collection
+              View Products
             </Button>
           </Link>
         </motion.div>

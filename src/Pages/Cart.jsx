@@ -1,13 +1,17 @@
-import React from "react";
 import { useCartContext } from "../Contexts/CartContext";
 import ProductCard from "../Components/ProductCard";
 import { ShoppingCart } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   const { cartItems } = useCartContext();
 
   return (
-    <div className="h-full w-full p-4 bg-[#F5DEB3]">
+    <motion.div
+      className="h-full w-full p-4"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <h2 className="text-3xl font-semibold mb-6 text-center">Your Cart</h2>
       {cartItems && cartItems.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center p-5 gap-4">
@@ -31,7 +35,7 @@ const Cart = () => {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

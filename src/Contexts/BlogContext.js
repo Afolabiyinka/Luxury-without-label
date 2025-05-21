@@ -1,38 +1,68 @@
 import { useContext, createContext, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const BlogContext = createContext();
 
 export const UseBlogs = () => useContext(BlogContext);
 
 export function BlogProvider({ children }) {
-  const [blogs, setBlogs] = useState({});
+  const [blogs, setBlogs] = useState(() => {
+    const storedBlogs = localStorage.getItem("Blogs");
+    return storedBlogs ? JSON.parse(storedBlogs) : [];
+  });
+
   const [blogTitle, setBlogTitle] = useState("");
+  const [blogAuthor, setBlogAuthor] = useState("");
   const [blogContent, setBlogContent] = useState("");
-  const [blogImage, setBlogImage] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  //Doing the url stuff
+  const initialPage = parseInt(searchParams.get("blog") || 1);
+  const [blogId, setBlogId] = useState(initialPage);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hideSearchParams = ["/newBlog"];
+    {
+      hideSearchParams.includes(location.pathname) &&
+        setSearchParams({ blog: initialPage });
+    }
+  }, [blogId, setSearchParams]);
 
   useEffect(() => {
     localStorage.setItem("Blogs", JSON.stringify(blogs));
   }, [blogs]);
 
-  function addBlog(e) {
-    e.preventDefault();
+  function addBlog({ title, content, imageUrl, author }) {
+    setBlogs((currentBlogs) => [
+      ...currentBlogs,
+      {
+        id: crypto.randomUUID(),
+        title,
+        content,
+        imageUrl,
+        author,
+      },
+    ]);
+  }
+  function deleteBlog(id) {
     setBlogs((currentBlogs) => {
-      return [
-        ...currentBlogs,
-        {
-          id: crypto.randomUUID(),
-          title: blogTitle,
-          content: blogContent,
-        },
-      ];
+      return currentBlogs.filter((blog) => blog.id !== id);
     });
-
-    alert("Blog Added");
   }
 
   const value = {
     addBlog,
     blogs,
+    blogAuthor,
+    blogTitle,
+    setBlogTitle,
+    setBlogAuthor,
+    blogContent,
+    setBlogContent,
+    deleteBlog,
   };
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { TfiFaceSad } from "react-icons/tfi";
 
 const NotFound = () => {
   return (
@@ -12,9 +13,12 @@ const NotFound = () => {
     >
       <div className="max-w-3xl w-full bg-white border border-amber-200 rounded-lg shadow-xl p-8 md:p-12">
         <div className="text-center mb-10">
-          <h1 className="font-serif text-9xl font-light text-amber-800 tracking-widest">
-            404
-          </h1>
+          <span className="flex justify-center items-center gap-3">
+            <h1 className="font-serif text-9xl font-light text-amber-800 tracking-widest ">
+              404
+            </h1>
+            <TfiFaceSad size={100} color="orange" />
+          </span>
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto my-6"></div>
           <h2 className="font-serif text-2xl text-amber-900 mb-2">
             Page Not Found
@@ -22,14 +26,6 @@ const NotFound = () => {
           <p className="text-amber-700 font-light">
             The page you are looking for does not exist or has been moved.
           </p>
-        </div>
-
-        <div className="flex justify-center mb-10">
-          <div className="w-12 h-12 border border-amber-200 rounded-full flex items-center justify-center">
-            <div className="w-12 h-12 border border-amber-300 rounded-full flex items-center justify-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-300 rounded-full"></div>
-            </div>
-          </div>
         </div>
         <div className="text-center">
           <p className="text-amber-700 mb-6">

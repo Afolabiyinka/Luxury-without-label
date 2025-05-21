@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import {
   IconButton,
   Typography,
@@ -10,11 +10,12 @@ import {
 import {
   Home,
   Gem,
-  PenLine,
   X,
   Menu,
   ShoppingBag,
   ShoppingCartIcon,
+  MessageCircle,
+  Pen,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -35,24 +36,34 @@ const LINKS = [
   {
     icon: ShoppingBag,
     title: "Store",
-    href: "/products",
+    href: "/store",
   },
   {
-    icon: PenLine,
+    icon: Pen,
     title: "Blogs",
     href: "/Blogs",
+  },
+  {
+    icon: MessageCircle,
+    title: "FAQs",
+    href: "/FAQs",
   },
 ];
 
 function NavList({ onLinkClick }) {
+  const [currentLink, setCurrentLink] = useState("");
   return (
     <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
       {LINKS.map(({ icon: Icon, title, href }) => (
-        <Link to={href} key={title} onClick={onLinkClick}>
+        <Link to={href} key={currentLink} onClick={onLinkClick}>
           <li>
             <Typography
               type="medium"
-              className="flex items-center gap-x-2 p-1  hover:underline-offset-1"
+              className={` ${
+                currentLink
+                  ? "flex items-center gap-x-2 p-1 underline-offset-2 underline"
+                  : "flex items-center gap-x-2 p-1  hover:underline-offset-1"
+              } `}
             >
               <Icon className="h-4 w-4" />
               {title}
@@ -94,10 +105,14 @@ export default function NavBar() {
         </div>
 
         <Link to="/cart">
-          <Badge className="ml-4 hidden md:grid">
+          <Badge className="ml-16 lg:grid lg:mr-2">
             <Badge.Content>
-              <IconButton color="primary">
-                <ShoppingCartIcon className="h-4 w-4 stroke-2" />
+              <IconButton
+                // color="primary"
+                variant="ghost"
+                className="outline-none border-none active:animate-bounce duration-300"
+              >
+                <ShoppingCartIcon className="h-6 w-6 " />
               </IconButton>
             </Badge.Content>
             <Badge.Indicator>
@@ -110,7 +125,7 @@ export default function NavBar() {
           variant="ghost"
           // color="secondary"
           onClick={() => setOpenNav(!openNav)}
-          className="ml-4 grid lg:hidden transition-all duration-300 ease-in-out"
+          className="grid lg:hidden transition-all duration-300 ease-in-out"
         >
           {openNav ? <X size={30} /> : <Menu size={35} />}
         </IconButton>

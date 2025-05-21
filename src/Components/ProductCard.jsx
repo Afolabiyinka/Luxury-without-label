@@ -1,6 +1,7 @@
-import { Card, Typography, Button } from "@material-tailwind/react";
+import { Card, Typography, IconButton, Button } from "@material-tailwind/react";
 import { Trash } from "lucide-react";
 import { useCartContext } from "../Contexts/CartContext";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function ProductCard({ product }) {
   const { isCart, addToCart, removeFromCart } = useCartContext();
@@ -13,36 +14,37 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <Card className="bg-[#F5DEB3]">
+    <Card className="p-0">
       <Card.Header
         as="img"
-        src={product.image_link}
+        src={product.image}
         alt={product.name}
-        className="h-80 object-cover"
+        className="h-80 object-cover hover:scale-105 transition-transform duration-300"
       />
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
           <Typography type="h6">{product.name}</Typography>
           <Typography type="h6">${product.price}</Typography>
         </div>
-        <Typography className="text-foreground">{product.desc}</Typography>
       </Card.Body>
       <Card.Footer className="flex gap-2 justify-center items-center">
         <Button
           isFullWidth
+          isPill
+          color="primary"
+          variant="solid"
+          className="bg-amber-600 hover:bg-orange-400 border-none"
+        >
+          View Product
+        </Button>
+        <IconButton
+          isFullWidth
           color="secondary"
           onClick={onCartClick}
-          className=" bg-amber-800 text-amber-50 hover:bg-amber-900 transition-colors"
+          className="transition-all duration-300"
         >
-          {cartItem ? "Remove from Cart" : "Add to Cart"}{" "}
-        </Button>
-        {cartItem && (
-          <Trash
-            size={35}
-            className="cursor-pointer text-red-500 hover:text-red-700 transition-colors hover:animate-bounce"
-            onClick={() => removeFromCart(product.id)}
-          />
-        )}
+          {cartItem ? <Trash size={24} /> : <FaShoppingCart size={24} />}
+        </IconButton>
       </Card.Footer>
     </Card>
   );

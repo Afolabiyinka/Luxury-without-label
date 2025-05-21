@@ -28,7 +28,7 @@ const Collections = () => {
   ];
 
   return (
-    <div className="text-center py-2">
+    <div className="text-center">
       <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text">
         Luxury Collections
       </h1>
