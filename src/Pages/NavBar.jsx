@@ -18,37 +18,29 @@ import {
   Pen,
 } from "lucide-react";
 
-import {
-  FaHome,
-  FaPen,
-  FaStore,
-  FaGem,
-  FaShoppingBasket,
-  FaShoppingCart,
-} from "react-icons/fa";
-
 import { Link } from "react-router-dom";
 import { useCartContext } from "../Contexts/CartContext";
+import ModeToggle from "../Components/ModeToggle";
 
 const LINKS = [
   {
-    icon: FaHome,
+    icon: Home,
     title: "Home",
     href: "/home",
   },
 
   {
-    icon: FaGem,
+    icon: Gem,
     title: "Luxury Collections",
     href: "/luxury-collections",
   },
   {
-    icon: FaShoppingBasket,
+    icon: ShoppingBag,
     title: "Store",
     href: "/store",
   },
   {
-    icon: FaPen,
+    icon: Pen,
     title: "Blogs",
     href: "/Blogs",
   },
@@ -96,7 +88,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full bg-inherit shadow-none border-none transition-all">
+    <Navbar className="w-full bg-inherit shadow-none border-none">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -112,15 +104,15 @@ export default function NavBar() {
             <NavList onLinkClick={() => setOpenNav(false)} />
           </div>
         </div>
-
+        <div></div>
         <Link to="/cart">
           <Badge className="ml-16 lg:grid lg:mr-2">
             <Badge.Content>
               <IconButton
                 variant="ghost"
-                className="outline-none border-none duration-300"
+                className="outline-none border-none active:animate-bounce duration-300"
               >
-                <FaShoppingCart className="h-6 w-6 " />
+                <ShoppingCartIcon className="h-6 w-6 " />
               </IconButton>
             </Badge.Content>
             <Badge.Indicator>
