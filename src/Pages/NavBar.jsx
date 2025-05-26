@@ -18,28 +18,37 @@ import {
   Pen,
 } from "lucide-react";
 
+import {
+  FaHome,
+  FaPen,
+  FaStore,
+  FaGem,
+  FaShoppingBasket,
+  FaShoppingCart,
+} from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import { useCartContext } from "../Contexts/CartContext";
 
 const LINKS = [
   {
-    icon: Home,
+    icon: FaHome,
     title: "Home",
     href: "/home",
   },
 
   {
-    icon: Gem,
+    icon: FaGem,
     title: "Luxury Collections",
     href: "/luxury-collections",
   },
   {
-    icon: ShoppingBag,
+    icon: FaShoppingBasket,
     title: "Store",
     href: "/store",
   },
   {
-    icon: Pen,
+    icon: FaPen,
     title: "Blogs",
     href: "/Blogs",
   },
@@ -55,10 +64,10 @@ function NavList({ onLinkClick }) {
   return (
     <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
       {LINKS.map(({ icon: Icon, title, href }) => (
-        <Link to={href} key={currentLink} onClick={onLinkClick}>
+        <Link to={href} key={title} onClick={onLinkClick}>
           <li>
             <Typography
-              type="medium"
+              // type="medium"
               className={` ${
                 currentLink
                   ? "flex items-center gap-x-2 p-1 underline-offset-2 underline"
@@ -87,7 +96,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full bg-inherit shadow-none border-none">
+    <Navbar className="w-full bg-inherit shadow-none border-none transition-all">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -108,11 +117,10 @@ export default function NavBar() {
           <Badge className="ml-16 lg:grid lg:mr-2">
             <Badge.Content>
               <IconButton
-                // color="primary"
                 variant="ghost"
-                className="outline-none border-none active:animate-bounce duration-300"
+                className="outline-none border-none duration-300"
               >
-                <ShoppingCartIcon className="h-6 w-6 " />
+                <FaShoppingCart className="h-6 w-6 " />
               </IconButton>
             </Badge.Content>
             <Badge.Indicator>

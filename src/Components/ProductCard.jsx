@@ -1,5 +1,4 @@
 import { Card, Typography, IconButton, Button } from "@material-tailwind/react";
-import { Trash } from "lucide-react";
 import { useCartContext } from "../Contexts/CartContext";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 

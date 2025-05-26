@@ -36,3 +36,13 @@ body {
   padding: 0.5rem;
   scroll-behavior: smooth;
 }
+
+.light {
+  background-color: white;
+  color: black;
+}
+.dark {
+  /* background-color: rgb(44, 43, 43); */
+  background-color: black;
+  color: white;
+}

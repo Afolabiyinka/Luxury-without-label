@@ -22,14 +22,9 @@ const Cart = () => {
       ) : (
         <div className="h-screen w-full flex justify-center items-center">
           <div className="text-center flex flex-col items-center justify-center">
-            <ShoppingCart
-              size={64}
-              className="text-gray-400 animate-bounce mb-4"
-            />
-            <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-              No Items in Cart
-            </h2>
-            <p className="text-lg text-gray-600">
+            <ShoppingCart size={64} className=" animate-bounce mb-4" />
+            <h2 className="text-3xl font-semibold  mb-4">No Items in Cart</h2>
+            <p className="text-lg">
               Start adding items to your cart and they will appear here!
             </p>
           </div>

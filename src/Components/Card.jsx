@@ -19,10 +19,7 @@ export default function CollectionCard({ collection }) {
         />
       </CardHeader>
       <CardBody className="text-center py-6">
-        <Typography
-          variant="h5"
-          className="text-xl font-bold text-gray-900 tracking-wide"
-        >
+        <Typography variant="h5" className="text-xl font-bold  tracking-wide">
           {collection.name}
         </Typography>
       </CardBody>

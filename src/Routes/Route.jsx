@@ -9,6 +9,7 @@ import Home from "../Pages/Home";
 import Collections from "../Pages/Subpages/Collections";
 import NotFound from "../Pages/NotFound";
 import FAQs from "../Pages/Subpages/FAQs";
+import ModeToggle from "../Components/ModeToggle";
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/newBlog" element={<CreateBlog />} />
         <Route path="/FAQS" element={<FAQs />} />
+        <Route path="theme" element={<ModeToggle />} />
       </Routes>
     </div>
   );
