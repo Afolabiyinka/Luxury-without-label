@@ -1,7 +1,7 @@
 # Luxury Without Label 👗✨
 
-![Home Page Screenshot](src/assets/Homepage.png)
-![Home Page Screenshot](src/assets/Productspage.png)
+![Home Page Screenshot](/public/Homepage.png)
+![Home Page Screenshot](/public/Productspage.png)
 
 A sleek and responsive fashion web app built with **React** and **Tailwind CSS**. "Luxury Without Label" is designed to showcase stylish clothing with a minimalist, label-free aesthetic — premium looks without the big brand logos.
 
