@@ -18,9 +18,8 @@ import {
   Pen,
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCartContext } from "../Contexts/CartContext";
-import ModeToggle from "../Components/ModeToggle";
 
 const LINKS = [
   {
@@ -52,23 +51,23 @@ const LINKS = [
 ];
 
 function NavList({ onLinkClick }) {
-  const [currentLink, setCurrentLink] = useState("");
+  const location = useLocation();
   return (
-    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center transition-all duration-300">
+    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center  transition-all duration-500">
       {LINKS.map(({ icon: Icon, title, href }) => (
         <Link to={href} key={title} onClick={onLinkClick}>
           <li>
-            <Typography
-              // type="medium"
-              className={` ${
-                currentLink
-                  ? "flex items-center gap-x-2 p-1 underline-offset-2 underline"
-                  : "flex items-center gap-x-2 p-1  hover:underline-offset-1"
-              } `}
-            >
-              <Icon className="h-4 w-4" />
-              {title}
-            </Typography>
+            <span className="flex flex-col">
+              <Typography className={`flex items-center gap-x-2 p-1`}>
+                <Icon className="h-4 w-4" />
+                {title}
+              </Typography>
+              <div
+                className={`${
+                  location.pathname === href ? "block" : "hidden"
+                } w-2 rounded-full h-0.5 ml-12 bg-gray-700 `}
+              ></div>
+            </span>
           </li>
         </Link>
       ))}
@@ -95,16 +94,16 @@ export default function NavBar() {
             as="a"
             href="/"
             type="large"
-            className="ml-6 mr-6 py-1 font-semibold text-2xl "
+            className="ml-3 mr-6 py-1 font-semibold text-2xl"
           >
             De Elegance
           </Typography>
           <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
-          <div className="hidden lg:block">
+          <div className={`hidden lg:block  ${openNav ? "translate-x-7" : ""}`}>
             <NavList onLinkClick={() => setOpenNav(false)} />
           </div>
         </div>
-        <div></div>
+
         <Link to="/cart">
           <Badge className="ml-16 lg:grid lg:mr-2">
             <Badge.Content>

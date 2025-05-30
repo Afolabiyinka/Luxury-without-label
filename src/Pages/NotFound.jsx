@@ -11,7 +11,7 @@ const NotFound = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="max-w-3xl w-full bg-white border border-amber-200 rounded-lg shadow-xl p-8 md:p-12">
+      <div className="max-w-3xl w-full bg-white rounded-lg shadow-xl p-8 md:p-12">
         <div className="text-center mb-10">
           <span className="flex justify-center items-center gap-3">
             <h1 className="font-serif text-9xl font-light text-amber-800 tracking-widest ">

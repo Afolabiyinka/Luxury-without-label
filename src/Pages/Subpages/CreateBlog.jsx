@@ -159,7 +159,6 @@ const CreateBlog = () => {
               <textarea
                 id="blogContent"
                 value={blogContent}
-                onChange={(e) => setBlogContent(e.target.value)}
                 placeholder="Write your blog content here..."
                 rows={10}
                 className="w-full p-3 rounded-lg border border-amber-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none resize-none tracking-wide"

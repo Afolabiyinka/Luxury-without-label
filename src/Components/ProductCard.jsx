@@ -24,6 +24,7 @@ export default function ProductCard({ product }) {
         <div className="mb-2 flex items-center justify-between">
           <Typography type="h6">{product.name}</Typography>
           <Typography type="h6">${product.price}</Typography>
+          <Typography>{product.webId}</Typography>
         </div>
       </Card.Body>
       <Card.Footer className="flex gap-2 justify-center items-center">

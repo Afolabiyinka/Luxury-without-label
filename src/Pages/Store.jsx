@@ -73,6 +73,7 @@ const Store = () => {
                   product.image?.imageURL ||
                   "https://via.placeholder.com/150",
                 prices: product.prices?.[0]?.regularPrice || "N/A",
+                webID: product.webID,
               }}
             />
           ))}
