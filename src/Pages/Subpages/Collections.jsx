@@ -28,8 +28,8 @@ const Collections = () => {
   ];
 
   return (
-    <div className="text-center">
-      <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text">
+    <div className="text-center pt-4 px-4">
+      <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text mb-3">
         Luxury Collections
       </h1>
       <div className="min-h-screen px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">

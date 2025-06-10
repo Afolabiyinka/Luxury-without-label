@@ -67,11 +67,7 @@ const Store = () => {
               product={{
                 id: product.webID,
                 name: product.productTitle,
-                image:
-                  product.image?.url ||
-                  product.image?.main ||
-                  product.image?.imageURL ||
-                  "https://via.placeholder.com/150",
+                image: product.image?.url,
                 prices: product.prices?.[0]?.regularPrice || "N/A",
                 webID: product.webID,
               }}

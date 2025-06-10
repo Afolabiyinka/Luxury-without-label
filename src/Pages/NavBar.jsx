@@ -87,7 +87,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full bg-inherit shadow-none border-none">
+    <Navbar className="w-full bg-inherit shadow-none border-none  lg:items-center lg:justify-center mb-3 gap-12">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -107,10 +107,7 @@ export default function NavBar() {
         <Link to="/cart">
           <Badge className="ml-16 lg:grid lg:mr-2">
             <Badge.Content>
-              <IconButton
-                variant="ghost"
-                className="outline-none border-none active:animate-bounce duration-300"
-              >
+              <IconButton variant="ghost" className="outline-none border-none">
                 <ShoppingCartIcon className="h-6 w-6 " />
               </IconButton>
             </Badge.Content>
