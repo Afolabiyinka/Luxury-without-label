@@ -21,16 +21,14 @@ const Blogs = () => {
           {blogs.map((item) => (
             <BlogCard blog={item} />
           ))}
-          <span>
-            {" "}
-            <Button
-              color="primary"
-              variant="outline"
-              onClick={() => navigate("/newBlog")}
-            >
-              Create a new Blog
-            </Button>
-          </span>
+
+          <Button
+            color="primary"
+            variant="solid"
+            onClick={() => navigate("/blog")}
+          >
+            Create a new Blog
+          </Button>
         </div>
       ) : (
         <div className="h-screen w-full flex flex-col gap-3 justify-center items-center">
@@ -46,7 +44,7 @@ const Blogs = () => {
           <Button
             color="primary"
             variant="outline"
-            onClick={() => navigate("/newBlog")}
+            onClick={() => navigate("/blog")}
           >
             Create a new Blog
           </Button>

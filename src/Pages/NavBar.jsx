@@ -9,13 +9,16 @@ import {
 
 import {
   Home,
-  Gem,
   X,
   Menu,
   ShoppingBag,
   ShoppingCartIcon,
   MessageCircle,
   Pen,
+  Diamond,
+  HelpCircle,
+  CircleHelp,
+  Heart,
 } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
@@ -25,11 +28,11 @@ const LINKS = [
   {
     icon: Home,
     title: "Home",
-    href: "/home",
+    href: "/",
   },
 
   {
-    icon: Gem,
+    icon: Diamond,
     title: "Luxury Collections",
     href: "/luxury-collections",
   },
@@ -44,29 +47,36 @@ const LINKS = [
     href: "/Blogs",
   },
   {
-    icon: MessageCircle,
+    icon: CircleHelp,
     title: "FAQs",
     href: "/FAQs",
+  },
+  {
+    icon: Heart,
+    title: "WishList",
+    href: "/wishlist",
   },
 ];
 
 function NavList({ onLinkClick }) {
   const location = useLocation();
   return (
-    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3 lg:mt-0 lg:flex-row lg:items-center  transition-all duration-500">
+    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3  lg:mt-0 lg:flex-row lg:items-center  transition-all duration-150">
       {LINKS.map(({ icon: Icon, title, href }) => (
-        <Link to={href} key={title} onClick={onLinkClick}>
+        <Link
+          to={href}
+          key={title}
+          onClick={onLinkClick}
+          className={`${
+            location.pathname === href ? "bg-gray-300 p-1 rounded-xl" : ""
+          }`}
+        >
           <li>
             <span className="flex flex-col">
               <Typography className={`flex items-center gap-x-2 p-1`}>
                 <Icon className="h-4 w-4" />
                 {title}
               </Typography>
-              <div
-                className={`${
-                  location.pathname === href ? "block" : "hidden"
-                } w-2 rounded-full h-0.5 ml-12 bg-gray-700 `}
-              ></div>
             </span>
           </li>
         </Link>
@@ -87,7 +97,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full bg-inherit shadow-none border-none  lg:items-center lg:justify-center mb-3 gap-12">
+    <Navbar className="w-full  border m-0 lg:mt-1 rounded-xl  lg:items-center lg:justify-center mb-3">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -105,9 +115,13 @@ export default function NavBar() {
         </div>
 
         <Link to="/cart">
-          <Badge className="ml-16 lg:grid lg:mr-2">
+          <Badge className="ml-16 lg:grid lg:mr-2 lg:mt-1">
             <Badge.Content>
-              <IconButton variant="ghost" className="outline-none border-none">
+              <IconButton
+                variant="ghost"
+                className="outline-none border-none"
+                isCircular
+              >
                 <ShoppingCartIcon className="h-6 w-6 " />
               </IconButton>
             </Badge.Content>
@@ -116,15 +130,25 @@ export default function NavBar() {
             </Badge.Indicator>
           </Badge>
         </Link>
-        <IconButton
-          size="sm"
-          variant="ghost"
+        <span
+          // size="sm"
+          // variant="ghost"
           // color="secondary"
           onClick={() => setOpenNav(!openNav)}
-          className="grid lg:hidden transition-all duration-300 ease-in-out"
+          className="grid lg:hidden transition-all duration-700 ease-in-out p-1"
         >
-          {openNav ? <X size={30} /> : <Menu size={35} />}
-        </IconButton>
+          {openNav ? (
+            <X
+              size={30}
+              className="active:rotate-180 transition-all duration-700"
+            />
+          ) : (
+            <Menu
+              size={35}
+              className="active:rotate-180 transition-all duration-700"
+            />
+          )}
+        </span>
       </div>
       <Collapse
         open={openNav}

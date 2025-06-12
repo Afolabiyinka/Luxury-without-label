@@ -18,16 +18,16 @@ export function BlogProvider({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   //Doing the url stuff
-  const initialPage = parseInt(searchParams.get("blog") || 1);
+  const initialPage = parseInt(searchParams.get("") || 1);
   const [blogId, setBlogId] = useState(initialPage);
 
   const location = useLocation();
 
   useEffect(() => {
-    const hideSearchParams = ["/newBlog"];
+    const showSearchParams = ["/blog"];
     {
-      hideSearchParams.includes(location.pathname) &&
-        setSearchParams({ blog: initialPage });
+      showSearchParams.includes(location.pathname) &&
+        setSearchParams({ "": initialPage });
     }
   }, [blogId, setSearchParams]);
 
