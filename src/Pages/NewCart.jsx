@@ -1,18 +1,7 @@
-import {
-  EditPencil,
-  UserPlus,
-  Search,
-  ArrowSeparateVertical,
-  Trash,
-  Cart,
-} from "iconoir-react";
+import { Trash } from "iconoir-react";
 
 import {
-  Input,
   Typography,
-  Button,
-  Chip,
-  Tabs,
   Avatar,
   IconButton,
   Tooltip,
@@ -29,9 +18,9 @@ export default function NewCart() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <h2 className="text-3xl font-semibold mb-2 text-center">Your Cart</h2>
       {cartItems && cartItems.length > 0 ? (
         <div className="w-full]">
+          <h2 className="text-3xl font-semibold mb-2 text-center">Your Cart</h2>
           <div className="mt-4 w-full overflow-hidden rounded-lg border border-surface">
             <table className="w-full">
               <tbody className="group text-sm text-black dark:text-white">
