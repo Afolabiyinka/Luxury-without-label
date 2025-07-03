@@ -3,46 +3,20 @@ import ProductCard from "../Components/ProductCard";
 import { motion } from "framer-motion";
 import Loader from "../Components/Loader";
 import { Frown } from "lucide-react";
+import { useProducts } from "../Contexts/ProductsContext";
 
 const Store = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(null);
-  const [error, setError] = useState(null);
-
-  async function getProductsInfos() {
-    const url =
-      "https://kohls.p.rapidapi.com/products/list?limit=100&offset=1&dimensionValueID=AgeAppropriate%3ATeens";
-    const options = {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "a869d5ae45mshdec2ffbb2a10db1p1a7913jsnd5d7cd0b7dd9",
-        "x-rapidapi-host": "kohls.p.rapidapi.com",
-      },
-    };
-
-    try {
-      setLoading(true);
-      const response = await fetch(url, options);
-      const result = await response.json();
-      console.log(result);
-      setProducts(result.payload.products);
-    } catch (error) {
-      setError(true);
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-  useEffect(() => {
-    getProductsInfos();
-  }, []);
-
+  const { products, loading, error } = useProducts();
   return (
     <motion.div
-      className="flex justify-center items-center p-2 w-full h-full"
+      className="flex flex-col justify-center items-center p-2 w-full h-full"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
+      <h1 className="text-3xl font-bold font-mono mb-4">
+        Trendy fashion picks
+      </h1>
+
       {loading ? (
         <div className="h-screen flex justify-center items-center">
           <Loader />
@@ -60,19 +34,21 @@ const Store = () => {
           </div>
         </div>
       ) : (
-        <div className="grid  md:grid-cols-3 gap-7 items-center justify-center px-4">
-          {products.map((product) => (
-            <ProductCard
-              key={product.webID}
-              product={{
-                id: product.webID,
-                name: product.productTitle,
-                image: product.image?.url,
-                prices: product.prices?.[0]?.regularPrice || "N/A",
-                webID: product.webID,
-              }}
-            />
-          ))}
+        <div>
+          <div className="grid md:grid-cols-4 gap-7 items-center justify-center px-8">
+            {products.map((product) => (
+              <ProductCard
+                key={product.webID}
+                product={{
+                  id: product.webID,
+                  name: product.productTitle,
+                  image: product.image?.url,
+                  prices: product.prices?.[0]?.regularPrice || "N/A",
+                  webID: product.webID,
+                }}
+              />
+            ))}
+          </div>
         </div>
       )}
     </motion.div>

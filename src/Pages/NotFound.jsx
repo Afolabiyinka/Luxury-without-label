@@ -17,7 +17,7 @@ const NotFound = () => {
             <h1 className="font-serif text-9xl font-light text-amber-800 tracking-widest ">
               404
             </h1>
-            <TfiFaceSad size={100} color="orange" />
+            <TfiFaceSad size={110} color="orange" />
           </span>
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto my-6"></div>
           <h2 className="font-serif text-2xl text-amber-900 mb-2">

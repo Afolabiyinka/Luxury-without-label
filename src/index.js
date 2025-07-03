@@ -6,17 +6,21 @@ import { BrowserRouter } from "react-router-dom";
 import { BlogProvider } from "./Contexts/BlogContext";
 import { CartProvider } from "./Contexts/CartContext";
 import { ThemeProvider } from "./Contexts/ThemeContext";
+import { ProductProvider } from "./Contexts/ProductsContext";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {
       <ThemeProvider>
         <BrowserRouter>
-          <BlogProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </BlogProvider>
+          <ProductProvider>
+            <BlogProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+            </BlogProvider>
+          </ProductProvider>
         </BrowserRouter>
       </ThemeProvider>
     }

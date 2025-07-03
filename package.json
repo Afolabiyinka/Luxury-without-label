@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "framer-motion": "^11.13.5",
+    "iconoir-react": "^7.11.0",
     "lexical": "^0.31.2",
     "lucide-react": "^0.486.0",
     "nprogress": "^0.2.0",

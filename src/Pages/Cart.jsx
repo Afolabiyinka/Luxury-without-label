@@ -14,7 +14,7 @@ const Cart = () => {
     >
       <h2 className="text-3xl font-semibold mb-6 text-center">Your Cart</h2>
       {cartItems && cartItems.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center p-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 justify-center items-center p-5 gap-4">
           {cartItems.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}

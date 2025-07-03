@@ -97,7 +97,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full  border m-0 lg:mt-1 rounded-xl  lg:items-center lg:justify-center mb-3">
+    <Navbar className="w-full border m-0 lg:mt-1 rounded-xl lg:items-center lg:justify-center mb-3">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Typography
@@ -108,7 +108,7 @@ export default function NavBar() {
           >
             De Elegance
           </Typography>
-          <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
+          {/* <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" /> */}
           <div className={`hidden lg:block  ${openNav ? "translate-x-7" : ""}`}>
             <NavList onLinkClick={() => setOpenNav(false)} />
           </div>
