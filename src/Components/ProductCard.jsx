@@ -36,7 +36,7 @@ export default function ProductCard({ product }) {
         </h3>
 
         <span className="flex justify-between p-2 items-center">
-          <p className="text-lg font-bold text-green-600">$120.00</p>
+          <p className="text-lg font-bold text-amber-600">$120.00</p>
           <button
             onClick={onCartClick}
             className={`p-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 hover:scale-105

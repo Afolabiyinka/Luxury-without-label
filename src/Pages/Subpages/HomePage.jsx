@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import heroModel from "../../Assets/Images/heroModel.png";
-import { Button } from "@material-tailwind/react";
+
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -55,7 +54,7 @@ const HomePage = () => {
         <motion.img
           src={heroModel}
           alt="Hero Model"
-          className="w-full h-full max-w-md md:max-w-lg object-contain ring-4 ring-white shadow-lg p-2 rounded-full"
+          className="w-full h-full max-w-md md:max-w-lg object-contain p-2 rounded-md"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}

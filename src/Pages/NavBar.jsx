@@ -61,7 +61,7 @@ const LINKS = [
 function NavList({ onLinkClick }) {
   const location = useLocation();
   return (
-    <ul className="flex flex-col gap-x-8 gap-y-3  lg:mt-0 lg:flex-row lg:items-center transition-all duration-1000">
+    <ul className="flex flex-col gap-x-3 gap-y-3  lg:mt-0 lg:flex-row lg:items-center transition-all duration-1000">
       {LINKS.map(({ icon: Icon, title, href }) => (
         <Link
           to={href}
@@ -97,9 +97,9 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full border p-4 rounded-none flex flex-col items-center justify-center mb-3">
+    <Navbar className="w-full border p-4 rounded-none flex flex-col items-center justify-center mb-3 shadow-sm">
       <div className="flex justify-between">
-        <div className="flex items-center ">
+        <div className="flex items-center">
           <Typography
             as="a"
             href="/"
@@ -113,37 +113,42 @@ export default function NavBar() {
           </div>
         </div>
 
-        <Link to="/cart">
-          <Badge className="ml-16 lg:grid lg:mr-2 lg:mt-1">
-            <Badge.Content>
-              <IconButton variant="ghost" className="outline-none border-none">
-                <ShoppingCartIcon size={27} />
-              </IconButton>
-            </Badge.Content>
-            <Badge.Indicator>
-              {cartItems ? cartItems.length : 0}
-            </Badge.Indicator>
-          </Badge>
-        </Link>
-        <span
-          onClick={() => setOpenNav(!openNav)}
-          className="grid ml-0.5 lg:hidden transition-all duration-1000 ease-in-out p-1"
-        >
-          {openNav ? (
-            <X
-              size={30}
-              className="transition-transform  transform active:-rotate-180  duration-1000"
-            />
-          ) : (
-            <Menu
-              size={35}
-              className=" transition-transform transform active:-rotate-180  duration-1000"
-            />
-          )}
-        </span>
+        <div className="flex gap-3 justify-center items-center">
+          <Link to="/cart">
+            <Badge className="ml-16 lg:grid lg:mr-2 lg:mt-1">
+              <Badge.Content>
+                <IconButton
+                  variant="ghost"
+                  className="outline-none border-none"
+                >
+                  <ShoppingCartIcon size={27} />
+                </IconButton>
+              </Badge.Content>
+              <Badge.Indicator>
+                {cartItems ? cartItems.length : 0}
+              </Badge.Indicator>
+            </Badge>
+          </Link>
+          <span
+            onClick={() => setOpenNav(!openNav)}
+            className="grid ml-0.5 lg:hidden transition-all duration-500 p-1"
+          >
+            {openNav ? (
+              <X
+                size={30}
+                className="transform rotate-180 transition duration-500 ease-in-out"
+              />
+            ) : (
+              <Menu
+                size={35}
+                className="transform rotate-0 transition duration-500 ease-in-out"
+              />
+            )}
+          </span>
+        </div>
       </div>
       {openNav && (
-        <div className="p-2 flex justify-center  w-screen h-screen items-center translate-x-8  transform transition-all duration-700">
+        <div className="fixed top-20 left-0 w-full h-full bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden">
           <NavList onLinkClick={() => setOpenNav(false)} />
         </div>
       )}

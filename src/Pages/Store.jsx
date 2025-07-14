@@ -13,7 +13,7 @@ const Store = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <h1 className="text-3xl font-bold font-mono mb-4">
+      <h1 className="text-2xl font-bold font-mono mb-4">
         Trendy fashion picks
       </h1>
 
@@ -35,7 +35,7 @@ const Store = () => {
         </div>
       ) : (
         <div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-2 md:px-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-6 md:px-8">
             {products.map((product) => (
               <ProductCard
                 key={product.webID}
