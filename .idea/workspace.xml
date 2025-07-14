@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="400a5436-e215-4d4b-b8bd-2129989d95c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/BlogCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BlogCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Contexts/BlogContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contexts/BlogContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Subpages/Blogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Subpages/Blogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Subpages/CreateBlog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Subpages/CreateBlog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/Route.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/Route.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +38,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -62,6 +59,8 @@
       <updated>1749647123014</updated>
       <workItem from="1749647125531" duration="101000" />
       <workItem from="1749647228951" duration="734000" />
+      <workItem from="1752050883306" duration="40000" />
+      <workItem from="1752052825997" duration="1974000" />
     </task>
     <servers />
   </component>

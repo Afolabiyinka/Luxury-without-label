@@ -61,7 +61,7 @@ const LINKS = [
 function NavList({ onLinkClick }) {
   const location = useLocation();
   return (
-    <ul className="mt-4 flex flex-col gap-x-6 gap-y-3  lg:mt-0 lg:flex-row lg:items-center  transition-all duration-150">
+    <ul className="flex flex-col gap-x-8 gap-y-3  lg:mt-0 lg:flex-row lg:items-center transition-all duration-1000">
       {LINKS.map(({ icon: Icon, title, href }) => (
         <Link
           to={href}
@@ -97,9 +97,9 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full border m-0 lg:mt-1 rounded-xl lg:items-center lg:justify-center mb-3">
+    <Navbar className="w-full border p-4 rounded-none flex flex-col items-center justify-center mb-3">
       <div className="flex justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <Typography
             as="a"
             href="/"
@@ -108,7 +108,6 @@ export default function NavBar() {
           >
             De Elegance
           </Typography>
-          {/* <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" /> */}
           <div className={`hidden lg:block  ${openNav ? "translate-x-7" : ""}`}>
             <NavList onLinkClick={() => setOpenNav(false)} />
           </div>
@@ -117,12 +116,8 @@ export default function NavBar() {
         <Link to="/cart">
           <Badge className="ml-16 lg:grid lg:mr-2 lg:mt-1">
             <Badge.Content>
-              <IconButton
-                variant="ghost"
-                className="outline-none border-none"
-                isCircular
-              >
-                <ShoppingCartIcon className="h-6 w-6 " />
+              <IconButton variant="ghost" className="outline-none border-none">
+                <ShoppingCartIcon size={27} />
               </IconButton>
             </Badge.Content>
             <Badge.Indicator>
@@ -131,34 +126,27 @@ export default function NavBar() {
           </Badge>
         </Link>
         <span
-          // size="sm"
-          // variant="ghost"
-          // color="secondary"
           onClick={() => setOpenNav(!openNav)}
-          className="grid lg:hidden transition-all duration-700 ease-in-out p-1"
+          className="grid ml-0.5 lg:hidden transition-all duration-1000 ease-in-out p-1"
         >
           {openNav ? (
             <X
               size={30}
-              className="active:rotate-180 transition-all duration-700"
+              className="transition-transform  transform active:-rotate-180  duration-1000"
             />
           ) : (
             <Menu
               size={35}
-              className="active:rotate-180 transition-all duration-700"
+              className=" transition-transform transform active:-rotate-180  duration-1000"
             />
           )}
         </span>
       </div>
-      <Collapse
-        open={openNav}
-        className="transition-all duration-700 ease-in-out transform"
-        style={{
-          transform: openNav ? "translateY(0)" : "translateY(-100%)",
-        }}
-      >
-        <NavList onLinkClick={() => setOpenNav(false)} />
-      </Collapse>
+      {openNav && (
+        <div className="p-2 flex justify-center  w-screen h-screen items-center translate-x-8  transform transition-all duration-700">
+          <NavList onLinkClick={() => setOpenNav(false)} />
+        </div>
+      )}
     </Navbar>
   );
 }

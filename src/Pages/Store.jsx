@@ -35,7 +35,7 @@ const Store = () => {
         </div>
       ) : (
         <div>
-          <div className="grid md:grid-cols-4 gap-7 items-center justify-center px-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-2 md:px-8">
             {products.map((product) => (
               <ProductCard
                 key={product.webID}

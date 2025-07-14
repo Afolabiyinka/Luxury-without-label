@@ -1,25 +1,16 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-} from "@material-tailwind/react";
-
 export default function CollectionCard({ collection }) {
   return (
-    <Card className="max-w-sm rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xlcursor-pointer active:opacity-80 active:duration-700 ">
-      <CardHeader className="h-80 overflow-hidden rounded-t-2xl">
+    <div className="max-w-sm rounded-sm shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer active:opacity-80 active:duration-700">
+      <div className="h-80 overflow-hidden rounded-none p-0.5">
         <img
           src={collection.imgSrc}
           alt={collection.name}
           className="h-full w-full object-cover"
         />
-      </CardHeader>
-      <CardBody className="text-center py-6">
-        <Typography variant="h5" className="text-xl font-bold  tracking-wide">
-          {collection.name}
-        </Typography>
-      </CardBody>
-    </Card>
+      </div>
+      <div className="text-center py-6">
+        <h5 className="text-xl font-bold  tracking-wide">{collection.name}</h5>
+      </div>
+    </div>
   );
 }

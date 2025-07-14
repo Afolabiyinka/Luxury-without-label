@@ -30,13 +30,13 @@ const CreateBlog = () => {
     setWebUrl(e.target.value);
   };
 
-  const handleUseWebUrl = () => {
-    if (webUrl && webUrl.trim() !== "") {
-      setImage(webUrl);
-    } else {
-      alert("Please enter a valid image URL");
-    }
-  };
+  // const handleUseWebUrl = () => {
+  //   if (webUrl && webUrl.trim() !== "") {
+  //     setImage(webUrl);
+  //   } else {
+  //     alert("Please enter a valid image URL");
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

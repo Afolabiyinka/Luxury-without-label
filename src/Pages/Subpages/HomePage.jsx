@@ -44,9 +44,9 @@ const HomePage = () => {
           transition={{ duration: 0.3, delay: 0.5 }}
         >
           <Link to="/store">
-            <Button className="text-white bg-black px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out">
+            <button className="text-white bg-black/90 px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out">
               View Products
-            </Button>
+            </button>
           </Link>
         </motion.div>
       </div>
