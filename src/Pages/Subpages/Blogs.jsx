@@ -43,7 +43,7 @@ const Blogs = () => {
           </div>
           <Button
             color="primary"
-            variant="outline"
+            variant="solid"
             onClick={() => navigate("/blog")}
           >
             Create a new Blog

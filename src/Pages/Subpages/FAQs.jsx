@@ -1,9 +1,9 @@
-import { Accordion } from "@material-tailwind/react";
+import { Accordion, Button } from "@material-tailwind/react";
 import { ChevronDown } from "lucide-react";
 
 export default function FAQs() {
   return (
-    <div className="min-h-screen py-16 px-4 flex flex-col items-center">
+    <div className="min-h-screen py-6 px-4 flex flex-col items-center">
       <div className="max-w-3xl w-full">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r  bg-clip-text  mb-4">
@@ -21,7 +21,7 @@ export default function FAQs() {
             defaultValue="shipping"
             className="border-none transition-all duration-300"
             color="primary"
-            variant="outline"
+            variant="gradient"
           >
             <Accordion.Item
               value="shipping"
@@ -126,9 +126,9 @@ export default function FAQs() {
 
         <div className="mt-10 text-center">
           <p className="text-gray-500 mb-4">Still have questions?</p>
-          <button className="px-6 py-3 bg-black text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <Button className="px-6 py-3 bg-black text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
             Contact Support
-          </button>
+          </Button>
         </div>
       </div>
     </div>

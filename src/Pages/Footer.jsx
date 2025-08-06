@@ -4,7 +4,7 @@ const YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 border-t border-surface py-4 text-center md:justify-center ">
+    <footer className="flex w-full flex-col md:flex-row items-center justify-center gap-x-12 gap-y-1 border-t border-surface py-4 text-center md:justify-center ">
       <Typography>&copy; {YEAR} De Elegance</Typography>
       <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
         <p>

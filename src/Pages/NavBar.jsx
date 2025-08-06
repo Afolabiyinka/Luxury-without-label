@@ -5,6 +5,8 @@ import {
   Collapse,
   Navbar,
   Badge,
+  Input,
+  InputIcon,
 } from "@material-tailwind/react";
 
 import {
@@ -13,12 +15,12 @@ import {
   Menu,
   ShoppingBag,
   ShoppingCartIcon,
-  MessageCircle,
   Pen,
   Diamond,
-  HelpCircle,
   CircleHelp,
   Heart,
+  Shirt,
+  Search,
 } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
@@ -61,19 +63,16 @@ const LINKS = [
 function NavList({ onLinkClick }) {
   const location = useLocation();
   return (
-    <ul className="flex flex-col gap-x-3 gap-y-3  lg:mt-0 lg:flex-row lg:items-center transition-all duration-1000">
+    <ul className="flex flex-col gap-x-8 gap-y-3  lg:mt-0 lg:flex-row lg:items-center lg:justify-start transition-all duration-1000">
       {LINKS.map(({ icon: Icon, title, href }) => (
-        <Link
-          to={href}
-          key={title}
-          onClick={onLinkClick}
-          className={`${
-            location.pathname === href ? "bg-gray-300 p-1 rounded-xl" : ""
-          }`}
-        >
+        <Link to={href} key={title} onClick={onLinkClick}>
           <li>
             <span className="flex flex-col">
-              <Typography className={`flex items-center gap-x-2 p-1`}>
+              <Typography
+                className={`flex items-center gap-x-2 p-1 ${
+                  location.pathname === href ? "underline text-gray-600" : ""
+                }`}
+              >
                 <Icon className="h-4 w-4" />
                 {title}
               </Typography>
@@ -97,61 +96,109 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="w-full border p-4 rounded-none flex flex-col items-center justify-center mb-3 shadow-sm">
-      <div className="flex justify-between">
-        <div className="flex items-center">
-          <Typography
-            as="a"
-            href="/"
-            type="large"
-            className="ml-3 mr-6 py-1 font-semibold text-2xl"
+    <>
+      <div className="bg-gray-50/40 shadow-sm p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
+        <Typography
+          as="a"
+          href="/"
+          type="large"
+          className="ml-3 mr-6 py-1 font-semibold text-xl md:flex gap-2 hidden text-gray-600"
+        >
+          <Shirt color="black" fill="gray" />
+          De Elegance
+        </Typography>
+
+        <span className="flex gap-2 items-center justify-center border p-1 rounded-md">
+          <input
+            type="search"
+            className="outline-none p-1 border-none bg-inherit text-sm"
+            placeholder="Search here..."
+          />
+          <Search color="gray" />
+        </span>
+        <span className="flex gap-3 items-center justify-center">
+          <Link
+            to="/cart"
+            className="shadow-sm text-gray-600 hidden md:flex gap-2 justify-center items-center rounded-md p-2"
           >
-            De Elegance
-          </Typography>
-          <div className={`hidden lg:block  ${openNav ? "translate-x-7" : ""}`}>
-            <NavList onLinkClick={() => setOpenNav(false)} />
+            <ShoppingCartIcon size={20} />
+
+            <p className="font-semibold tracking-wide">Cart</p>
+            <p className="bg-black/50 text-white h-5 w-4 flex justify-center items-center rounded-full">
+              {cartItems ? cartItems.length : 0}
+            </p>
+          </Link>
+
+          <Link to="/wishlist">
+            <IconButton variant="ghost" className="hidden md:block shadow-sm">
+              <Heart />
+            </IconButton>
+          </Link>
+        </span>
+      </div>
+      <Navbar className="w-full border-none p-3 md:px-32 rounded-none flex flex-col  md:justify-start mb-3 shadow-sm">
+        <div className="flex justify-between">
+          <div className="flex items-center md:justify-start">
+            <Typography
+              as="a"
+              href="/"
+              type="large"
+              className="ml-3 mr-6  font-semibold text-xl md:hidden flex gap-2 text-gray-600"
+            >
+              <Shirt color="black" fill="gray" />
+              De Elegance
+            </Typography>
+            <div
+              className={`hidden lg:block   ${openNav ? "translate-y-2" : ""}`}
+            >
+              <NavList onLinkClick={() => setOpenNav(false)} />
+            </div>
+          </div>
+
+          <div className="flex gap-3 justify-center items-center">
+            <Link to="/cart">
+              <Badge className=" lg:mr-2 lg:mt-1 lg:hidden">
+                <Badge.Content>
+                  <IconButton
+                    variant="ghost"
+                    className="outline-none border-none"
+                  >
+                    <ShoppingCartIcon size={27} />
+                  </IconButton>
+                </Badge.Content>
+                <Badge.Indicator>
+                  {cartItems ? cartItems.length : 0}
+                </Badge.Indicator>
+              </Badge>
+            </Link>
+            <span
+              onClick={() => setOpenNav(!openNav)}
+              className="grid ml-0.5 lg:hidden transition-all duration-500 p-1"
+            >
+              {openNav ? (
+                <X
+                  size={30}
+                  className="transform rotate-180 transition duration-500 ease-in-out"
+                />
+              ) : (
+                <Menu
+                  size={35}
+                  className="transform rotate-0 transition duration-500 ease-in-out"
+                />
+              )}
+            </span>
           </div>
         </div>
-
-        <div className="flex gap-3 justify-center items-center">
-          <Link to="/cart">
-            <Badge className="ml-16 lg:grid lg:mr-2 lg:mt-1">
-              <Badge.Content>
-                <IconButton
-                  variant="ghost"
-                  className="outline-none border-none"
-                >
-                  <ShoppingCartIcon size={27} />
-                </IconButton>
-              </Badge.Content>
-              <Badge.Indicator>
-                {cartItems ? cartItems.length : 0}
-              </Badge.Indicator>
-            </Badge>
-          </Link>
-          <span
-            onClick={() => setOpenNav(!openNav)}
-            className="grid ml-0.5 lg:hidden transition-all duration-500 p-1"
+        {openNav && (
+          <div
+            className={` ${
+              openNav ? "translate-y-4" : ""
+            }fixed top-[8rem] left-0 w-full h-full bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden`}
           >
-            {openNav ? (
-              <X
-                size={30}
-                className="transform rotate-180 transition duration-500 ease-in-out"
-              />
-            ) : (
-              <Menu
-                size={35}
-                className="transform rotate-0 transition duration-500 ease-in-out"
-              />
-            )}
-          </span>
-        </div>
-      </div>
-      {openNav && (
-        <div className="fixed top-20 left-0 w-full h-full bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden">
-          <NavList onLinkClick={() => setOpenNav(false)} />
-        </div>
-      )}
-    </Navbar>
+            <NavList onLinkClick={() => setOpenNav(false)} />
+          </div>
+        )}
+      </Navbar>
+    </>
   );
 }

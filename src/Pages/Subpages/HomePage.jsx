@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-10 gap-10 md:gap-5">
+    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-3 gap-10 md:gap-5">
       <div className="w-full md:w-1/2 text-center md:text-left">
         <motion.p
           className="text-sm text-black uppercase tracking-widest mb-2"
@@ -43,7 +43,7 @@ const HomePage = () => {
           transition={{ duration: 0.3, delay: 0.5 }}
         >
           <Link to="/store">
-            <button className="text-white bg-black/90 px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out">
+            <button className="text-white bg-black/90 px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out rounded-md">
               View Products
             </button>
           </Link>
@@ -54,7 +54,7 @@ const HomePage = () => {
         <motion.img
           src={heroModel}
           alt="Hero Model"
-          className="w-full h-full max-w-md md:max-w-lg object-contain p-2 rounded-md"
+          className="w-full h-full max-w-md md:max-w-lg object-contain ring-gray-100 p-1 ring-2 rounded-full"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
