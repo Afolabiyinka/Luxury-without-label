@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center  px-6 md:px-16 py-3 gap-10 md:gap-5">
-      <div className="w-full md:w-1/2 text-center md:text-left">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center  px-6 lg:px-16 py-3 gap-10 lg:gap-5">
+      <div className="w-full lg:w-1/2 text-center lg:text-left">
         <motion.p
           className="text-sm text-black uppercase tracking-widest mb-2"
           initial={{ opacity: 0, y: 30 }}
@@ -17,7 +17,7 @@ const HomePage = () => {
         </motion.p>
 
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -50,11 +50,11 @@ const HomePage = () => {
         </motion.div>
       </div>
 
-      <div className="w-full md:w-1/2 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
         <motion.img
           src={heroModel}
           alt="Hero Model"
-          className="w-full h-full max-w-md md:max-w-lg object-contain ring-gray-100 p-1 ring-2 rounded-full"
+          className="w-full h-full max-w-md lg:max-w-lg object-contain ring-gray-100 p-1 ring-2 rounded-full"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}

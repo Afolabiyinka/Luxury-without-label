@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import {
   IconButton,
   Typography,
-  Collapse,
   Navbar,
   Badge,
-  Input,
-  InputIcon,
 } from "@material-tailwind/react";
 
 import {
