@@ -18,7 +18,7 @@ const Store = () => {
       </h1>
 
       {loading ? (
-        <div className="h-screen flex justify-center items-center">
+        <div className="h-screen  flex  pt-20">
           <Loader />
         </div>
       ) : error ? (
