@@ -1,93 +1,109 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Loader = () => {
   return (
     <StyledWrapper>
-      <div className="loader">
-        <div className="justify-content-center jimu-primary-loading" />
+      <div className="spinner">
+        <div />   
+        <div />    
+        <div />    
+        <div />    
+        <div />    
+        <div />    
+        <div />    
+        <div />    
+        <div />    
+        <div />    
       </div>
     </StyledWrapper>
   );
-};
+}
 
 const StyledWrapper = styled.div`
-  .loader {
+  .spinner {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 9px;
+    height: 9px;
   }
 
-  .jimu-primary-loading:before,
-  .jimu-primary-loading:after {
+  .spinner div {
     position: absolute;
-    top: 0;
-    content: "";
+    width: 50%;
+    height: 150%;
+    background: #000000;
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+    animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
   }
 
-  .jimu-primary-loading:before {
-    left: -19.992px;
+  .spinner div:nth-child(1) {
+    --delay: 0.1;
+    --rotation: 36;
+    --translation: 150;
   }
 
-  .jimu-primary-loading:after {
-    left: 19.992px;
-    -webkit-animation-delay: 0.32s !important;
-    animation-delay: 0.32s !important;
+  .spinner div:nth-child(2) {
+    --delay: 0.2;
+    --rotation: 72;
+    --translation: 150;
   }
 
-  .jimu-primary-loading:before,
-  .jimu-primary-loading:after,
-  .jimu-primary-loading {
-    background: gray;
-    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
-    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
-    width: 13.6px;
-    height: 32px;
+  .spinner div:nth-child(3) {
+    --delay: 0.3;
+    --rotation: 108;
+    --translation: 150;
   }
 
-  .jimu-primary-loading {
-    text-indent: -9999em;
-    margin: auto;
-    position: absolute;
-    right: calc(50% - 6.8px);
-    top: calc(50% - 16px);
-    -webkit-animation-delay: 0.16s !important;
-    animation-delay: 0.16s !important;
+  .spinner div:nth-child(4) {
+    --delay: 0.4;
+    --rotation: 144;
+    --translation: 150;
   }
 
-  @-webkit-keyframes loading-keys-app-loading {
-    0%,
-    80%,
-    100% {
-      opacity: 0.75;
-      box-shadow: 0 0 gray;
-      height: 32px;
+  .spinner div:nth-child(5) {
+    --delay: 0.5;
+    --rotation: 180;
+    --translation: 150;
+  }
+
+  .spinner div:nth-child(6) {
+    --delay: 0.6;
+    --rotation: 216;
+    --translation: 150;
+  }
+
+  .spinner div:nth-child(7) {
+    --delay: 0.7;
+    --rotation: 252;
+    --translation: 150;
+  }
+
+  .spinner div:nth-child(8) {
+    --delay: 0.8;
+    --rotation: 288;
+    --translation: 150;
+  }
+
+  .spinner div:nth-child(9) {
+    --delay: 0.9;
+    --rotation: 324;
+    --translation: 150;
+  }
+
+  .spinner div:nth-child(10) {
+    --delay: 1;
+    --rotation: 360;
+    --translation: 150;
+  }
+
+  @keyframes spinner-fzua35 {
+    0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
     }
 
-    40% {
-      opacity: 1;
-      box-shadow: 0 -8px gray;
-      height: 40px;
+    50% {
+      transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
     }
-  }
-
-  @keyframes loading-keys-app-loading {
-    0%,
-    80%,
-    100% {
-      opacity: 0.75;
-      box-shadow: 0 0 gray;
-      height: 32px;
-    }
-
-    40% {
-      opacity: 1;
-      box-shadow: 0 -8px gray;
-      height: 40px;
-    }
-  }
-`;
+  }`;
 
 export default Loader;
