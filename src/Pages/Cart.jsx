@@ -20,7 +20,7 @@ const Cart = () => {
           ))}
         </div>
       ) : (
-        <div className="h-screen w-full flex justify-center items-center">
+        <div className="h-full w-full flex justify-center items-center">
           <div className="text-center flex flex-col items-center justify-center">
             <ShoppingCart
               size={64}
@@ -28,7 +28,7 @@ const Cart = () => {
               color="gray"
             />
             <h2 className="text-3xl font-semibold  mb-4">No Items in Cart</h2>
-            <p className="text-lg">
+            <p className="text-lg p-3">
               Start adding items to your cart and they will appear here!
             </p>
           </div>

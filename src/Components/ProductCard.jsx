@@ -17,8 +17,7 @@ export default function ProductCard({ product }) {
       <div className="relative overflow-hidden group">
         <img
           src={product.image}
-          alt={`Image of ${product.name}`}
-          onError={(e) => (e.target.src = "/placeholder.jpg")}
+          alt={product.name}
           className="h-64 w-full object-cover transform group-hover:scale-105 transition-transform duration-300 border-b"
         />
         {/* Badge */}

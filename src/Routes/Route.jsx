@@ -11,7 +11,8 @@ import NotFound from "../Pages/NotFound";
 import FAQs from "../Pages/Subpages/FAQs";
 import ModeToggle from "../Components/ModeToggle";
 import NewCart from "../Pages/NewCart";
-import ProductDetailsCard from "../Components/ProductDetailsCard";
+import ProductDetails from "../Components/ProductDetails";
+import Wishlist from "../Pages/Wishlist";
 
 const Router = () => {
   return (
@@ -26,7 +27,8 @@ const Router = () => {
       <Route path="/blog" element={<CreateBlog />} />
       <Route path="/FAQS" element={<FAQs />} />
       <Route path="theme" element={<ModeToggle />} />
-      <Route path="random" element={<ProductDetailsCard />} />
+      <Route path="random" element={<ProductDetails />} />
+      <Route path="wishlist" element={<Wishlist />} />
     </Routes>
   );
 };

@@ -7,33 +7,32 @@ export const ProductProvider = ({ children }) => {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    async function getProductsInfos() {
-      const url =
-        "https://kohls.p.rapidapi.com/products/list?limit=100&offset=1&dimensionValueID=AgeAppropriate%3ATeens";
-      const options = {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "a869d5ae45mshdec2ffbb2a10db1p1a7913jsnd5d7cd0b7dd9",
-          "x-rapidapi-host": "kohls.p.rapidapi.com",
-        },
-      };
+  async function getProducts() {
+    const url =
+      "https://kohls.p.rapidapi.com/products/list?limit=100&offset=1&dimensionValueID=AgeAppropriate%3ATeens";
+    const options = {
+      method: "GET",
+      headers: {
+        "x-rapidapi-key": "a869d5ae45mshdec2ffbb2a10db1p1a7913jsnd5d7cd0b7dd9",
+        "x-rapidapi-host": "kohls.p.rapidapi.com",
+      },
+    };
 
-      try {
-        setLoading(true);
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log(result);
-        setProducts(result.payload.products);
-      } catch (error) {
-        setError(true);
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
+    try {
+      setLoading(true);
+      const response = await fetch(url, options);
+      const result = await response.json();
+      // console.log(result);
+      setProducts(result.payload.products);
+    } catch (error) {
+      setError(true);
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
-    getProductsInfos();
+  }
+  useEffect(() => {
+    getProducts();
   }, []);
 
   const value = {

@@ -4,6 +4,7 @@ import {
   Typography,
   Navbar,
   Badge,
+  Tooltip,
 } from "@material-tailwind/react";
 
 import {
@@ -99,7 +100,7 @@ export default function NavBar() {
           as="a"
           href="/"
           type="large"
-          className="ml-3 mr-6 py-1 font-semibold text-xl md:flex gap-2 hidden text-gray-600"
+          className="ml-3 mr-6 py-1 font-semibold text-xl md:flex gap-2 hidden "
         >
           <Shirt color="black" fill="gray" />
           De Elegance
@@ -108,7 +109,7 @@ export default function NavBar() {
         <span className="flex gap-2 items-center justify-center border p-1 rounded-md">
           <input
             type="search"
-            className="outline-none p-1 border-none bg-inherit text-sm"
+            className="outline-none p-1 w-[17rem] border-none bg-inherit text-sm"
             placeholder="Search here..."
           />
           <Search color="gray" />
@@ -121,16 +122,25 @@ export default function NavBar() {
             <ShoppingCartIcon size={20} />
 
             <p className="font-semibold tracking-wide">Cart</p>
-            <p className="bg-black/50 text-white h-5 w-4 flex justify-center items-center rounded-full">
+            <p className="bg-black/50 text-white h-6 w-6 flex justify-center items-center rounded-full">
               {cartItems ? cartItems.length : 0}
             </p>
           </Link>
-
-          <Link to="/wishlist">
-            <IconButton variant="ghost" className="hidden md:block shadow-sm">
-              <Heart />
-            </IconButton>
-          </Link>
+          <Tooltip>
+            <Link to="/wishlist">
+              <Tooltip.Content>
+                WishList <Tooltip.Arrow />
+              </Tooltip.Content>
+              <Tooltip.Trigger>
+                <IconButton
+                  variant="ghost"
+                  className="hidden md:block shadow-sm"
+                >
+                  <Heart />
+                </IconButton>
+              </Tooltip.Trigger>
+            </Link>
+          </Tooltip>
         </span>
       </div>
       <Navbar className="w-full border-none p-3 md:px-32 rounded-none flex flex-col  md:justify-start mb-3 shadow-sm">

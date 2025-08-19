@@ -54,7 +54,7 @@ const HomePage = () => {
         <motion.img
           src={heroModel}
           alt="Hero Model"
-          className="w-full h-full max-w-md lg:max-w-lg object-contain ring-gray-100 p-1 ring-2 rounded-full"
+          className="w-full h-full max-w-md lg:max-w-lg object-contain ring-gray-50 p-1 ring-2 rounded-full"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}

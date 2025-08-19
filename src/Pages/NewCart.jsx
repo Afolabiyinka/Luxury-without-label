@@ -5,10 +5,12 @@ import {
   Avatar,
   IconButton,
   Tooltip,
+  Button,
 } from "@material-tailwind/react";
 import { ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCartContext } from "../Contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export default function NewCart() {
   const { cartItems, removeFromCart } = useCartContext();
@@ -89,9 +91,12 @@ export default function NewCart() {
               color="gray"
             />
             <h2 className="text-3xl font-semibold  mb-4">No Items in Cart</h2>
-            <p className="text-lg">
+            <p className="text-lg mb-3">
               Start adding items to your cart and they will appear here!
             </p>
+            <Button color="secondary" variant="solid">
+              <Link to="/store">Place Order</Link>
+            </Button>
           </div>
         </div>
       )}
