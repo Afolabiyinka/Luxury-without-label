@@ -10,7 +10,7 @@ export default function BlogCard({ blog }) {
     <Card className="flex h-fit w-full max-w-[48rem] flex-col gap-1 p-2 md:flex-row overflow-hidden shadow-lg hover:opacity-95 active:opacity-100 cursor-pointer transition-all duration-300 justify-center items-center">
       <Card.Header className="m-0 h-full w-full md:w-3/4 p-1">
         <img
-          src={blog.imageUrl}
+          src={blog.image}
           alt={blog.title}
           className="h-80 w-full object-cover rounded-md"
         />

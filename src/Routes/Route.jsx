@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 //Importing out Pages
 import Store from "../Pages/Store";
 import Blogs from "../Pages/Subpages/Blogs";
-import Cart from "../Pages/Cart";
+// import Cart from "../Pages/Cart";
 import CreateBlog from "../Pages/Subpages/CreateBlog";
 import Home from "../Pages/Home";
 import Collections from "../Pages/Subpages/Collections";
@@ -13,6 +13,7 @@ import ModeToggle from "../Components/ModeToggle";
 import NewCart from "../Pages/NewCart";
 import ProductDetails from "../Components/ProductDetails";
 import Wishlist from "../Pages/Wishlist";
+import ProfilePicUpload from "../Pages/ImageUploader";
 
 const Router = () => {
   return (
@@ -27,7 +28,7 @@ const Router = () => {
       <Route path="/blog" element={<CreateBlog />} />
       <Route path="/FAQS" element={<FAQs />} />
       <Route path="theme" element={<ModeToggle />} />
-      <Route path="random" element={<ProductDetails />} />
+      <Route path="random" element={<ProfilePicUpload />} />
       <Route path="wishlist" element={<Wishlist />} />
     </Routes>
   );

@@ -19,7 +19,7 @@ export default function FAQs() {
         <div className="shadow-xl rounded-2xl overflow-hidden ">
           <Accordion
             defaultValue="shipping"
-            className="border-none transition-all duration-300"
+            className="border-none transition-transform  duration-1000 group-[transition-transform]:"
             color="primary"
             variant="gradient"
           >
