@@ -11,11 +11,11 @@ const Wishlist = () => {
         View Products
       </Link>
 
-      <div>
+      {/* <div>
         {materialStuff.map((icon) => (
           <Button>{icon}</Button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
