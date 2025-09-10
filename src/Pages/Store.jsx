@@ -10,7 +10,7 @@ const Store = () => {
   const { products, loading, error, getProducts } = useProducts();
   return (
     <motion.div
-      className="flex flex-col justify-center items-center p-2 w-full h-full"
+      className="flex flex-col justify-center items-center p-2 w-full h-full relative"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
@@ -60,6 +60,7 @@ const Store = () => {
                   webID: product.webID,
                   colors: product.availableColr,
                   rating: product.rating.avgRating,
+                  reviews: product.rating.count,
                   otherImgs: product.swatchImages,
                 }}
               />
