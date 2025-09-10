@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, IconButton, Typography } from "@material-tailwind/react";
-import { User, Trash } from "lucide-react";
+import { Card, Typography } from "@material-tailwind/react";
+import { User } from "lucide-react";
 import { UseBlogs } from "../Contexts/BlogContext";
 
 export default function BlogCard({ blog }) {
@@ -15,12 +15,17 @@ export default function BlogCard({ blog }) {
           className="h-80 w-full object-cover rounded-md"
         />
       </Card.Header>
-      <Card.Body className="h-fit  p-5 flex flex-col justify-between">
+      <Card.Body className="h-fit p-5 flex flex-col justify-between">
         <div>
           <Typography variant="h1" className="text-2xl mb-3 font-bold">
             {blog.title}
           </Typography>
-          <Typography className="mb-6">{blog.content}</Typography>
+
+          {/* ✅ render HTML from Quill */}
+          <div
+            className="prose prose-sm md:prose-lg lg:prose-xl max-w-none mb-6"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
         </div>
 
         <span className="flex gap-2 items-center">

@@ -52,7 +52,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             alt={product.name}
             className="h-[400px] w-full object-contain rounded-md"
           />
-          <div className="grid grid-cols-5 gap-6 mt-3 justify-center p-5 h-full w-fit ">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 mt-3 justify-center p-5 h-full w-fit ">
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
