@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { UseBlogs } from "../../Contexts/BlogContext";
 import { useNavigate } from "react-router-dom";
-import { Spinner, Input } from "@material-tailwind/react";
+import { Spinner } from "@material-tailwind/react";
+import TextEditor from "../../Components/TextEditor";
 const CreateBlog = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [webUrl, setWebUrl] = useState("");
 
   const {
     addBlog,
@@ -25,18 +25,6 @@ const CreateBlog = () => {
       setImage(imageUrl);
     }
   };
-
-  const handleWebUrlChange = (e) => {
-    setWebUrl(e.target.value);
-  };
-
-  // const handleUseWebUrl = () => {
-  //   if (webUrl && webUrl.trim() !== "") {
-  //     setImage(webUrl);
-  //   } else {
-  //     alert("Please enter a valid image URL");
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +51,6 @@ const CreateBlog = () => {
         setBlogTitle("");
         setBlogContent("");
         setImage(null);
-        setWebUrl("");
         setBlogAuthor("");
         navigate("/blogs");
       } catch (error) {
@@ -76,11 +63,11 @@ const CreateBlog = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 md:p-2">
+    <div className="max-w-7xl mx-auto p-2 md:p-2">
       {/* <h1 className="text-3xl font-bold mb-3">Create New Blog</h1> */}
 
-      <div className="w-full flex flex-col lg:flex-row gap-3  rounded-xl shadow-lg p-4 md:p-4">
-        <div className="w-full lg:w-1/2 rounded-xl p-4 flex flex-col gap-4">
+      <div className="w-full flex flex-col lg:flex-row gap-3  rounded-xl shadow-lg p-2 md:p-4">
+        <div className="w-full lg:w-1/2 rounded-xl p-2 flex flex-col gap-4">
           <div className="h-64 md:h-[25rem] w-full bg-white/50 rounded-xl flex items-center justify-center overflow-hidden border-2 border-dashed border-amber-300">
             {image ? (
               <img
@@ -137,19 +124,8 @@ const CreateBlog = () => {
             </div>
 
             <div>
-              <label htmlFor="blogContent" className="block  font-medium mb-2">
-                Blog Content
-              </label>
-              <textarea
-                id="blogContent"
-                value={blogContent}
-                onChange={(e) => setBlogContent(e.target.value)}
-                placeholder="Write your blog content here..."
-                rows={7}
-                className="w-full p-3 rounded-lg border border-amber-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none  tracking-wide"
-              />
+              <TextEditor />
             </div>
-
             <div className="flex items-center gap-4 mt-2">
               <button
                 type="submit"

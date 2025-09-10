@@ -42,10 +42,10 @@ const Store = () => {
         </div>
       ) : (
         <div>
+          <h1 className="text-2xl font-bold font-mono mb-4">
+            Trendy fashion picks
+          </h1>
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-6 md:px-8">
-            <h1 className="text-2xl font-bold font-mono mb-4">
-              Trendy fashion picks
-            </h1>
             {products.map((product) => (
               <ProductCard
                 key={product.webID}
@@ -53,8 +53,14 @@ const Store = () => {
                   id: product.webID,
                   name: product.productTitle,
                   image: product.image?.url,
-                  // prices: product.prices?.[0]?.regularPrice || "N/A",
+                  price:
+                    product.prices?.[0]?.salePrice?.minPrice ??
+                    product.prices?.[0]?.regularPrice?.minPrice ??
+                    "N/A",
                   webID: product.webID,
+                  colors: product.availableColr,
+                  rating: product.rating.avgRating,
+                  otherImgs: product.swatchImages,
                 }}
               />
             ))}

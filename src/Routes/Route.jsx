@@ -14,6 +14,7 @@ import NewCart from "../Pages/NewCart";
 import ProductDetails from "../Components/ProductDetails";
 import Wishlist from "../Pages/Wishlist";
 import ProfilePicUpload from "../Pages/ImageUploader";
+import ProductDetailsCard from "../Components/ProductDetailsCard";
 
 const Router = () => {
   return (
@@ -28,7 +29,7 @@ const Router = () => {
       <Route path="/blog" element={<CreateBlog />} />
       <Route path="/FAQS" element={<FAQs />} />
       <Route path="theme" element={<ModeToggle />} />
-      <Route path="random" element={<ProfilePicUpload />} />
+      <Route path="random" element={<ProductDetailsCard />} />
       <Route path="wishlist" element={<Wishlist />} />
     </Routes>
   );
