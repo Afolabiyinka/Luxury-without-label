@@ -3,6 +3,7 @@ import { Card } from "@material-tailwind/react";
 import { useCartContext } from "../Contexts/CartContext";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 import ProductDetailsCard from "./ProductDetailsCard";
+import StarRating from "./Ratings";
 
 export default function ProductCard({ product }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +42,9 @@ export default function ProductCard({ product }) {
 
         {/* Content */}
         <div className="flex flex-col justify-between p-4">
+          <div>
+            <StarRating rating={product.rating} />
+          </div>
           <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">
             {product.name}
           </h3>

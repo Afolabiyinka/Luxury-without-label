@@ -42,9 +42,6 @@ const Store = () => {
         </div>
       ) : (
         <div>
-          <h1 className="text-2xl font-bold font-mono mb-4">
-            Trendy fashion picks
-          </h1>
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-6 md:px-8">
             {products.map((product) => (
               <ProductCard
