@@ -165,7 +165,7 @@ export default function NewCart() {
               Start adding items to your cart and they will appear here!
             </p>
             <Button color="secondary" variant="solid">
-              <Link>Go to Store</Link>
+              <Link to="/store">Go to Store</Link>
             </Button>
           </div>
         </div>

@@ -21,7 +21,6 @@ export default function BlogCard({ blog }) {
             {blog.title}
           </Typography>
 
-          {/* ✅ render HTML from Quill */}
           <div
             className="prose prose-sm md:prose-lg lg:prose-xl max-w-none mb-6"
             dangerouslySetInnerHTML={{ __html: blog.content }}

@@ -33,10 +33,7 @@ const Store = () => {
             <p className="text-lg text-gray-600 mb-2">
               Unstable internet connection!
             </p>
-            <Button onClick={() => getProducts} color="secondary">
-              <RefreshCcw />
-              Try Again
-            </Button>
+
             {/* <Pagination currentPage={1} /> */}
           </div>
         </div>

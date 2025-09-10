@@ -3,17 +3,13 @@ import { Routes, Route } from "react-router-dom";
 //Importing out Pages
 import Store from "../Pages/Store";
 import Blogs from "../Pages/Subpages/Blogs";
-// import Cart from "../Pages/Cart";
 import CreateBlog from "../Pages/Subpages/CreateBlog";
 import Home from "../Pages/Home";
 import Collections from "../Pages/Subpages/Collections";
 import NotFound from "../Pages/NotFound";
 import FAQs from "../Pages/Subpages/FAQs";
-import ModeToggle from "../Components/ModeToggle";
 import NewCart from "../Pages/NewCart";
-import ProductDetails from "../Components/ProductDetails";
 import Wishlist from "../Pages/Wishlist";
-import ProfilePicUpload from "../Pages/ImageUploader";
 import ProductDetailsCard from "../Components/ProductDetailsCard";
 
 const Router = () => {
@@ -28,7 +24,6 @@ const Router = () => {
       <Route path="/cart" element={<NewCart />} />
       <Route path="/blog" element={<CreateBlog />} />
       <Route path="/FAQS" element={<FAQs />} />
-      <Route path="theme" element={<ModeToggle />} />
       <Route path="random" element={<ProductDetailsCard />} />
       <Route path="wishlist" element={<Wishlist />} />
     </Routes>

@@ -36,30 +36,10 @@ export const ProductProvider = ({ children }) => {
     getProducts();
   }, []);
 
-  async function getProductDetails({ webId }) {
-    const url = `https://kohls.p.rapidapi.com/products/detail?webID=${webId}`;
-    const options = {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "YOUR_API_KEY",
-        "x-rapidapi-host": "kohls.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json(); // ✅ parse json
-      return result;
-    } catch (error) {
-      console.error("Error fetching product details:", error);
-      return null;
-    }
-  }
   const value = {
     products,
     loading,
     error,
-    getProductDetails,
   };
 
   return (

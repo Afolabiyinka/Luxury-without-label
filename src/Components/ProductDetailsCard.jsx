@@ -17,8 +17,6 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
     cartItem ? removeFromCart(product.id) : addToCart(product);
   }
 
-  const clothSizes = ["S", "M", "L", "XL", "XXL"];
-
   const shippingOptions = [
     { name: "Discount", desc: "Disc 50%", icon: Sparkle },
     { name: "Package", desc: "Regular Package", icon: Box },
@@ -52,7 +50,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             alt={product.name}
             className="h-[400px] w-full object-contain rounded-md"
           />
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 mt-3 justify-center p-5 h-full w-fit ">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10 mt-3 justify-start items-start p-5 h-full w-fit ">
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
@@ -82,25 +80,6 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             <Typography className="mt-3 mb-6 text-3xl font-bold font-serif">
               ${product.price || "N/A"}
             </Typography>
-
-            {/* Sizes */}
-            {/* <div className="mb-6">
-              <Typography className="text-gray-500 font-medium mb-2">
-                Select Size
-              </Typography>
-              <div className="flex gap-3 flex-wrap">
-                {clothSizes.map((size) => (
-                  <button
-                    key={size}
-                    variant="outlined"
-                    size="sm"
-                    className="rounded-full h-10 w-10 bg-gray-400"
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div> */}
 
             {/* Actions */}
             <div className="flex gap-2 justify-start mb-6 p-1">

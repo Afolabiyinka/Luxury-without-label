@@ -23,6 +23,7 @@ import {
 
 import { Link, useLocation } from "react-router-dom";
 import { useCartContext } from "../Contexts/CartContext";
+import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [
   {
@@ -196,15 +197,21 @@ export default function NavBar() {
             </span>
           </div>
         </div>
-        {openNav && (
-          <div
-            className={` ${
-              openNav ? "translate-y-4" : ""
-            }fixed top-[8rem] left-0 w-full h-full bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden`}
-          >
-            <NavList onLinkClick={() => setOpenNav(false)} />
-          </div>
-        )}
+        <AnimatePresence>
+          {openNav && (
+            <motion.div
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
+              exit={{ y: -20 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className={` ${
+                openNav ? "translate-y-4" : ""
+              }fixed top-[8rem] left-0 w-full h-screen bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden`}
+            >
+              <NavList onLinkClick={() => setOpenNav(false)} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Navbar>
     </>
   );
