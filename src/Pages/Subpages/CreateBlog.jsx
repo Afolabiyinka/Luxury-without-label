@@ -68,7 +68,7 @@ const CreateBlog = () => {
 
       <div className="w-full flex flex-col lg:flex-row gap-3  rounded-xl shadow-lg p-2 md:p-4">
         <div className="w-full lg:w-1/2 rounded-xl p-2 flex flex-col gap-4">
-          <div className="h-64 md:h-[25rem] w-full bg-white/50 rounded-xl flex items-center justify-center overflow-hidden border-2 border-dashed border-amber-300">
+          <div className="h-64 md:h-[25rem] w-full bg-white/50 rounded-xl flex items-center justify-center overflow-hidden border-2 border-dashed">
             {image ? (
               <img
                 src={image}
@@ -83,7 +83,7 @@ const CreateBlog = () => {
             )}
           </div>
 
-          <label className="transition-colors cursor-pointer rounded-lg p-3 text-center  hover:bg-amber-800 bg-amber-400 text-white ">
+          <label className="transition-colors cursor-pointer rounded-lg p-3 text-center bg-gray-300 ">
             {image ? "Change Image" : "Upload Image"}
             <input
               type="file"
@@ -130,7 +130,7 @@ const CreateBlog = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`px-6 py-3 bg-amber-700 text-white rounded-lg font-medium hover:bg-amber-800 transition-colors ${
+                className={`px-6 py-3 bg-gray-800 text-white rounded-lg font-medium hover:opacity-85 transition-colors ${
                   isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >

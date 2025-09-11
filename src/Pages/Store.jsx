@@ -24,7 +24,7 @@ const Store = () => {
       ) : error ? (
         <div className="h-screen w-full flex justify-center items-center">
           <div className="text-center flex flex-col items-center justify-center">
-            <Frown size={64} className="text-gray-400 animate-bounce mb-4" />
+            <Frown size={64} className="animate-bounce mb-4" />
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">
               Error fetching products
             </h2>

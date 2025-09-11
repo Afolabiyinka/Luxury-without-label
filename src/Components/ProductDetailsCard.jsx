@@ -4,23 +4,32 @@ import { Heart, Truck, Sparkle, Calendar, Box, X } from "lucide-react";
 import { useCartContext } from "../hooks/CartContext";
 import { useState } from "react";
 import AddToCart from "./Add ToCart";
+import { useWishList } from "../hooks/WishListContext";
 
 const ProductDetailsCard = ({ isOpen, isClose, product }) => {
   const { isCart, addToCart, removeFromCart } = useCartContext();
+  const { inWishlist, addToWishList, removeFromWishList } = useWishList();
   const cartItem = isCart(product.id);
   const [selectedColor, setSelectedColor] = useState("");
 
   function onCartClick(e) {
     e.preventDefault();
-
     cartItem ? removeFromCart(product.id) : addToCart(product);
   }
 
+  function onWishListClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    inWishlist ? removeFromWishList(product.id) : addToWishList(product);
+  }
+
+  const YEAR = new Date().getFullYear();
   const shippingOptions = [
     { name: "Discount", desc: "Disc 50%", icon: Sparkle },
     { name: "Package", desc: "Regular Package", icon: Box },
     { name: "Delivery Time", desc: "3-4 Working Days", icon: Calendar },
-    { name: "Estimation Arrive", desc: "10-12 October 2024", icon: Truck },
+    { name: "Estimation Arrive", desc: `10-12 October ${YEAR}`, icon: Truck },
   ];
 
   if (!isOpen) return null;
@@ -90,8 +99,15 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
 
               <Tooltip>
                 <Tooltip.Trigger>
-                  <button className="rounded-full border h-12 w-12 flex justify-center items-center">
-                    <Heart className="text-black" />
+                  <button
+                    className={`rounded-full border h-12 w-12 flex justify-center items-center cursor-pointer ${
+                      inWishlist ? "bg-green-600 " : "bg-red-500 animate-bounce"
+                    }`}
+                    onClick={onWishListClick}
+                  >
+                    <Heart
+                    //  className="text-black"
+                    />
                   </button>
                 </Tooltip.Trigger>
                 <Tooltip.Content>Add to wishList</Tooltip.Content>

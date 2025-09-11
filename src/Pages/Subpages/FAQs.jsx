@@ -33,7 +33,10 @@ export default function FAQs() {
                 </span>
                 <ChevronDown className="h-5 w-5  transition-transform duration-300 ease-in-out group-data-[open=true]:rotate-180" />
               </Accordion.Trigger>
-              <Accordion.Content className="px-6 py-5 bg-gradient-to-r transition-transform duration-700 ease-in-out group-data-[open=true]:ease-in">
+              <Accordion.Content
+                className="px-6 py-5 
+               bg-gradient-to-r transition-transform duration-700 ease-in-out group-data-[open=true]:ease-in"
+              >
                 <p className="text-gray-600 leading-relaxed">
                   We offer standard and express shipping options. Standard
                   shipping typically takes 3-5 business days, while express

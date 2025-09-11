@@ -7,6 +7,7 @@ import { BlogProvider } from "./hooks/BlogContext";
 import { CartProvider } from "./hooks/CartContext";
 import { ThemeProvider } from "./hooks/ThemeContext";
 import { ProductProvider } from "./hooks/ProductsContext";
+import { WishListProvider } from "./hooks/WishListContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
           <ProductProvider>
             <BlogProvider>
               <CartProvider>
-                <App />
+                <WishListProvider>
+                  <App />
+                </WishListProvider>
               </CartProvider>
             </BlogProvider>
           </ProductProvider>

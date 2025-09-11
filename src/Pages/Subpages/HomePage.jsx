@@ -43,7 +43,7 @@ const HomePage = () => {
           transition={{ duration: 0.3, delay: 0.5 }}
         >
           <Link to="/store">
-            <button className="text-white bg-black/90 px-11 py-2.5 hover:bg-gray-800 transition-all duration-300 ease-in-out rounded-md">
+            <button className="text-white bg-black/90 px-11 py-3.5 hover:bg-gray-800 transition-all duration-300 ease-in-out rounded-3xl">
               View Products
             </button>
           </Link>

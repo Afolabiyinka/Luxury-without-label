@@ -100,7 +100,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="bg-gray-50/40 shadow-sm p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
+      <div className="bg-gray-50/40 shadow-sm text-black p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
         {/* <Typography
           as="a"
           href="/"
@@ -120,7 +120,7 @@ export default function NavBar() {
           </a>
         </div>
 
-        <span className="flex gap-2 items-center justify-center border p-1 rounded-md">
+        <span className="flex gap-2 items-center justify-center border p-2.5 rounded-3xl ">
           <input
             type="search"
             className="outline-none p-1 w-[17rem] border-none bg-inherit text-sm"
@@ -136,7 +136,7 @@ export default function NavBar() {
             <ShoppingCartIcon size={20} />
 
             <p className="font-semibold tracking-wide">Cart</p>
-            <p className="bg-black/50 text-white h-6 w-6 flex justify-center items-center rounded-full">
+            <p className="bg-black/90 text-white h-6 w-6 flex justify-center items-center rounded-full">
               {cartItems ? cartItems.length : 0}
             </p>
           </Link>

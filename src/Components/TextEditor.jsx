@@ -39,7 +39,7 @@ export default function TextEditor() {
         modules={modules}
         formats={formats}
         placeholder="Type something fancy..."
-        className="w-full p-3 rounded-lg border border-amber-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none  tracking-wide"
+        className="w-full p-3 rounded-lg border focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none  tracking-wide"
       />
       <div className="mt-4 p-2 border rounded">
         <h3 className="font-semibold">Preview:</h3>

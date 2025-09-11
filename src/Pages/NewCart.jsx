@@ -49,16 +49,16 @@ export default function NewCart() {
           <h2 className="text-3xl font-semibold mb-2 text-center ">
             Your Cart
           </h2>
-          <div className="h-full flex flex-col md:flex-row gap-4 justify-center items-start">
+          <div className="h-full flex flex-col md:flex-row gap-4 justify-center items-start p-3">
             {/* Cart Items */}
-            <div className=" w-full md:w-[60%] h-full p-6 overflow-hidden rounded-lg border border-surface">
-              <table className="w-full">
+            <div className=" w-full md:w-[60%] h-full p-6 overflow-hidden rounded-3xl border border-surface">
+              <table className="w-full rounded-xl">
                 <tbody className="group text-sm text-black dark:text-white cursor-pointer">
                   {cartItems.map((product) => (
                     <tr
                       key={product.id}
                       onClick={() => handleOpenModal(product)}
-                      className="border-b border-surface last:border-0 hover:bg-gray-200 dark:hover:bg-gray-700"
+                      className="hover:bg-gray-200  rounded-xl"
                     >
                       <td className="p-3">
                         <div className="flex items-center gap-3">
@@ -119,7 +119,7 @@ export default function NewCart() {
             </div>
 
             {/* Checkout Summary */}
-            <Card className="w-full md:w-[40%] p-6 rounded-xl shadow-md border">
+            <Card className="w-full md:w-[40%] p-6 rounded-3xl shadow-md border">
               <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
               <div className="flex justify-between mb-2">
                 <span className="text-gray-600">Subtotal</span>
