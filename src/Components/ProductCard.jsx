@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card } from "@material-tailwind/react";
-import { useCartContext } from "../Contexts/CartContext";
+import { useCartContext } from "../hooks/CartContext";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 import ProductDetailsCard from "./ProductDetailsCard";
 import StarRating from "./Ratings";
@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
 
   function onCartClick(e) {
     e.preventDefault();
-    e.stopPropagation(); // ✅ prevents modal opening when cart button clicked
+    e.stopPropagation();
     cartItem ? removeFromCart(product.id) : addToCart(product);
   }
 
@@ -60,11 +60,7 @@ export default function ProductCard({ product }) {
                     : "bg-gray-100 hover:bg-amber-100 text-amber-600 border border-amber-300 hover:border-amber-400"
                 }
               `}
-              aria-label={
-                cartItem
-                  ? `Remove ${product.name} from cart`
-                  : `Add ${product.name} to cart`
-              }
+            
             >
               {cartItem ? <FaTrash size={16} /> : <FaShoppingCart size={16} />}
             </button>
@@ -76,7 +72,7 @@ export default function ProductCard({ product }) {
       {isOpen && (
         <ProductDetailsCard
           isOpen={isOpen}
-          isClose={handleCloseModal} // ✅ pass the close handler
+          isClose={handleCloseModal}
           product={product}
         />
       )}

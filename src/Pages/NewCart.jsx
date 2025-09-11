@@ -12,7 +12,7 @@ import {
 } from "@material-tailwind/react";
 import { ShoppingCart } from "lucide-react";
 import { motion } from "framer-motion";
-import { useCartContext } from "../Contexts/CartContext";
+import { useCartContext } from "../hooks/CartContext";
 import { Link } from "react-router-dom";
 
 export default function NewCart() {

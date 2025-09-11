@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import { User } from "lucide-react";
-import { UseBlogs } from "../Contexts/BlogContext";
+import { UseBlogs } from "../hooks/BlogContext";
 
 export default function BlogCard({ blog }) {
   const { deleteBlog } = UseBlogs();

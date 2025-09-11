@@ -1,8 +1,12 @@
-import { Typography } from "@material-tailwind/react";
+import {
+  TooltipContent,
+  TooltipTrigger,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
 import StarRating from "./Ratings";
 import { Heart, Truck, Sparkle, Calendar, Box, X } from "lucide-react";
-import { useCartContext } from "../Contexts/CartContext";
-import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import { useCartContext } from "../hooks/CartContext";
 import { useState } from "react";
 import AddToCart from "./Add ToCart";
 
@@ -13,7 +17,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
 
   function onCartClick(e) {
     e.preventDefault();
-    e.stopPropagation();
+
     cartItem ? removeFromCart(product.id) : addToCart(product);
   }
 
@@ -54,7 +58,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
-                className="h-35 w-20 p-4 border rounded flex flex-col justify-center items-center cursor-pointer"
+                className="h-30 w-20 p-4 border rounded flex flex-col justify-center items-center cursor-pointer"
               >
                 <img
                   src={img.URL}
@@ -74,7 +78,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             </Typography>
             <StarRating rating={product.rating} />
             <p className="text-gray-500 text-sm">
-              {product.reviews || "units"} sold
+              {product.reviews} units sold
             </p>
 
             <Typography className="mt-3 mb-6 text-3xl font-bold font-serif">
@@ -89,9 +93,14 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
                 />
               </button>
 
-              <button className="rounded-full border h-12 w-12 flex justify-center items-center">
-                <Heart className="text-black" />
-              </button>
+              <Tooltip>
+                <TooltipTrigger>
+                  <button className="rounded-full border h-12 w-12 flex justify-center items-center">
+                    <Heart className="text-black" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent>Add to wishList</TooltipContent>
+              </Tooltip>
             </div>
           </div>
 

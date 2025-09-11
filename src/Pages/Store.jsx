@@ -1,10 +1,8 @@
 import ProductCard from "../Components/ProductCard";
 import { motion } from "framer-motion";
-import { Frown, RefreshCcw } from "lucide-react";
-import { useProducts } from "../Contexts/ProductsContext";
-import { Button } from "@material-tailwind/react";
+import { Frown } from "lucide-react";
+import { useProducts } from "../hooks/ProductsContext";
 import DummyCard from "../Components/DummyCard";
-// import Pagination from "../Components/Pagination";
 
 const Store = () => {
   const { products, loading, error, getProducts } = useProducts();

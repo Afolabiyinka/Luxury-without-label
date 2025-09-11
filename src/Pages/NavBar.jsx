@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
-import { useCartContext } from "../Contexts/CartContext";
+import { useCartContext } from "../hooks/CartContext";
 import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [
@@ -72,7 +72,7 @@ function NavList({ onLinkClick }) {
                   location.pathname === href ? "underline text-gray-600" : ""
                 }`}
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-4 w-4 stroke-[2px]" />
                 {title}
               </Typography>
             </span>
@@ -86,6 +86,7 @@ function NavList({ onLinkClick }) {
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
   const { cartItems } = useCartContext();
+  const location = useLocation();
 
   useEffect(() => {
     window.addEventListener(
@@ -118,7 +119,7 @@ export default function NavBar() {
         <span className="flex gap-3 items-center justify-center">
           <Link
             to="/cart"
-            className="shadow-sm text-gray-600 hidden md:flex gap-2 justify-center items-center rounded-md p-2"
+            className="hidden md:flex gap-2 justify-center items-center rounded-3xl p-3 border"
           >
             <ShoppingCartIcon size={20} />
 
@@ -135,16 +136,17 @@ export default function NavBar() {
               <Tooltip.Trigger>
                 <IconButton
                   variant="ghost"
-                  className="hidden md:block shadow-sm"
+                  className="hidden md:block shadow-sm rounded-3xl p-2
+                  "
                 >
-                  <Heart />
+                  <Heart size={30} />
                 </IconButton>
               </Tooltip.Trigger>
             </Link>
           </Tooltip>
         </span>
       </div>
-      <Navbar className="w-full border-none p-3 md:px-32 rounded-none flex flex-col  md:justify-start mb-3 shadow-sm">
+      <Navbar className="w-full border-none p-3 md:px-32 rounded-none flex flex-col shadow-none md:justify-start mb-3 ">
         <div className="flex justify-between">
           <div className="flex items-center md:justify-start">
             <Typography
@@ -168,7 +170,10 @@ export default function NavBar() {
               <Badge className=" lg:mr-2 lg:mt-1 lg:hidden">
                 <Badge.Content>
                   <IconButton
-                    variant="ghost"
+                    variant={`${
+                      location.pathname === "/cart" ? "solid" : "outline"
+                    }`}
+                    color="secondary"
                     className="outline-none border-none"
                   >
                     <ShoppingCartIcon size={27} />

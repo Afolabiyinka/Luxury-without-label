@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UseBlogs } from "../../Contexts/BlogContext";
+import { UseBlogs } from "../../hooks/BlogContext";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "@material-tailwind/react";
 import TextEditor from "../../Components/TextEditor";

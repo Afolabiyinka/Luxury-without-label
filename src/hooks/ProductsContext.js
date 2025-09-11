@@ -22,9 +22,7 @@ export const ProductProvider = ({ children }) => {
       setLoading(true);
       const response = await fetch(url, options);
       const result = await response.json();
-      // console.log(result);
       setProducts(result.payload.products);
-      console.log(result.payload.products);
     } catch (error) {
       setError(true);
       console.error(error);

@@ -10,7 +10,6 @@ import NotFound from "../Pages/NotFound";
 import FAQs from "../Pages/Subpages/FAQs";
 import NewCart from "../Pages/NewCart";
 import Wishlist from "../Pages/Wishlist";
-import ProductDetailsCard from "../Components/ProductDetailsCard";
 
 const Router = () => {
   return (
@@ -24,7 +23,6 @@ const Router = () => {
       <Route path="/cart" element={<NewCart />} />
       <Route path="/blog" element={<CreateBlog />} />
       <Route path="/FAQS" element={<FAQs />} />
-      <Route path="random" element={<ProductDetailsCard />} />
       <Route path="wishlist" element={<Wishlist />} />
     </Routes>
   );
