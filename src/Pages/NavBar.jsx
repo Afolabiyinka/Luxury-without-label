@@ -6,6 +6,7 @@ import {
   Badge,
   Tooltip,
 } from "@material-tailwind/react";
+import DeEleganceLogo from "../Assets/DeElegance Logo.png";
 
 import {
   Home,
@@ -100,7 +101,7 @@ export default function NavBar() {
   return (
     <>
       <div className="bg-gray-50/40 shadow-sm p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
-        <Typography
+        {/* <Typography
           as="a"
           href="/"
           type="large"
@@ -108,7 +109,16 @@ export default function NavBar() {
         >
           <Shirt color="black" fill="gray" />
           De Elegance
-        </Typography>
+        </Typography> */}
+        <div>
+          <a href="/">
+            <img
+              src={DeEleganceLogo}
+              alt=""
+              className="h-12 bg-white border rounded-full w-[17rem] hidden md:block"
+            />
+          </a>
+        </div>
 
         <span className="flex gap-2 items-center justify-center border p-1 rounded-md">
           <input
@@ -151,15 +161,15 @@ export default function NavBar() {
       <Navbar className="w-full border-none p-3 md:px-32 rounded-none flex flex-col shadow-none md:justify-start mb-3 ">
         <div className="flex justify-between">
           <div className="flex items-center md:justify-start">
-            <Typography
-              as="a"
-              href="/"
-              type="large"
-              className="ml-3 mr-6  font-semibold text-xl md:hidden flex gap-2 text-gray-600"
-            >
-              <Shirt color="black" fill="gray" />
-              De Elegance
-            </Typography>
+            <div>
+              <a href="/">
+                <img
+                  src={DeEleganceLogo}
+                  alt=""
+                  className="h-14 bg-white border rounded-full w-[13rem] block md:hidden mr-2"
+                />
+              </a>
+            </div>
             <div
               className={`hidden lg:block   ${openNav ? "translate-y-2" : ""}`}
             >
