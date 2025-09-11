@@ -49,9 +49,9 @@ export default function NewCart() {
           <h2 className="text-3xl font-semibold mb-2 text-center ">
             Your Cart
           </h2>
-          <div className="h-full flex flex-col md:flex-row gap-4 justify-start items-start">
+          <div className="h-full flex flex-col md:flex-row gap-4 justify-center items-start">
             {/* Cart Items */}
-            <div className="mt-4 w-full md:w-[60%] h-full p-6 overflow-hidden rounded-lg border border-surface">
+            <div className=" w-full md:w-[60%] h-full p-6 overflow-hidden rounded-lg border border-surface">
               <table className="w-full">
                 <tbody className="group text-sm text-black dark:text-white cursor-pointer">
                   {cartItems.map((product) => (

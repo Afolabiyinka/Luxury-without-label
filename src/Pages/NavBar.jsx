@@ -68,8 +68,10 @@ function NavList({ onLinkClick }) {
           <li>
             <span className="flex flex-col">
               <Typography
-                className={`flex items-center gap-x-2 p-1 ${
-                  location.pathname === href ? "underline text-gray-600" : ""
+                className={`flex items-center gap-x-2 p-1 border-none ${
+                  location.pathname === href
+                    ? "border rounded-full  p-2 px-4 bg-gray-200"
+                    : ""
                 }`}
               >
                 <Icon className="h-4 w-4 stroke-[2px]" />

@@ -1,9 +1,4 @@
-import {
-  TooltipContent,
-  TooltipTrigger,
-  Typography,
-  Tooltip,
-} from "@material-tailwind/react";
+import { Typography, Tooltip } from "@material-tailwind/react";
 import StarRating from "./Ratings";
 import { Heart, Truck, Sparkle, Calendar, Box, X } from "lucide-react";
 import { useCartContext } from "../hooks/CartContext";
@@ -48,7 +43,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
         </button>
 
         {/* Left: Image */}
-        <div className="w-fit h-fit lg:w-1/2 p-6">
+        <div className="w-fit h-fit lg:w-1/2 p-6 border rounded-3xl">
           <img
             src={product.image}
             alt={product.name}
@@ -58,7 +53,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
-                className="h-30 w-20 p-4 border rounded flex flex-col justify-center items-center cursor-pointer"
+                className="h-20 w-20 p-2 border rounded flex flex-col justify-center items-center cursor-pointer"
               >
                 <img
                   src={img.URL}
@@ -94,12 +89,12 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
               </button>
 
               <Tooltip>
-                <TooltipTrigger>
+                <Tooltip.Trigger>
                   <button className="rounded-full border h-12 w-12 flex justify-center items-center">
                     <Heart className="text-black" />
                   </button>
-                </TooltipTrigger>
-                <TooltipContent>Add to wishList</TooltipContent>
+                </Tooltip.Trigger>
+                <Tooltip.Content>Add to wishList</Tooltip.Content>
               </Tooltip>
             </div>
           </div>
