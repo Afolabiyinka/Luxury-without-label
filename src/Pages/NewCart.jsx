@@ -1,4 +1,3 @@
-import { Trash } from "iconoir-react";
 import { useState, useMemo } from "react";
 import ProductDetailsCard from "../Components/ProductDetailsCard";
 
@@ -10,7 +9,7 @@ import {
   Button,
   Card,
 } from "@material-tailwind/react";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Trash } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCartContext } from "../hooks/CartContext";
 import { Link } from "react-router-dom";
