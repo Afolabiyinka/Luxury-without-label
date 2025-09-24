@@ -25,11 +25,22 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
   }
 
   const YEAR = new Date().getFullYear();
+
+  const formattedDate = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   const shippingOptions = [
     { name: "Discount", desc: "Disc 50%", icon: Sparkle },
     { name: "Package", desc: "Regular Package", icon: Box },
     { name: "Delivery Time", desc: "3-4 Working Days", icon: Calendar },
-    { name: "Estimation Arrive", desc: `10-12 October ${YEAR}`, icon: Truck },
+    {
+      name: "Estimation Arrive",
+      desc: `${formattedDate}`,
+      icon: Truck,
+    },
   ];
 
   if (!isOpen) return null;
@@ -62,11 +73,11 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
-                className="h-20 w-20 p-2 border rounded flex flex-col justify-center items-center cursor-pointer"
+                className="h-20 w-20 p-3 border rounded flex flex-col justify-center items-center cursor-pointer"
               >
                 <img
                   src={img.URL}
-                  className="h-[60%] w-full object-cover rounded border"
+                  className="h-[60%] w-full object-cover rounded-full mb-2 border"
                 />
                 <p className="text-xs text-center">{img.color.split("-")[0]}</p>
               </div>

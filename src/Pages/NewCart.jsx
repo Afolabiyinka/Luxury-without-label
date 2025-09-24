@@ -29,12 +29,11 @@ export default function NewCart() {
     setSelectedProduct(null);
   };
 
-  // 🧮 Cart totals
   const subtotal = useMemo(
     () => cartItems.reduce((acc, item) => acc + Number(item.price), 0),
     [cartItems]
   );
-  const deliveryFee = subtotal > 0 ? 5 : 0; // flat fee
+  const deliveryFee = subtotal > 0 ? 5 : 0;
   const total = subtotal + deliveryFee;
 
   return (
@@ -50,7 +49,7 @@ export default function NewCart() {
           </h2>
           <div className="h-full flex flex-col md:flex-row gap-4 justify-center items-start p-3">
             {/* Cart Items */}
-            <div className=" w-full md:w-[60%] h-full p-6 overflow-hidden rounded-3xl border border-surface">
+            <div className=" w-full md:w-[60%] h-full p-3 overflow-hidden rounded-3xl border border-surface">
               <table className="w-full rounded-xl">
                 <tbody className="group text-sm text-black dark:text-white cursor-pointer">
                   {cartItems.map((product) => (
@@ -59,7 +58,7 @@ export default function NewCart() {
                       onClick={() => handleOpenModal(product)}
                       className="hover:bg-gray-200  rounded-xl"
                     >
-                      <td className="p-3">
+                      <td className="p-2">
                         <div className="flex items-center gap-3">
                           <Avatar
                             src={product.image}
@@ -70,7 +69,7 @@ export default function NewCart() {
                           <div className="flex flex-col max-w-[200px]">
                             <Typography
                               as="p"
-                              className="line-clamp-2 text-sm font-medium"
+                              className="line-clamp-3 text-sm font-medium"
                               title={product.name}
                             >
                               {product.name}
@@ -79,7 +78,7 @@ export default function NewCart() {
                         </div>
                       </td>
 
-                      <td className="p-3">
+                      <td className="">
                         <div className="w-max text-xl font-bold">
                           <Typography>${product.price}</Typography>
                         </div>
