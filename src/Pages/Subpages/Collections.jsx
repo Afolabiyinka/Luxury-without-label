@@ -28,11 +28,11 @@ const Collections = () => {
   ];
 
   return (
-    <div className="text-center pt-4 px-4">
+    <div className="text-center pt-4 px-4 flex flex-col justify-center items-center">
       <h1 className="text-3xl sm:text-4xl md:text-3xl font-bold leading-tight bg-gradient-to-r from-black to-gray-700 text-transparent bg-clip-text mb-3">
         Luxury Collections
       </h1>
-      <div className="min-h-screen px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="min-h-screen w-full  px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center items-center">
         {collections.map((collection) => (
           <CollectionWithAnimation
             collection={collection}

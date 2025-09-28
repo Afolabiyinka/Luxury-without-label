@@ -101,21 +101,12 @@ export default function NavBar() {
   return (
     <>
       <div className="bg-gray-50/40 shadow-sm text-black p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
-        {/* <Typography
-          as="a"
-          href="/"
-          type="large"
-          className="ml-3 mr-6 py-1 font-semibold text-xl md:flex gap-2 hidden "
-        >
-          <Shirt color="black" fill="gray" />
-          De Elegance
-        </Typography> */}
         <div>
           <a href="/">
             <img
               src={DeEleganceLogo}
               alt=""
-              className="h-12 bg-white border rounded-full w-[17rem] hidden md:block"
+              className="h-12 bg-white  rounded-full w-[17rem] hidden md:block"
             />
           </a>
         </div>
@@ -124,7 +115,7 @@ export default function NavBar() {
           <input
             type="search"
             className="outline-none p-1 w-[17rem] border-none bg-inherit text-sm"
-            placeholder="Search here..."
+            placeholder="Search for a product or brand"
           />
           <Search color="gray" />
         </span>
@@ -166,7 +157,7 @@ export default function NavBar() {
                 <img
                   src={DeEleganceLogo}
                   alt=""
-                  className="h-14 bg-white border rounded-full w-[13rem] block md:hidden mr-2"
+                  className="h-14 bg-white  rounded-full w-[13rem] block md:hidden mr-2"
                 />
               </a>
             </div>
