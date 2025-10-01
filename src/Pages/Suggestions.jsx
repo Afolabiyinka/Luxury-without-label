@@ -22,8 +22,8 @@ const Suggestions = () => {
           <DummyCard />
         </div>
       ) : error ? (
-        <div className="h-full py-10 w-full flex justify-center items-center">
-          <div className="text-center flex flex-col items-center justify-center">
+        <div className="h-full w-full flex justify-center items-center">
+          {/* <div className="text-center flex flex-col items-center justify-center">
             <Frown size={64} className="animate-bounce mb-4" />
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">
               Error fetching products
@@ -31,7 +31,7 @@ const Suggestions = () => {
             <p className="text-lg text-gray-600 mb-2">
               Unstable internet connection!
             </p>
-          </div>
+          </div> */}
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center gap-10">

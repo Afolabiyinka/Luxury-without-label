@@ -28,10 +28,11 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-12 right-5 bg-gray-500 text-white p-3 rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 z-50"
+        className="fixed flex gap-2 items-center bottom-12 right-5 bg-gray-500 text-white p-3 rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 z-50"
         title="Go to top"
       >
-        <ArrowUp className="w-5 h-5" />
+        Back to Top
+        <ArrowUp className="w-6 h-6" />
       </button>
     )
   );
