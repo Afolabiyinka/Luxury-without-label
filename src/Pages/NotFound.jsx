@@ -39,7 +39,7 @@ const NotFound = () => {
               Return Home
             </Link>
             <Link
-              to="/luxury-collections"
+              to="/store"
               className="px-8 py-3 border border-amber-800 text-amber-800 hover:bg-amber-50 transition-colors rounded-sm text-sm uppercase tracking-wider font-medium"
             >
               Browse Collections

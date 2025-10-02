@@ -60,7 +60,6 @@ export default function ProductCard({ product }) {
                     : "bg-gray-100 hover:bg-amber-100 text-amber-600 border border-amber-300 hover:border-amber-400"
                 }
               `}
-            
             >
               {cartItem ? <FaTrash size={16} /> : <FaShoppingCart size={16} />}
             </button>

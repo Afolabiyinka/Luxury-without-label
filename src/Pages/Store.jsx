@@ -13,7 +13,9 @@ const Store = () => {
       animate={{ opacity: 1, y: 0 }}
     >
       {loading ? (
-        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-10 items-center justify-center px-6 md:px-8">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10 items-center justify-center px-6 md:px-8">
+          <DummyCard />
+          <DummyCard />
           <DummyCard />
           <DummyCard />
           <DummyCard />
@@ -37,7 +39,7 @@ const Store = () => {
         </div>
       ) : (
         <div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-7 items-center justify-center px-6 md:px-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-7 items-center justify-center px-6 md:px-8">
             {products.map((product) => (
               <ProductCard
                 key={product.webID}
