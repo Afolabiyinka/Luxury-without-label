@@ -68,7 +68,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
             className="h-[400px] w-full object-contain rounded-md"
           />
           {/* Thumbnails */}
-          <div className="flex gap-4 mt-4 overflow-x-auto w-full">
+          <div className="flex gap-4 mt-4 overflow-x-auto p-9 w-full">
             {product.otherImgs?.map((img, idx) => (
               <div
                 key={idx}
@@ -79,7 +79,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
                   alt={img.color}
                   className="h-full w-full object-cover rounded-md"
                 />
-                <p className="text-xs text-center mt-1 text-gray-600">
+                <p className="text-xs text-center mt-2 text-gray-600">
                   {img.color.split("-")[0]}
                 </p>
               </div>
