@@ -15,21 +15,21 @@ export function BlogProvider({ children }) {
   const [blogTitle, setBlogTitle] = useState("");
   const [blogAuthor, setBlogAuthor] = useState("");
   const [blogContent, setBlogContent] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   //Doing the url stuff
-  const initialPage = parseInt(searchParams.get("") || 1);
-  const [blogId, setBlogId] = useState(initialPage);
+  // const initialPage = parseInt(searchParams.get("") || 1);
+  // const [blogId, setBlogId] = useState(initialPage);
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  useEffect(() => {
-    const showSearchParams = ["/blog"];
-    {
-      showSearchParams.includes(location.pathname) &&
-        setSearchParams({ "": initialPage });
-    }
-  }, [blogId, setSearchParams]);
+  // useEffect(() => {
+  //   const showSearchParams = ["/blog"];
+  //   {
+  //     showSearchParams.includes(location.pathname) &&
+  //       setSearchParams({ "": initialPage });
+  //   }
+  // }, [blogId, setSearchParams]);
 
   useEffect(() => {
     localStorage.setItem("Blogs", JSON.stringify(blogs));

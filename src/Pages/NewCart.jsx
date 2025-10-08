@@ -38,12 +38,12 @@ export default function NewCart() {
 
   return (
     <motion.div
-      className="h-full w-full p-1"
+      className="h-full w-full p-1 flex flex-col justify-center items-center"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
       {cartItems && cartItems.length > 0 ? (
-        <div>
+        <div className="w-full">
           <h2 className="text-3xl font-semibold mb-2 text-center ">
             Your Cart
           </h2>
