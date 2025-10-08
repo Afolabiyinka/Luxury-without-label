@@ -100,7 +100,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="fixed -top-2 bg-white w-full z-50">
+      <div className="">
         <div className="bg-gray-50/40  shadow-sm text-black p-1 mt-2 flex flex-col gap-4 md:flex-row justify-center items-center md:justify-around md:items-center w-full">
           <div>
             <a href="/">
