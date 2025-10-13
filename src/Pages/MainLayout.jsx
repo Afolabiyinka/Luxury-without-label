@@ -1,15 +1,14 @@
 import React from "react";
-import NavBar from "./NavBar";
+import NavBar from "./nav/NavBar";
 import { Outlet } from "react-router-dom";
+import Footer from "./nav/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col gap-11">
+    <div>
       <NavBar />
-      <div>
-        {" "}
-        <Outlet />
-      </div>
+      <Outlet />
+      <Footer />
     </div>
   );
 };

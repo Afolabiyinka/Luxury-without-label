@@ -1,8 +1,8 @@
-import ProductCard from "../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 import { motion } from "framer-motion";
 import { Frown } from "lucide-react";
-import { useProducts } from "../hooks/ProductsContext";
-import DummyCard from "../Components/DummyCard";
+import { useProducts } from "../../hooks/ProductsContext";
+import DummyCard from "../../Components/DummyCard";
 
 const Store = () => {
   const { products, loading, error, getProducts } = useProducts();

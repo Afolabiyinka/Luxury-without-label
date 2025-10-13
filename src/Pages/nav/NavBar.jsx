@@ -6,7 +6,7 @@ import {
   Badge,
   Tooltip,
 } from "@material-tailwind/react";
-import DeEleganceLogo from "../Assets/DeElegance Logo.png";
+import DeEleganceLogo from "../../Assets/Images/DeElegance Logo.png";
 
 import {
   Home,
@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
-import { useCartContext } from "../hooks/CartContext";
+import { useCartContext } from "../../hooks/CartContext";
 import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [

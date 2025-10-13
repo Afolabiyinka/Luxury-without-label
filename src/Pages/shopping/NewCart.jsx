@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import ProductDetailsCard from "../Components/ProductDetailsCard";
+import ProductDetailsCard from "../../Components/ProductDetailsCard";
 
 import {
   Typography,
@@ -11,7 +11,7 @@ import {
 } from "@material-tailwind/react";
 import { ShoppingCart, Trash } from "lucide-react";
 import { motion } from "framer-motion";
-import { useCartContext } from "../hooks/CartContext";
+import { useCartContext } from "../../hooks/CartContext";
 import { Link } from "react-router-dom";
 
 export default function NewCart() {

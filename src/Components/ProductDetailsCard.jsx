@@ -5,6 +5,8 @@ import { useCartContext } from "../hooks/CartContext";
 import AddToCart from "./Add ToCart";
 import { useWishList } from "../hooks/WishListContext";
 import { useProducts } from "../hooks/ProductsContext";
+import { motion } from "framer-motion";
+
 import {
   Breadcrumb,
   BreadcrumbLink,
@@ -44,8 +46,10 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50"
+    <motion.div
+      initial={{ scale: 0.8 }}
+      animate={{ scale: 1.0 }}
+      className="fixed inset-0 bg-black/40 backdrop-blur-3xl flex justify-center items-center z-50"
       onClick={isClose}
     >
       <div
@@ -156,7 +160,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -25,7 +25,7 @@ const Blogs = () => {
           <Button
             color="primary"
             variant="solid"
-            onClick={() => navigate("/blog")}
+            onClick={() => navigate("/create-blog")}
             className="rounded-3xl"
             size="md"
           >
@@ -46,7 +46,7 @@ const Blogs = () => {
           <Button
             color="primary"
             variant="solid"
-            onClick={() => navigate("/blog")}
+            onClick={() => navigate("/create-blog")}
             className="rounded-3xl p-3 px-10"
             size="md"
           >

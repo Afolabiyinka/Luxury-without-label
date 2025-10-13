@@ -1,8 +1,7 @@
-import React from "react";
 import HomePage from "./Subpages/HomePage";
-import Collections from "./Subpages/Collections";
+import Collections from "./shopping/Collections";
 import FAQs from "./Subpages/FAQs";
-import Suggestions from "./Suggestions";
+import Suggestions from "./shopping/Suggestions";
 
 const Home = () => {
   return (

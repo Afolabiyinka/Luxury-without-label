@@ -1,14 +1,14 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Pages/MainLayout";
-import Store from "../Pages/Store";
+import Store from "../Pages/shopping/Store";
 import Blogs from "../Pages/Subpages/Blogs";
 import Home from "../Pages/Home";
 import CreateBlog from "../Pages/Subpages/CreateBlog";
-import Collections from "../Pages/Subpages/Collections";
+import Collections from "../Pages/shopping/Collections";
 import FAQs from "../Pages/Subpages/FAQs";
-import Wishlist from "../Pages/Wishlist";
+import Wishlist from "../Pages/shopping/Wishlist";
 import NotFound from "../Pages/NotFound";
-import NewCart from "../Pages/NewCart";
+import NewCart from "../Pages/shopping/NewCart";
 const routes = [
   {
     path: "/",
