@@ -1,9 +1,9 @@
 import { Typography, Tooltip } from "@material-tailwind/react";
 import StarRating from "./Ratings";
 import { Heart, Truck, Sparkle, Calendar, Box, X } from "lucide-react";
-import { useCartContext } from "../hooks/CartContext";
-import AddToCart from "./Add ToCart";
-import { useWishList } from "../hooks/WishListContext";
+import { useCartContext } from "../../cart/hooks/CartContext";
+import AddToCart from "../../cart/components/Add ToCart";
+import { useWishList } from "../../../hooks/WishListContext";
 import { useProducts } from "../hooks/ProductsContext";
 import { motion } from "framer-motion";
 

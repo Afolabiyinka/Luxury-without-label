@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import { User } from "lucide-react";
-import { UseBlogs } from "../hooks/BlogContext";
+// import { UseBlogs } from "../Pages/blogs/hooks/BlogContext";
 
 export default function BlogCard({ blog }) {
-  const { deleteBlog } = UseBlogs();
+  // const { deleteBlog } = UseBlogs();
 
   return (
     <Card className="flex h-fit w-full max-w-[48rem] flex-col gap-1 p-2 md:flex-row overflow-hidden shadow-lg hover:opacity-95 active:opacity-100 cursor-pointer transition-all duration-300 justify-center items-center">

@@ -7,58 +7,12 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 import DeEleganceLogo from "../../Assets/Images/DeElegance Logo.png";
-
-import {
-  Home,
-  X,
-  Menu,
-  ShoppingBag,
-  ShoppingCartIcon,
-  Pen,
-  Diamond,
-  CircleHelp,
-  Heart,
-  Shirt,
-  Search,
-} from "lucide-react";
+import { X, Menu, ShoppingCartIcon, Heart, Search } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
-import { useCartContext } from "../../hooks/CartContext";
+import { useCartContext } from "../cart/hooks/CartContext";
 import { AnimatePresence, motion } from "framer-motion";
-
-const LINKS = [
-  {
-    icon: Home,
-    title: "Home",
-    href: "/",
-  },
-
-  {
-    icon: Diamond,
-    title: "Luxury Collections",
-    href: "/luxury-collections",
-  },
-  {
-    icon: ShoppingBag,
-    title: "Store",
-    href: "/store",
-  },
-  {
-    icon: Pen,
-    title: "Blogs",
-    href: "/Blogs",
-  },
-  {
-    icon: CircleHelp,
-    title: "FAQs",
-    href: "/FAQs",
-  },
-  {
-    icon: Heart,
-    title: "WishList",
-    href: "/wishlist",
-  },
-];
+import { LINKS } from "./Nav-Related";
 
 function NavList({ onLinkClick }) {
   const location = useLocation();
@@ -182,7 +136,7 @@ export default function NavBar() {
                       color="secondary"
                       className="outline-none border-none"
                     >
-                      <ShoppingCartIcon size={27} />
+                      <ShoppingCartIcon size={27} className="stroke-[1.5px]" />
                     </IconButton>
                   </Badge.Content>
                   <Badge.Indicator>
@@ -190,22 +144,22 @@ export default function NavBar() {
                   </Badge.Indicator>
                 </Badge>
               </Link>
-              <span
+              <button
                 onClick={() => setOpenNav(!openNav)}
-                className="grid ml-0.5 lg:hidden transition-all duration-500 p-1"
+                className="grid ml-0.5 lg:hidden transition-all duration-500 p-1 "
               >
                 {openNav ? (
                   <X
                     size={30}
-                    className="transform rotate-180 transition duration-500 ease-in-out"
+                    className="transform rotate-180 transition duration-500 ease-in-out stroke-[1px]"
                   />
                 ) : (
                   <Menu
                     size={35}
-                    className="transform rotate-0 transition duration-500 ease-in-out"
+                    className="transform rotate-0 transition duration-500 ease-in-out stroke-[1px]"
                   />
                 )}
-              </span>
+              </button>
             </div>
           </div>
           <AnimatePresence>
@@ -214,7 +168,7 @@ export default function NavBar() {
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 exit={{ y: -20 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className={` ${
                   openNav ? "translate-y-4" : ""
                 }fixed top-[8rem] left-0 w-full h-screen bg-white z-50 px-4 py-6 transition-transform duration-500 transform translate-y-0 animate-slideDown lg:hidden`}

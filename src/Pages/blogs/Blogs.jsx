@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import BlogCard from "../../Components/BlogCard";
+import BlogCard from "./components/BlogCard";
 import { PenLine } from "lucide-react";
 import { Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
-import { UseBlogs } from "../../hooks/BlogContext";
+import { UseBlogs } from "./hooks/BlogContext";
 
 const Blogs = () => {
   const navigate = useNavigate();

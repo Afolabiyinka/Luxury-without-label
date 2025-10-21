@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { UseBlogs } from "../../hooks/BlogContext";
+import { UseBlogs } from "./hooks/BlogContext";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from "@material-tailwind/react";
-import TextEditor from "../../Components/TextEditor";
+import TextEditor from "./components/TextEditor";
 const CreateBlog = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
@@ -41,7 +41,6 @@ const CreateBlog = () => {
     setTimeout(() => {
       try {
         addBlog({
-          // id: blogId,
           title: blogTitle,
           content: blogContent,
           imageUrl: image,

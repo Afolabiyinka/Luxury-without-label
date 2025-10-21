@@ -1,8 +1,8 @@
-import ProductCard from "../../Components/ProductCard";
+import ProductCard from "./components/ProductCard";
 import { motion } from "framer-motion";
-import { useProducts } from "../../hooks/ProductsContext";
-import DummyCard from "../../Components/DummyCard";
-import CustomBotton from "../../Components/CutstomBtn";
+import { useProducts } from "./hooks/ProductsContext";
+import DummyCard from "./components/DummyCard";
+import CustomBotton from "./components/CutstomBtn";
 import { Link } from "react-router-dom";
 
 const Suggestions = () => {

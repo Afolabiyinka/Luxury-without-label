@@ -25,7 +25,7 @@ export default function FAQs() {
           >
             <Accordion.Item
               value="shipping"
-              className="border-b border-gray-200"
+              className="border-b border-gray-200 "
             >
               <Accordion.Trigger className="px-6 py-5 flex justify-between items-center w-full hover:bg-gray-50 transition-all duration-200 group">
                 <span className="text-lg font-medium text-gray-800">
@@ -35,7 +35,7 @@ export default function FAQs() {
               </Accordion.Trigger>
               <Accordion.Content
                 className="px-6 py-5 
-               bg-gradient-to-r transition-transform duration-700 ease-in-out group-data-[open=true]:ease-in"
+               bg-gradient-to-r transition-transform duration-700  ease-in-out group-data-[open=true]:ease-in"
               >
                 <p className="text-gray-600 leading-relaxed">
                   We offer standard and express shipping options. Standard

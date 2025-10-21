@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Card } from "@material-tailwind/react";
-import { useCartContext } from "../hooks/CartContext";
+import { useCartContext } from "../../cart/hooks/CartContext";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 import ProductDetailsCard from "./ProductDetailsCard";
 import StarRating from "./Ratings";

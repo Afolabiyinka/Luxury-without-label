@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import heroModel from "../../Assets/Images/heroModel.png";
 import { Link } from "react-router-dom";
-import CustomBotton from "../../Components/CutstomBtn";
+import CustomBotton from "../shopping/components/CutstomBtn";
 
 const HomePage = () => {
   return (
