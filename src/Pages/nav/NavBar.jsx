@@ -7,7 +7,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 import DeEleganceLogo from "../../Assets/Images/DeElegance Logo.png";
-import { X, Menu, ShoppingCartIcon, Heart, Search } from "lucide-react";
+import { X, Menu, ShoppingCartIcon, Heart, Search, Eye } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
 import { useCartContext } from "../cart/hooks/CartContext";
