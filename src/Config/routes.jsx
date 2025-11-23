@@ -10,6 +10,8 @@ import Wishlist from "../Pages/shopping/Wishlist";
 import NotFound from "../Pages/NotFound";
 import NewCart from "../Pages/cart/NewCart";
 import Exclusives from "../Pages/exclusives/Exclusives";
+import CollectionsLayout from "../Pages/CollectionsLayout";
+import Watches from "../Pages/Subpages/Watches";
 const routes = [
   {
     path: "/",
@@ -48,10 +50,16 @@ const routes = [
         path: "exclusives",
         Component: Exclusives,
       },
-      // {
-      //   path: "wishlist",
-      //   Component: Wishlist,
-      // },
+      {
+        path: "collections",
+        Component: CollectionsLayout,
+        children: [
+          {
+            path: "watches",
+            Component: Watches,
+          },
+        ],
+      },
     ],
   },
 ];

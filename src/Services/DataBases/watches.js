@@ -6,7 +6,7 @@ export const watches = [
     price: 13900000,
     currency: "NGN",
     image:
-      "https://www.rolex.com/content/dam/rolex-24/variants/m126610ln-0001/model-page/submariner_m126610ln_0001_2301jva_001.jpg",
+      "https://www.rolex.com/content/dam/rolex-24/variants/m126610ln-0001/model-page/submariner_m126610ln_0001_2301jva_001.jpg/_jcr_content/renditions/cq5dam.web.768.768.jpeg",
     availability: true,
   },
   {
@@ -45,7 +45,7 @@ export const watches = [
     price: 115000000,
     currency: "NGN",
     image:
-      "https://www.audemarspiguet.com/content/dam/ap/com/products/watches/royal-oak/15500ST.OO.1220ST.01.png",
+      "https://www.audemarspiguet.com/content/dam/ap/com/products/watches/royal-oak/15500ST.OO.1220ST.01.png/_jcr_content/renditions/cq5dam.web.768.768.png",
     availability: true,
   },
 ];
