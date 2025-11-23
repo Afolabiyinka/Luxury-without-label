@@ -4,11 +4,12 @@ import Store from "../Pages/shopping/Store";
 import Blogs from "../Pages/blogs/Blogs";
 import Home from "../Pages/Home";
 import CreateBlog from "../Pages/blogs/CreateBlog";
-import Collections from "../Pages/shopping/Collections";
+import Collections from "../Pages/collections/Collections";
 import FAQs from "../Pages/Subpages/FAQs";
 import Wishlist from "../Pages/shopping/Wishlist";
 import NotFound from "../Pages/NotFound";
 import NewCart from "../Pages/cart/NewCart";
+import Exclusives from "../Pages/exclusives/Exclusives";
 const routes = [
   {
     path: "/",
@@ -44,13 +45,13 @@ const routes = [
         Component: CreateBlog,
       },
       {
-        path: "FAQs",
-        Component: FAQs,
+        path: "exclusives",
+        Component: Exclusives,
       },
-      {
-        path: "wishlist",
-        Component: Wishlist,
-      },
+      // {
+      //   path: "wishlist",
+      //   Component: Wishlist,
+      // },
     ],
   },
 ];

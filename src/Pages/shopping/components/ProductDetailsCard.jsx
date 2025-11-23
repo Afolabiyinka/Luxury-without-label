@@ -1,10 +1,12 @@
+import { useEffect } from "react";
 import { Typography, Tooltip } from "@material-tailwind/react";
 import StarRating from "./Ratings";
 import { Heart, Truck, Sparkle, Calendar, Box, X } from "lucide-react";
-import { useCartContext } from "../../cart/hooks/CartContext";
+import { useCart } from "../../cart/hooks/CartContext";
 import AddToCart from "../../cart/components/Add ToCart";
 import { useWishList } from "../../../hooks/WishListContext";
 import { useProducts } from "../hooks/ProductsContext";
+
 import { motion } from "framer-motion";
 
 import {
@@ -12,12 +14,21 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@material-tailwind/react";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductDetailsCard = ({ isOpen, isClose, product }) => {
-  const { isCart, addToCart, removeFromCart } = useCartContext();
+  const { getReviews, reviews } = useProducts();
+  const { isCart, addToCart, removeFromCart } = useCart();
   const { inWishlist, addToWishList, removeFromWishList } = useWishList();
-  const { getReviews } = useProducts();
+
+  useEffect(() => {
+    if (product?.id) {
+      getReviews(product.id);
+    }
+  }, [product?.id, getReviews]);
+
   const cartItem = isCart(product.id);
+  const navigate = useNavigate();
 
   const onCartClick = (e) => {
     e.preventDefault();
@@ -53,7 +64,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
       onClick={isClose}
     >
       <div
-        className="relative flex flex-col lg:flex-row bg-white rounded-xl shadow-lg p-4 max-h-[95vh] w-full max-w-6xl overflow-y-auto"
+        className="relative flex flex-col lg:flex-row bg-white rounded-xl shadow-lg p-4 h-screen w-screen overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -67,6 +78,7 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
         {/* Left: Image */}
         <div className="lg:w-1/2 flex flex-col items-center p-4">
           <img
+          
             src={product.image}
             alt={product.name}
             className="h-[400px] w-full object-contain rounded-md"
@@ -94,8 +106,10 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
         {/* Right: Details */}
         <div className="lg:w-1/2 flex flex-col gap-6 p-4">
           {/* Breadcrumb */}
-          <Breadcrumb>
-            <BreadcrumbLink>Home</BreadcrumbLink>
+          <Breadcrumb className="border p-2 bg-gray-200 rounded-xl">
+            <BreadcrumbLink>
+              <Link onClick={() => navigate(-1)}> Home</Link>
+            </BreadcrumbLink>
             <BreadcrumbSeparator />
             <BreadcrumbLink>Store</BreadcrumbLink>
           </Breadcrumb>
@@ -157,6 +171,11 @@ const ProductDetailsCard = ({ isOpen, isClose, product }) => {
               <Truck size={16} />
               <p>Free Delivery on orders above $30.00</p>
             </div>
+          </div>
+          <div>
+            {reviews.map((review) => {
+              <div>{review.userNickname}</div>;
+            })}
           </div>
         </div>
       </div>

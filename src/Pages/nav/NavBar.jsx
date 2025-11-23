@@ -10,7 +10,7 @@ import DeEleganceLogo from "../../Assets/Images/DeElegance Logo.png";
 import { X, Menu, ShoppingCartIcon, Heart, Search, Eye } from "lucide-react";
 
 import { Link, useLocation } from "react-router-dom";
-import { useCartContext } from "../cart/hooks/CartContext";
+import { useCart } from "../cart/hooks/CartContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { LINKS } from "./Nav-Related";
 
@@ -42,7 +42,7 @@ function NavList({ onLinkClick }) {
 
 export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const { cartItems } = useCartContext();
+  const { cartItems } = useCart();
   const location = useLocation();
 
   useEffect(() => {
@@ -88,9 +88,6 @@ export default function NavBar() {
             </Link>
             <Tooltip>
               <Link to="/wishlist">
-                <Tooltip.Content>
-                  WishList <Tooltip.Arrow />
-                </Tooltip.Content>
                 <Tooltip.Trigger>
                   <IconButton
                     variant="ghost"
@@ -100,6 +97,9 @@ export default function NavBar() {
                     <Heart size={30} />
                   </IconButton>
                 </Tooltip.Trigger>
+                <Tooltip.Content>
+                  WishList <Tooltip.Arrow />
+                </Tooltip.Content>
               </Link>
             </Tooltip>
           </span>

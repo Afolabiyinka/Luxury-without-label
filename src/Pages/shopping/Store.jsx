@@ -3,9 +3,14 @@ import { motion } from "framer-motion";
 import { Frown } from "lucide-react";
 import { useProducts } from "./hooks/ProductsContext";
 import DummyCard from "./components/DummyCard";
+import { useEffect } from "react";
 
 const Store = () => {
   const { products, loading, error, getProducts } = useProducts();
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <motion.div
       className="flex flex-col justify-center items-center p-2 w-full h-full relative"
@@ -39,7 +44,7 @@ const Store = () => {
         </div>
       ) : (
         <div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-7 items-center justify-center px-6 md:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 items-center justify-center px-6 md:px-8">
             {products.map((product) => (
               <ProductCard
                 key={product.webID}

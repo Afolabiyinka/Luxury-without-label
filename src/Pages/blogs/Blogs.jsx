@@ -11,13 +11,13 @@ const Blogs = () => {
 
   return (
     <motion.div
-      className="w-full  flex flex-col gap-4 justify-center items-center p-4 "
+      className="w-full flex flex-col gap-4 justify-center items-center p-4 "
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {blogs && blogs.length > 0 ? (
-        <div className="h-full grid grid-cols-1 justify-center items-center gap-4 p-2">
+        <div className="h-full w-full grid grid-cols-1 justify-center items-center gap-4 p-2">
           {blogs.map((item) => (
             <BlogCard blog={item} />
           ))}

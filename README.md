@@ -7,7 +7,7 @@ A sleek and responsive fashion web app built with **React** and **Tailwind CSS**
 
 ## 🚀 Features
 
-- ⚡ Built with React (Vite or CRA — depending on your setup)
+- ⚡ Built with React + vite
 - 💨 Tailwind CSS for fast, responsive design
 - 🖼️ Home, Collection, and Product pages
 - 📱 Mobile-friendly & accessible
@@ -18,7 +18,8 @@ A sleek and responsive fashion web app built with **React** and **Tailwind CSS**
 
 - **Frontend**: React, Tailwind CSS, JSX
 - **State**: React Hooks (useState, useEffect, etc.)
-- **Routing**: React Router (if applicable)
+- **Api Calls**: Tanstack query
+- **Routing**: React Router
 
 ---
 

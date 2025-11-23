@@ -63,7 +63,7 @@ const CreateBlog = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-2 md:p-2">
-      {/* <h1 className="text-3xl font-bold mb-3">Create New Blog</h1> */}
+      <h1 className="text-3xl font-bold mb-3">Create New Blog</h1>
 
       <div className="w-full flex flex-col lg:flex-row gap-3  rounded-xl shadow-lg p-2 md:p-4">
         <div className="w-full lg:w-1/2 rounded-xl p-2 flex flex-col gap-4">

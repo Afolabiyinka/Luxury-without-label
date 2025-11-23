@@ -2,7 +2,7 @@ import { Card } from "@material-tailwind/react";
 
 export default function DummyCard() {
   return (
-    <Card className="transition-all animate-pulse flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl  ">
+    <Card className="transition-all animate-pulse flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-xl  ">
       {/* Product Image */}
       <div className="relative overflow-hidden group">
         <div className="h-64 w-full bg-gray-100 object-cover transform group-hover:scale-105 transition-transform duration-300 border-b" />

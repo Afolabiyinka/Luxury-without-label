@@ -1,15 +1,12 @@
 import {
   Home,
-  X,
-  Menu,
   ShoppingBag,
   ShoppingCartIcon,
   Pen,
   Diamond,
   CircleHelp,
   Heart,
-  Shirt,
-  Search,
+  Sparkles,
 } from "lucide-react";
 
 export const LINKS = [
@@ -34,14 +31,15 @@ export const LINKS = [
     title: "Blogs",
     href: "/Blogs",
   },
-  {
-    icon: CircleHelp,
-    title: "FAQs",
-    href: "/FAQs",
-  },
+
   {
     icon: Heart,
     title: "WishList",
     href: "/wishlist",
+  },
+  {
+    icon: Sparkles,
+    title: "Exclusives",
+    href: "/exclusives",
   },
 ];

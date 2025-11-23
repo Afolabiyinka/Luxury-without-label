@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import heroModel from "../../Assets/Images/heroModel.png";
 import { Link } from "react-router-dom";
 import CustomBotton from "../shopping/components/CutstomBtn";
+import { ShoppingBag } from "lucide-react";
 
 const HomePage = () => {
   return (
     <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 py-10 lg:py-20 gap-12 lg:gap-20">
-      {/* Text Content */}
       <div className="w-full lg:w-1/2  text-center flex flex-col  lg:text-left space-y-6">
         <motion.p
           className="text-xs sm:text-sm font-medium text-gray-800 uppercase tracking-[0.25em] mb-2"
@@ -45,7 +45,7 @@ const HomePage = () => {
           className="w-full flex  md:flex-row justify-center items-center md:justify-start"
         >
           <Link to="/store">
-            <CustomBotton text={`Start Shopping`} />
+            <CustomBotton text={`Start Shopping`} Icon={ShoppingBag} />
           </Link>
         </motion.div>
       </div>

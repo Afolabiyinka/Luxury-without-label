@@ -1,16 +1,19 @@
 import { useState } from "react";
-import { useCartContext } from "../../cart/hooks/CartContext";
-import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import { useCart } from "../../cart/hooks/CartContext";
+import { ShoppingCart, Trash } from "lucide-react";
 import ProductDetailsCard from "./ProductDetailsCard";
 import StarRating from "./Ratings";
 
 export default function ProductCard({ product }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { isCart, addToCart, removeFromCart } = useCartContext();
+  const { isCart, addToCart, removeFromCart } = useCart();
   const cartItem = isCart(product.id);
 
-  const handleOpenModal = () => setIsOpen(true);
+  const handleOpenModal = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
   const handleCloseModal = () => setIsOpen(false);
 
   function onCartClick(e) {
@@ -21,10 +24,7 @@ export default function ProductCard({ product }) {
 
   return (
     <div onClick={handleOpenModal}>
-      <div
-        onClick={handleOpenModal}
-        className="flex flex-col rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer active:opacity-80 w-[100%]"
-      >
+      <div className="flex flex-col rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer active:opacity-80 w-[100%]">
         {/* Product Image */}
         <div className="relative overflow-hidden group">
           <img
@@ -60,7 +60,7 @@ export default function ProductCard({ product }) {
                 }
               `}
             >
-              {cartItem ? <FaTrash size={16} /> : <FaShoppingCart size={16} />}
+              {cartItem ? <Trash size={16} /> : <ShoppingCart size={16} />}
             </button>
           </span>
         </div>

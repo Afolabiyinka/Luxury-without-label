@@ -1,5 +1,5 @@
 import HomePage from "./Subpages/HomePage";
-import Collections from "./shopping/Collections";
+import Collections from "./collections/Collections";
 import FAQs from "./Subpages/FAQs";
 import Suggestions from "./shopping/Suggestions";
 

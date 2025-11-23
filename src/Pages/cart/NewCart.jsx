@@ -11,11 +11,11 @@ import {
 } from "@material-tailwind/react";
 import { ShoppingCart, Trash } from "lucide-react";
 import { motion } from "framer-motion";
-import { useCartContext } from "./hooks/CartContext";
+import { useCart } from "./hooks/CartContext";
 import { Link } from "react-router-dom";
 
 export default function NewCart() {
-  const { cartItems, removeFromCart } = useCartContext();
+  const { cartItems, removeFromCart } = useCart();
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -48,7 +48,6 @@ export default function NewCart() {
             Your Cart
           </h2>
           <div className="h-full flex flex-col md:flex-row gap-4 justify-center items-start p-3">
-            {/* Cart Items */}
             <div className=" w-full md:w-[60%] h-full p-3 overflow-hidden rounded-3xl border border-surface">
               <table className="w-full rounded-xl">
                 <tbody className="group text-sm text-black dark:text-white cursor-pointer">
@@ -116,7 +115,6 @@ export default function NewCart() {
               </table>
             </div>
 
-            {/* Checkout Summary */}
             <Card className="w-full md:w-[40%] p-6 rounded-3xl shadow-md border">
               <h3 className="text-xl font-semibold mb-4">Order Summary</h3>
               <div className="flex justify-between mb-2">
@@ -133,15 +131,14 @@ export default function NewCart() {
               </div>
 
               <Button
-                color="amber"
-                className="mt-6 w-full text-black font-semibold py-3 rounded-lg hover:bg-gray-300 cursor-pointer"
+                color="secondary"
+                className="mt-6 w-full text-black font-semibold py-3 rounded-3xl hover:bg-gray-300 cursor-pointer"
               >
                 <Link to="/checkout">Proceed to Checkout</Link>
               </Button>
             </Card>
           </div>
 
-          {/* ✅ One Modal */}
           {isOpen && selectedProduct && (
             <ProductDetailsCard
               isOpen={isOpen}
