@@ -14,7 +14,7 @@ export const ProductProvider = ({ children }) => {
     const options = {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "a869d5ae45mshdec2ffbb2a10db1p1a7913jsnd5d7cd0b7dd9",
+        "x-rapidapi-key": "2f610978fbmsh006b099c52c156dp1d2834jsnc2b929edd4b6",
         "x-rapidapi-host": "kohls.p.rapidapi.com",
       },
     };
@@ -25,7 +25,6 @@ export const ProductProvider = ({ children }) => {
       const result = await response.json();
       setProducts(result.payload.products);
     } catch (error) {
-      setError(true);
       console.error(error);
     } finally {
       setLoading(false);

@@ -5,13 +5,13 @@ import Blogs from "../Pages/blogs/Blogs";
 import Home from "../Pages/Home";
 import CreateBlog from "../Pages/blogs/CreateBlog";
 import Collections from "../Pages/collections/Collections";
-import FAQs from "../Pages/Subpages/FAQs";
 import Wishlist from "../Pages/shopping/Wishlist";
 import NotFound from "../Pages/NotFound";
 import NewCart from "../Pages/cart/NewCart";
 import Exclusives from "../Pages/exclusives/Exclusives";
 import CollectionsLayout from "../Pages/CollectionsLayout";
 import Watches from "../Pages/Subpages/Watches";
+import ProductDetailsCard from "../Pages/shopping/components/ProductDetailsPage";
 const routes = [
   {
     path: "/",
@@ -22,6 +22,10 @@ const routes = [
         Component: Home,
       },
       {
+        path: "/product/:id",
+        Component: ProductDetailsCard,
+      },
+      {
         path: "*",
 
         Component: NotFound,
@@ -30,6 +34,7 @@ const routes = [
         path: "store",
         Component: Store,
       },
+
       {
         path: "cart",
         Component: NewCart,

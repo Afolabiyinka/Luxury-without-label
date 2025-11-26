@@ -9,7 +9,9 @@ const Store = () => {
   const { products, loading, error, getProducts } = useProducts();
 
   useEffect(() => {
-    getProducts();
+    if (!products.length && !loading) {
+      getProducts();
+    }
   }, []);
   return (
     <motion.div

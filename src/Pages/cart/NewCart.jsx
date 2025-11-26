@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
-import ProductDetailsCard from "../shopping/components/ProductDetailsCard";
-
+import { useNavigate } from "react-router-dom";
 import {
   Typography,
   Avatar,
@@ -16,18 +15,7 @@ import { Link } from "react-router-dom";
 
 export default function NewCart() {
   const { cartItems, removeFromCart } = useCart();
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleOpenModal = (product) => {
-    setSelectedProduct(product);
-    setIsOpen(true);
-  };
-  const handleCloseModal = () => {
-    setIsOpen(false);
-    setSelectedProduct(null);
-  };
+  const navigate = useNavigate();
 
   const subtotal = useMemo(
     () => cartItems.reduce((acc, item) => acc + Number(item.price), 0),
@@ -54,7 +42,7 @@ export default function NewCart() {
                   {cartItems.map((product) => (
                     <tr
                       key={product.id}
-                      onClick={() => handleOpenModal(product)}
+                      onClick={() => navigate(`/product/${product.id}`)}
                       className="hover:bg-gray-200  rounded-xl"
                     >
                       <td className="p-2">
@@ -138,14 +126,6 @@ export default function NewCart() {
               </Button>
             </Card>
           </div>
-
-          {isOpen && selectedProduct && (
-            <ProductDetailsCard
-              isOpen={isOpen}
-              isClose={handleCloseModal}
-              product={selectedProduct}
-            />
-          )}
         </div>
       ) : (
         <div className="h-screen w-full flex justify-center items-center">

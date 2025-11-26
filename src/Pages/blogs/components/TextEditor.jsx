@@ -31,7 +31,9 @@ export default function TextEditor() {
 
   return (
     <div className="">
-      <h2 className="text-xl font-bold p-1  mb-2">Blog Content</h2>
+      <h2 className="text-xl font-bold p-1  mb-2 overflow-y-scroll">
+        Blog Content
+      </h2>
       <ReactQuill
         theme="snow"
         value={blogContent}
@@ -39,7 +41,7 @@ export default function TextEditor() {
         modules={modules}
         formats={formats}
         placeholder="Type something fancy..."
-        className="w-full p-3 rounded-lg border focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none  tracking-wide"
+        className="w-full p-3 overflow-y-scroll h-full  rounded-lg border focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none  tracking-wide"
       />
       <div className="mt-4 p-2 border rounded">
         <h3 className="font-semibold">Preview:</h3>

@@ -10,17 +10,13 @@ import RoutesConfig from "./Config/routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    {
-      <ProductProvider>
-        <BlogProvider>
-          <CartProvider>
-            <WishListProvider>
-              <RoutesConfig />
-            </WishListProvider>
-          </CartProvider>
-        </BlogProvider>
-      </ProductProvider>
-    }
-  </React.StrictMode>
+  <ProductProvider>
+    <BlogProvider>
+      <CartProvider>
+        <WishListProvider>
+          <RoutesConfig />
+        </WishListProvider>
+      </CartProvider>
+    </BlogProvider>
+  </ProductProvider>
 );

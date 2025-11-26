@@ -1,20 +1,10 @@
-import { useState } from "react";
 import { useCart } from "../../cart/hooks/CartContext";
 import { ShoppingCart, Trash } from "lucide-react";
-import ProductDetailsCard from "./ProductDetailsCard";
 import StarRating from "./Ratings";
-
+import { useNavigate } from "react-router-dom";
 export default function ProductCard({ product }) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const { isCart, addToCart, removeFromCart } = useCart();
   const cartItem = isCart(product.id);
-
-  const handleOpenModal = (e) => {
-    e.preventDefault();
-    setIsOpen(true);
-  };
-  const handleCloseModal = () => setIsOpen(false);
 
   function onCartClick(e) {
     e.preventDefault();
@@ -22,8 +12,9 @@ export default function ProductCard({ product }) {
     cartItem ? removeFromCart(product.id) : addToCart(product);
   }
 
+  const navigate = useNavigate();
   return (
-    <div onClick={handleOpenModal}>
+    <div onClick={() => navigate(`/product/${product.id}`)}>
       <div className="flex flex-col rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer active:opacity-80 w-[100%]">
         {/* Product Image */}
         <div className="relative overflow-hidden group">
@@ -65,15 +56,6 @@ export default function ProductCard({ product }) {
           </span>
         </div>
       </div>
-
-      {/* Modal */}
-      {isOpen && (
-        <ProductDetailsCard
-          isOpen={isOpen}
-          isClose={handleCloseModal}
-          product={product}
-        />
-      )}
     </div>
   );
 }
