@@ -63,7 +63,7 @@ const routes = [
     ],
   },
 ];
-const RoutesConfig = () => {
+const RoutesConfig: React.FC = () => {
   const router = createBrowserRouter(routes);
   return <RouterProvider router={router} />;
 };
