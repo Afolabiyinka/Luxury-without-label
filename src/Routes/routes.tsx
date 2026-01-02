@@ -1,78 +1,50 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Store from "@/modules/user/shopping/Store.tsx";
-import Home from "@/modules/user/Home";
-import Collections from "@/modules/user/collections/Collections.tsx";
-import NotFound from "@/modules/user/NotFound";
-import Exclusives from "@/modules/user/exclusives/Exclusives.tsx";
-import CollectionsLayout from "@/modules/user/CollectionsLayout";
-import ProductDetailsCard from "@/modules/user/shopping/components/ProductDetailsPage.tsx";
+import { lazy } from "react";
+
 import MainLayout from "@/modules/user/others/MainLayout";
-import Checkout from "@/modules/user/checkout/pages/Checkout.tsx";
-import Bag from "@/modules/user/cart/Bag.tsx";
-import random from "@/random.tsx";
-import FAQs from "@/modules/user/others/FAQs";
-import Wishlist from "@/modules/user/shopping/Wishlist";
+
+// lazy pages
+const Home = lazy(() => import("@/modules/user/Home"));
+const Store = lazy(() => import("@/modules/user/shopping/Store"));
+const Collections = lazy(
+  () => import("@/modules/user/collections/Collections")
+);
+const Exclusives = lazy(() => import("@/modules/user/exclusives/Exclusives"));
+const CollectionsLayout = lazy(
+  () => import("@/modules/user/CollectionsLayout")
+);
+const ProductDetailsCard = lazy(
+  () => import("@/modules/user/shopping/components/ProductDetailsPage")
+);
+const Checkout = lazy(() => import("@/modules/user/checkout/pages/Checkout"));
+const Bag = lazy(() => import("@/modules/user/cart/Bag"));
+const Wishlist = lazy(() => import("@/modules/user/shopping/Wishlist"));
+const FAQs = lazy(() => import("@/modules/user/others/FAQs"));
+const NotFound = lazy(() => import("@/modules/user/NotFound"));
+const Random = lazy(() => import("@/random"));
 
 const routes = [
   {
     path: "/",
-    Component: MainLayout,
+    element: <MainLayout />,
     children: [
-      {
-        index: true,
-        Component: Home,
-      },
-      {
-        path: "/product/:id",
-        Component: ProductDetailsCard,
-      },
-      {
-        path: "*",
-
-        Component: NotFound,
-      },
-      {
-        path: "store",
-        Component: Store,
-      },
-
-      {
-        path: "bag",
-        Component: Bag,
-      },
-      {
-        path: "bag",
-        Component: Wishlist,
-      },
-      {
-        path: "faqs",
-        Component: FAQs,
-      },
-      {
-        path: "luxury-collections",
-        Component: Collections,
-      },
-
-      {
-        path: "exclusives",
-        Component: Exclusives,
-      },
-      {
-        path: "random",
-        Component: random,
-      },
-      {
-        path: "checkout",
-        Component: Checkout,
-      },
-      {
-        path: "collections",
-        Component: CollectionsLayout,
-      },
+      { index: true, element: <Home /> },
+      { path: "store", element: <Store /> },
+      { path: "bag", element: <Bag /> },
+      { path: "wishlist", element: <Wishlist /> },
+      { path: "faqs", element: <FAQs /> },
+      { path: "luxury-collections", element: <Collections /> },
+      { path: "collections", element: <CollectionsLayout /> },
+      { path: "exclusives", element: <Exclusives /> },
+      { path: "checkout", element: <Checkout /> },
+      { path: "product/:id", element: <ProductDetailsCard /> },
+      { path: "random", element: <Random /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ];
-const RoutesConfig: React.FC = () => {
+
+const RoutesConfig = () => {
   const router = createBrowserRouter(routes);
   return <RouterProvider router={router} />;
 };
