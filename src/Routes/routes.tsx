@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { type RouteObject } from "react-router-dom";
 import { lazy } from "react";
 
 import MainLayout from "@/modules/user/others/MainLayout";
@@ -23,7 +23,7 @@ const FAQs = lazy(() => import("@/modules/user/others/FAQs"));
 const NotFound = lazy(() => import("@/modules/user/NotFound"));
 const Random = lazy(() => import("@/random"));
 
-const routes = [
+export const routes: RouteObject[] = [
   {
     path: "/",
     element: <MainLayout />,
@@ -43,10 +43,3 @@ const routes = [
     ],
   },
 ];
-
-const RoutesConfig = () => {
-  const router = createBrowserRouter(routes);
-  return <RouterProvider router={router} />;
-};
-
-export default RoutesConfig;

@@ -1,5 +1,5 @@
 import ScrollToTopButton from "./components/ScrollBtn";
-import RoutesConfig from "@/routes/routes";
+import RoutesConfig from "./routes/routes-config";
 
 export function App() {
   return (
