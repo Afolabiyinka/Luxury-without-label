@@ -1,4 +1,4 @@
-import type { ApiProduct } from "@/modules/shopping/types/types";
+import type { ApiProduct } from "../../shopping/types/types";
 import { create } from "zustand";
 
 interface BagItemsStore {
