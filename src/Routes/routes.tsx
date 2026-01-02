@@ -1,15 +1,18 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Store from "../modules/shopping/Store.tsx";
-import Home from "../modules/Home.tsx";
-import Collections from "../modules/collections/Collections.tsx";
-import NotFound from "../modules/NotFound.tsx";
-import NewCart from "../modules/cart/NewCart.tsx";
-import Exclusives from "../modules/exclusives/Exclusives.tsx";
-import CollectionsLayout from "../modules/CollectionsLayout.tsx";
-import Watches from "../modules/Subpages/Watches.tsx";
-import ProductDetailsCard from "../modules/shopping/components/ProductDetailsPage.tsx";
-import MainLayout from "../modules/MainLayout.tsx";
+import Store from "@/modules/user/shopping/Store.tsx";
+import Home from "@/modules/user/Home";
+import Collections from "@/modules/user/collections/Collections.tsx";
+import NotFound from "@/modules/user/NotFound";
+import Exclusives from "@/modules/user/exclusives/Exclusives.tsx";
+import CollectionsLayout from "@/modules/user/CollectionsLayout";
+import ProductDetailsCard from "@/modules/user/shopping/components/ProductDetailsPage.tsx";
+import MainLayout from "@/modules/user/others/MainLayout";
+import Checkout from "@/modules/user/checkout/pages/Checkout.tsx";
+import Bag from "@/modules/user/cart/Bag.tsx";
 import random from "@/random.tsx";
+import FAQs from "@/modules/user/others/FAQs";
+import Wishlist from "@/modules/user/shopping/Wishlist";
+
 const routes = [
   {
     path: "/",
@@ -34,8 +37,16 @@ const routes = [
       },
 
       {
-        path: "cart",
-        Component: NewCart,
+        path: "bag",
+        Component: Bag,
+      },
+      {
+        path: "bag",
+        Component: Wishlist,
+      },
+      {
+        path: "faqs",
+        Component: FAQs,
       },
       {
         path: "luxury-collections",
@@ -51,14 +62,12 @@ const routes = [
         Component: random,
       },
       {
+        path: "checkout",
+        Component: Checkout,
+      },
+      {
         path: "collections",
         Component: CollectionsLayout,
-        children: [
-          {
-            path: "watches",
-            Component: Watches,
-          },
-        ],
       },
     ],
   },

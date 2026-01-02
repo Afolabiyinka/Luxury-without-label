@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react";
-
+import { ArrowUpIcon } from "@phosphor-icons/react";
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -15,7 +14,7 @@ const ScrollToTopButton = () => {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+}, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -28,10 +27,10 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed flex gap-2 items-center bottom-12 right-5 bg-gray-500 text-white p-3 rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 z-50"
+        className="fixed flex gap-2 items-center bottom-12 right-5 bg-black text-white p-3 rounded-full shadow-lg hover:text-black z-50 hover:bg-transparent border transition-all duration-300"
         title="Go to top"
       >
-        <ArrowUp className="w-6 h-6" />
+        <ArrowUpIcon className="w-6 h-6" />
       </button>
     )
   );
