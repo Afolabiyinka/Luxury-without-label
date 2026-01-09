@@ -57,9 +57,9 @@ const ProductDetailsCard = () => {
 
   const wishlistItem = isInWishlist(product.webID);
 
-  const onwishlistClick = () => {
-    wishlistItem ? removeFromWishlist(product.webID) : addToWishlist(product);
-  };
+  // const onwishlistClick = () => {
+  //   wishlistItem ? removeFromWishlist(product.webID) : addToWishlist(product);
+  // };
 
   const onCartClick = () => {
     cartItem ? removeFromBag(product.webID) : addToBag(product);
