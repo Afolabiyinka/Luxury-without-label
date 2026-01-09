@@ -22,11 +22,14 @@ import type { ApiProduct } from "../types/types";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useProducts } from "../hooks/useProducts";
 import { useBagItems } from "../../cart/store/useBag";
+import { useWishlist } from "../../wishlist/store/useWishlist";
 import { Button } from "@/components/ui/button";
 
 const ProductDetailsCard = () => {
   const { products, loading } = useProducts();
+
   const { isInBag, addToBag, removeFromBag } = useBagItems();
+  const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -51,6 +54,12 @@ const ProductDetailsCard = () => {
   }
 
   const cartItem = isInBag(product.webID);
+
+  const wishlistItem = isInWishlist(product.webID);
+
+  const onwishlistClick = () => {
+    wishlistItem ? removeFromWishlist(product.webID) : addToWishlist(product);
+  };
 
   const onCartClick = () => {
     cartItem ? removeFromBag(product.webID) : addToBag(product);

@@ -18,7 +18,7 @@ const ProductDetailsCard = lazy(
 );
 const Checkout = lazy(() => import("@/modules/user/checkout/pages/Checkout"));
 const Bag = lazy(() => import("@/modules/user/cart/Bag"));
-const Wishlist = lazy(() => import("@/modules/user/shopping/Wishlist"));
+const Wishlist = lazy(() => import("@/modules/user/wishlist/Wishlist"));
 const FAQs = lazy(() => import("@/modules/user/others/FAQs"));
 const NotFound = lazy(() => import("@/modules/user/NotFound"));
 const Random = lazy(() => import("@/random"));

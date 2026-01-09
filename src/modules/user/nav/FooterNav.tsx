@@ -5,6 +5,7 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip.tsx";
 import { Button } from "@/components/ui/button";
+import { ArrowRightCircle } from "lucide-react";
 
 const YEAR = new Date().getFullYear();
 
@@ -62,7 +63,10 @@ export default function Footer() {
           <div className="flex flex-col justify-start mb-2">
             <span className="flex flex-col w-full gap-3 text-sm text-muted-foreground">
               <h1 className="font-medium text-xl">Sell with De Elegance</h1>{" "}
-              <Button size={`lg`}>Join now</Button>
+              <Button size={`lg`}>
+                Join now
+                <ArrowRightCircle className="h-6 w-8 stroke-[1px]" />
+              </Button>
             </span>
           </div>
         </div>
