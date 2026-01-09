@@ -11,11 +11,12 @@ import { ShoppingBagOpenIcon } from "@phosphor-icons/react/dist/ssr";
 
 const HomePage = () => {
   const HEROIMAGES = [
-    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947982/wrqni7mvlbdiogpbzerp.jpg",
-    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947977/jxiontdjsgbdkvemnk6t.jpg",
-    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947970/ucayyak2o98x17vlin6x.jpg",
-    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947965/h4r4uosngw5nh8jcym4c.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/f_auto,q_auto,w_1200/v1767947982/wrqni7mvlbdiogpbzerp.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/f_auto,q_auto,w_1200/v1767947977/jxiontdjsgbdkvemnk6t.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/f_auto,q_auto,w_1200/v1767947970/ucayyak2o98x17vlin6x.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/f_auto,q_auto,w_1200/v1767947965/h4r4uosngw5nh8jcym4c.jpg",
   ];
+
   return (
     <section className="h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 py-10 lg:py-20 gap-12 lg:gap-20">
       <div className="w-full lg:w-1/2  text-center flex flex-col  lg:text-left space-y-6">
