@@ -1,8 +1,4 @@
 import { motion } from "framer-motion";
-import heroModel1 from "@/Assets/pictures/pexels-aksioart-1926769.jpg";
-import heroModel2 from "@/Assets/pictures/pexels-andrea-yurko-364018-982585.jpg";
-import heroModel3 from "@/Assets/pictures/pexels-olenagoldman-1021693.jpg";
-import heroModel4 from "@/Assets/pictures/secondModel.jpg";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +10,12 @@ import "swiper/css/pagination";
 import { ShoppingBagOpenIcon } from "@phosphor-icons/react/dist/ssr";
 
 const HomePage = () => {
-  const HEROIMAGES = [heroModel1, heroModel2, heroModel3, heroModel4];
+  const HEROIMAGES = [
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947982/wrqni7mvlbdiogpbzerp.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947977/jxiontdjsgbdkvemnk6t.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947970/ucayyak2o98x17vlin6x.jpg",
+    "https://res.cloudinary.com/dz0v1gqb1/image/upload/v1767947965/h4r4uosngw5nh8jcym4c.jpg",
+  ];
   return (
     <section className="h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 py-10 lg:py-20 gap-12 lg:gap-20">
       <div className="w-full lg:w-1/2  text-center flex flex-col  lg:text-left space-y-6">
@@ -88,6 +89,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              fetchPriority="high"
             />
           </SwiperSlide>
         ))}
