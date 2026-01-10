@@ -1,4 +1,4 @@
-import AddToBag from "@/modules/user/cart/components/AddtoBag";
+import AddToBag from "@/modules/user/bag/components/AddtoBag";
 
 const random = () => {
   return (

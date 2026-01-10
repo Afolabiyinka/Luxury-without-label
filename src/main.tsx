@@ -3,13 +3,13 @@ import "./index.css";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense } from "react";
-import FullPageLoader from "./components/loader/loader";
+import ProgressBar from "./components/progress-bar/progress-bar";
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <QueryClientProvider client={queryClient}>
-    <Suspense fallback={<FullPageLoader />}>
+    <Suspense fallback={<ProgressBar />}>
       <App />
     </Suspense>
   </QueryClientProvider>

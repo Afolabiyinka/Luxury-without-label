@@ -24,7 +24,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { useBagItems } from "../cart/store/useBag";
+import { useBagItems } from "../bag/store/useBag";
 import { Badge } from "@/components/ui/badge";
 
 function NavList({ onLinkClick }: { onLinkClick: any }) {

@@ -8,7 +8,7 @@ import { exclusives } from "./libs/exclusivesArray";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import AddToBag from "../cart/components/AddtoBag";
+import AddToBag from "../bag/components/AddtoBag";
 
 const Exclusives = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);

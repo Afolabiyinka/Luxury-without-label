@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/tooltip";
 import StarRating from "./Ratings";
 import { Truck, Calendar, Box, ArrowLeft, BadgePercent } from "lucide-react";
-import AddToBag from "../../cart/components/AddtoBag";
+import AddToBag from "../../bag/components/AddtoBag";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -21,7 +21,7 @@ import ProductDetailsSkeleton from "./ProductDetailsSkeleton";
 import type { ApiProduct } from "../types/types";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useProducts } from "../hooks/useProducts";
-import { useBagItems } from "../../cart/store/useBag";
+import { useBagItems } from "../../bag/store/useBag";
 // import { useWishlist } from "../../wishlist/store/useWishlist";
 import { Button } from "@/components/ui/button";
 

@@ -9,7 +9,7 @@ interface BagItemsStore {
 }
 
 function getBagItems(): ApiProduct[] {
-  const stored = localStorage.getItem("cart-items");
+  const stored = localStorage.getItem("bag-items");
   return stored ? JSON.parse(stored) : [];
 }
 
