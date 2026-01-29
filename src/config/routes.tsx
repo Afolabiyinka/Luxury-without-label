@@ -1,7 +1,7 @@
 import { type RouteObject } from "react-router-dom";
 import { lazy } from "react";
 
-import MainLayout from "@/modules/user/others/MainLayout";
+import MainLayout from "@/modules/user/MainLayout.tsx";
 
 // lazy pages
 const Home = lazy(() => import("@/modules/user/Home"));
