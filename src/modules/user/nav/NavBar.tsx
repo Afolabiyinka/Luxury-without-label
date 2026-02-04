@@ -60,19 +60,19 @@ export default function NavBar() {
   useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
+      () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
 
   return (
     <>
       <div className="">
-        <div className="p-1 mt-1 flex flex-col gap-4 md:flex-row justify-between items-center md:justify-between md:items-center w-full">
+        <div className="p-1 mt-1 flex flex-col gap-4 lg:flex-row justify-between items-center lg:justify-between lg:items-center w-full">
           <a href="/">
             <img
               src={DeEleganceLogo}
               alt=""
-              className="h-12 bg-white rounded-full w-56  hidden md:block"
+              className="h-12 bg-white rounded-full w-56  hidden lg:block"
             />
           </a>
           <InputGroup>
@@ -87,7 +87,7 @@ export default function NavBar() {
           {/* Nav actions for the desktop*/}
           <span className="flex gap-3 items-center justify-center mr-2">
             <Tooltip>
-              <Link to="/account" className="p-2 hidden md:block ">
+              <Link to="/account" className="p-2 hidden lg:block ">
                 <TooltipTrigger>
                   <UserIcon size={30} weight="thin" />
                 </TooltipTrigger>
@@ -95,7 +95,7 @@ export default function NavBar() {
               </Link>
             </Tooltip>
             <Tooltip>
-              <Link to="/wishlist" className="p-2 hidden md:block">
+              <Link to="/wishlist" className="p-2 hidden lg:block">
                 <TooltipTrigger>
                   <HeartIcon size={30} weight="thin" />
                 </TooltipTrigger>
@@ -103,7 +103,7 @@ export default function NavBar() {
               </Link>
             </Tooltip>
             <Tooltip>
-              <Link to="/bag" className="hidden md:block p-2 relative">
+              <Link to="/bag" className="hidden lg:block p-2 relative">
                 <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums absolute -top-0.5 -right-0.5">
                   {bagItems.length}
                 </Badge>
@@ -117,15 +117,15 @@ export default function NavBar() {
             </Tooltip>
           </span>
         </div>
-        <nav className="w-full border-none p-3 md:px-32 rounded-none flex flex-col shadow-none md:justify-start mb-3 ">
+        <nav className="w-full border-none p-3 lg:px-32 rounded-none flex flex-col shadow-none lg:justify-start mb-3 ">
           <div className="flex justify-between">
-            <div className="flex items-center md:justify-start">
+            <div className="flex items-center lg:justify-start">
               <div>
                 <a href="/">
                   <img
                     src={DeEleganceLogo}
                     alt=""
-                    className="h-14 bg-white  rounded-full w-52 block md:hidden mr-2"
+                    className="h-14 bg-white  rounded-full w-52 block lg:hidden mr-2"
                   />
                 </a>
               </div>
@@ -140,7 +140,7 @@ export default function NavBar() {
 
             <div className="flex  justify-end items-center">
               <Tooltip>
-                <Link to="/bag" className="md:hidden block ">
+                <Link to="/bag" className="lg:hidden block ">
                   <TooltipTrigger>
                     <ToteIcon size={30} className="stroke-[1px]" />
                   </TooltipTrigger>

@@ -42,12 +42,12 @@ const ProductDetailsCard = () => {
       <div className="flex justify-center items-center h-screen">
         <div className="bg-white p-8 rounded-xl shadow-lg text-center">
           <p className="text-lg mb-4">Product not found</p>
-          <button
+          <Button
             onClick={() => navigate(-1)}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
           >
             Go Back
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -91,7 +91,7 @@ const ProductDetailsCard = () => {
         className={`border-0`}
         onClick={() => navigate(-1)}
       >
-        <ArrowLeft size={20} />
+        <ArrowLeft size={20} className="h-6 w-6 mr-3" />
         Back to store
       </Button>
 
