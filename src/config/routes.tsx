@@ -2,19 +2,19 @@ import { type RouteObject } from "react-router-dom";
 import { lazy } from "react";
 
 import MainLayout from "@/modules/user/MainLayout.tsx";
+import LandingPage from "@/modules/user/LandingPage";
 
 // lazy pages
-const Home = lazy(() => import("@/modules/user/Home"));
 const Store = lazy(() => import("@/modules/user/shopping/Store"));
 const Collections = lazy(
-  () => import("@/modules/user/collections/Collections")
+  () => import("@/modules/user/collections/Collections"),
 );
 const Exclusives = lazy(() => import("@/modules/user/exclusives/Exclusives"));
 const CollectionsLayout = lazy(
-  () => import("@/modules/user/CollectionsLayout")
+  () => import("@/modules/user/CollectionsLayout"),
 );
 const ProductDetailsCard = lazy(
-  () => import("@/modules/user/shopping/components/ProductDetailsPage")
+  () => import("@/modules/user/shopping/components/ProductDetailsPage"),
 );
 const Checkout = lazy(() => import("@/modules/user/checkout/pages/Checkout"));
 const Bag = lazy(() => import("@/modules/user/bag/Bag"));
@@ -28,7 +28,7 @@ export const routes: RouteObject[] = [
     path: "/",
     element: <MainLayout />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <LandingPage /> },
       { path: "store", element: <Store /> },
       { path: "bag", element: <Bag /> },
       { path: "wishlist", element: <Wishlist /> },

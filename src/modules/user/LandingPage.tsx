@@ -3,7 +3,7 @@ import Suggestions from "./shopping/Suggestions";
 import FAQs from "./others/FAQs";
 import HomePage from "./others/HomePage";
 
-const Home = () => {
+const LandingPage = () => {
   return (
     <>
       <HomePage />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;
