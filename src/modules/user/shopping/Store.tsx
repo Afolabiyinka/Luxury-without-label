@@ -16,7 +16,7 @@ const Store = () => {
       animate={{ opacity: 1, y: 0 }}
     >
       {loading ? (
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 h-full items-center justify-center px-6 md:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 items-center justify-center px-6 md:px-8 w-full border">
           <DummyCard />
           <DummyCard />
           <DummyCard />

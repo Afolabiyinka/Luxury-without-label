@@ -1,34 +1,35 @@
 import {
-  House,
-  Diamond,
-  ShoppingBag,
-  Heart,
-  Sparkle,
+
+  HouseIcon,
+  DiamondIcon,
+  ShoppingBagIcon,
+  HeartIcon,
+  SparkleIcon,
 } from "@phosphor-icons/react";
 
 export const LINKS = [
   {
-    icon: House,
+    icon: HouseIcon,
     title: "Home",
     href: "/",
   },
   {
-    icon: Diamond,
+    icon: DiamondIcon,
     title: "Luxury Collections",
     href: "/luxury-collections",
   },
   {
-    icon: ShoppingBag,
+    icon: ShoppingBagIcon,
     title: "Store",
     href: "/store",
   },
   {
-    icon: Heart,
+    icon: HeartIcon,
     title: "WishList",
     href: "/wishlist",
   },
   {
-    icon: Sparkle,
+    icon: SparkleIcon,
     title: "Exclusives",
     href: "/exclusives",
   },

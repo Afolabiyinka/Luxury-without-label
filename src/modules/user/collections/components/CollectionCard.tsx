@@ -8,7 +8,7 @@ export default function CollectionCard({ collection }: { collection: any }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`max-w-sm rounded-sm shadow-xl relative transition-all hover:scale-110 duration-300 cursor-pointer flex flex-col 
+      className={`w-full rounded-sm shadow-xl relative transition-all hover:scale-110 duration-300 cursor-pointer flex flex-col 
       `}
     >
       <div className="h-96 overflow-hidden rounded-none">

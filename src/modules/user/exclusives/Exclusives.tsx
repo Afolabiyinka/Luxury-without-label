@@ -41,12 +41,26 @@ const Exclusives = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ y: -50, opacity: 0 }}
+                  initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 50, opacity: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
                   className="flex flex-col flex-1 p-4"
                 >
+                  <motion.span
+                    className="text-lg md:text-xl px-6 py-2 tracking-widest font-semibold rounded-full flex items-center gap-2"
+                    initial={{ y: 50 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 10, opacity: 0 }}
+                    transition={{ duration: 0.3, delay: 0.5 }}
+                  >
+                    <img
+                      src={item.brandLogo}
+                      alt={item.brand}
+                      className="w-8 h-8 md:w-12 md:h-12 object-contain"
+                    />
+                    {item.brand}
+                  </motion.span>
                   <motion.h1 className="text-3xl md:text-5xl font-extrabold tracking-wide leading-tight">
                     {item.headingText}
                   </motion.h1>
@@ -56,7 +70,7 @@ const Exclusives = () => {
                   </motion.p>
 
                   <motion.div
-                    className="flex flex-wrap md:flex-nowrap items-center gap-4 mt-4"
+                    className="flex  items-center gap-10 mt-4 mb-5"
                     initial={{ y: 50 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 10, opacity: 0 }}
@@ -65,35 +79,19 @@ const Exclusives = () => {
                     <h1 className="text-2xl md:text-3xl font-bold">
                       {item.price}
                     </h1>
-                    <AddToBag text="Buy now" />
+                    <div className="flex  gap-4">
+                      <motion.span
+                        className="text-lg md:text-xl  py-2 tracking-widest font-semibold  flex items-center rounded-full"
+                        initial={{ y: 50 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 10, opacity: 0 }}
+                        transition={{ duration: 0.3, delay: 0.5 }}
+                      >
+                        {item.discount}
+                      </motion.span>
+                    </div>
                   </motion.div>
-
-                  <div className="flex flex-wrap gap-4 mt-5">
-                    <motion.span
-                      className="text-lg md:text-xl px-6 py-2 tracking-widest font-semibold  flex items-center rounded-full"
-                      initial={{ y: 50 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 10, opacity: 0 }}
-                      transition={{ duration: 0.3, delay: 0.5 }}
-                    >
-                      {item.discount}
-                    </motion.span>
-
-                    <motion.span
-                      className="text-lg md:text-xl px-6 py-2 tracking-widest font-semibold rounded-full flex items-center justify-center gap-2"
-                      initial={{ y: 50 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 10, opacity: 0 }}
-                      transition={{ duration: 0.3, delay: 0.5 }}
-                    >
-                      <img
-                        src={item.brandLogo}
-                        alt={item.brand}
-                        className="w-8 h-8 md:w-12 md:h-12 object-contain"
-                      />
-                      {item.brand}
-                    </motion.span>
-                  </div>
+                  <AddToBag text="Buy now" />
                 </motion.div>
               </AnimatePresence>
             </div>

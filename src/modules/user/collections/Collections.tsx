@@ -32,12 +32,12 @@ const collections: Collection[] = [
 
 const Collections = () => {
   return (
-    <div className="text-center pt-4 px-4 flex flex-col items-center">
-      <h1 className="text-3xl sm:text-4xl font-bold font-[Bodoni Moda] bg-linear-to-r from-black to-gray-700 text-transparent bg-clip-text mb-3">
+    <div className="text-center pt-4 px-4 flex flex-col items-center ">
+      <h1 className="text-3xl sm:text-4xl font-bold font-[Bodoni Moda] bg-linear-to-r from-black to-gray-700 text-transparent bg-clip-text mb-8">
         Luxury Collections
       </h1>
 
-      <div className="min-h-screen w-full px-4 py-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="h-full w-full p-3 grid grid-cols-1 lg:grid-cols-3 gap-16  justify-center items-center">
         {collections.map((collection) => (
           <CollectionWithAnimation
             key={collection.name}
@@ -64,7 +64,7 @@ const CollectionWithAnimation = ({
   return (
     <motion.div
       ref={ref}
-      className="w-full"
+      className="w-full flex justify-center items-center "
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.4, ease: "easeOut" }}

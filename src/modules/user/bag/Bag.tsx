@@ -9,7 +9,7 @@ export default function Bag() {
 
   return (
     <motion.div
-      className="h-full w-full p-1 flex flex-col justify-center items-center"
+      className="h-screen w-full p-1 flex flex-col justify-start items-start"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >

@@ -49,8 +49,8 @@ export default function Footer() {
             className="flex gap-4
         "
           >
-            {FOOTERICONS.map(({ name, icon: Icon }) => (
-              <Tooltip>
+            {FOOTERICONS.map(({ name, icon: Icon }, i) => (
+              <Tooltip key={i}>
                 <TooltipTrigger>
                   <Icon size={30} />
                 </TooltipTrigger>

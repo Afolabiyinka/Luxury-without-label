@@ -23,6 +23,7 @@ const Suggestions = () => {
             <DummyCard />
             <DummyCard />
             <DummyCard />
+            <DummyCard />
           </div>
 
           <Link to="/store">
