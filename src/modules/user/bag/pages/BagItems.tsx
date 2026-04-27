@@ -58,14 +58,15 @@ const BagItems = () => {
                 <Tooltip>
                   <TooltipTrigger>
                     <Button
-                      variant={`outline`}
-                      className={`border-0`}
+                      variant={`destructive`}
+                      size={`icon-lg`}
+                      className={`border-0 bg-transparent`}
                       onClick={(e) => {
                         e.stopPropagation();
                         removeFromBag(product.webID);
                       }}
                     >
-                      <Trash scale={10} className="stroke-1" />
+                      <Trash className="" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>Remove From Bag</TooltipContent>

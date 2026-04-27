@@ -30,21 +30,47 @@ const collections: Collection[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Collections = () => {
   return (
-    <div className="text-center pt-4 px-4 flex flex-col items-center ">
-      <h1 className="text-3xl sm:text-4xl font-bold font-[Bodoni Moda] bg-linear-to-r from-black to-gray-700 text-transparent bg-clip-text mb-8">
-        Luxury Collections
-      </h1>
+    <div className="px-4 md:px-8 py-12 max-w-7xl mx-auto">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          Luxury Collections
+        </h1>
+        <p className="text-gray-500 mt-2 text-sm">
+          Curated selections for a refined lifestyle
+        </p>
+      </div>
 
-      <div className="h-full w-full p-3 grid grid-cols-1 lg:grid-cols-3 gap-16  justify-center items-center">
+      {/* Grid */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {collections.map((collection) => (
           <CollectionWithAnimation
             key={collection.name}
             collection={collection}
           />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -58,16 +84,17 @@ const CollectionWithAnimation = ({
 }: CollectionWithAnimationProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.2,
   });
 
   return (
     <motion.div
       ref={ref}
-      className="w-full flex justify-center items-center "
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      variants={itemVariants}
+      initial="hidden"
+      animate={inView ? "show" : "hidden"}
       transition={{ duration: 0.4, ease: "easeOut" }}
+      className="w-full"
     >
       <CollectionCard collection={collection} />
     </motion.div>

@@ -14,86 +14,84 @@ const Exclusives = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   return (
-    <div className="p-6 w-full flex justify-center items-center">
+    <div className="px-4 md:px-8 py-10 w-full flex justify-center">
       <Swiper
         onSlideChange={(swiper: SwiperType) =>
           setCurrentIndex(swiper.realIndex)
         }
         modules={[Autoplay, Pagination]}
         className="w-full max-w-7xl"
-        freeMode
         loop
-        speed={1500}
+        speed={800} // ✅ smoother (1500 was too slow)
         slidesPerView={1}
-        spaceBetween={20}
-        pagination={{ dynamicBullets: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        spaceBetween={24}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
       >
         {exclusives.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col md:flex-row shadow-md p-2 gap-6">
-              <img
-                src={item.coverImage}
-                alt={item.headingText}
-                className="w-full md:w-[45%] h-64 md:h-auto object-cover rounded-md"
-              />
+            <div className="flex flex-col md:flex-row gap-8 bg-white  rounded-2xl overflow-hidden transition">
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: 50, opacity: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 }}
-                  className="flex flex-col flex-1 p-4"
-                >
-                  <motion.span
-                    className="text-lg md:text-xl px-6 py-2 tracking-widest font-semibold rounded-full flex items-center gap-2"
-                    initial={{ y: 50 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 10, opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
-                  >
-                    <img
-                      src={item.brandLogo}
-                      alt={item.brand}
-                      className="w-8 h-8 md:w-12 md:h-12 object-contain"
-                    />
-                    {item.brand}
-                  </motion.span>
-                  <motion.h1 className="text-3xl md:text-5xl font-extrabold tracking-wide leading-tight">
-                    {item.headingText}
-                  </motion.h1>
+              {/* IMAGE */}
+              <div className="md:w-1/2 flex items-center justify-center p-6">
+                <img
+                  src={item.coverImage}
+                  alt={item.headingText}
+                  className="max-h-[350px] object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </div>
 
-                  <motion.p className="text-lg md:text-2xl font-semibold mt-3 font-mono leading-relaxed">
-                    {item.description}
-                  </motion.p>
-
+              {/* CONTENT */}
+              <div className="md:w-1/2 flex items-center">
+                <AnimatePresence mode="wait">
                   <motion.div
-                    className="flex  items-center gap-10 mt-4 mb-5"
-                    initial={{ y: 50 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 10, opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
+                    key={currentIndex}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ duration: 0.35 }}
+                    className="flex flex-col gap-4 p-6"
                   >
-                    <h1 className="text-2xl md:text-3xl font-bold">
-                      {item.price}
+                    {/* BRAND */}
+                    <div className="flex items-center gap-3 text-sm text-gray-500">
+                      <img
+                        src={item.brandLogo}
+                        alt={item.brand}
+                        className="w-8 h-8 object-contain"
+                      />
+                      <span className="tracking-wide">{item.brand}</span>
+                    </div>
+
+                    {/* TITLE */}
+                    <h1 className="text-2xl md:text-4xl font-bold leading-tight tracking-tight">
+                      {item.headingText}
                     </h1>
-                    <div className="flex  gap-4">
-                      <motion.span
-                        className="text-lg md:text-xl  py-2 tracking-widest font-semibold  flex items-center rounded-full"
-                        initial={{ y: 50 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 10, opacity: 0 }}
-                        transition={{ duration: 0.3, delay: 0.5 }}
-                      >
-                        {item.discount}
-                      </motion.span>
+
+                    {/* DESCRIPTION */}
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                      {item.description}
+                    </p>
+
+                    {/* PRICE + DISCOUNT */}
+                    <div className="flex items-center gap-6 mt-2">
+                      <p className="text-2xl font-semibold tracking-tight">
+                        {item.price}
+                      </p>
+
+                      {item.discount && (
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded-md text-gray-600">
+                          {item.discount}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-4">
+                      <AddToBag text="Buy now" />
                     </div>
                   </motion.div>
-                  <AddToBag text="Buy now" />
-                </motion.div>
-              </AnimatePresence>
+                </AnimatePresence>
+              </div>
             </div>
           </SwiperSlide>
         ))}

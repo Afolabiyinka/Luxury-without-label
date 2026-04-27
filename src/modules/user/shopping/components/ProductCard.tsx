@@ -1,32 +1,49 @@
 import { useNavigate } from "react-router-dom";
 import type { ApiProduct } from "../types/types";
+
 export default function ProductCard({ product }: { product: ApiProduct }) {
   const navigate = useNavigate();
+
+  const price =
+    product.prices?.[0]?.salePrice?.minPrice ??
+    product.prices?.[0]?.regularPrice?.minPrice;
+
   return (
-    <div onClick={() => navigate(`/product/${product.webID}`)}>
-      <div className="flex flex-col rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer active:opacity-80 w-full">
-        {/* Product Image */}
-        <div className="relative overflow-hidden group">
+    <div
+      onClick={() => navigate(`/product/${product.webID}`)}
+      className="cursor-pointer group"
+    >
+      <div className="flex flex-col rounded-2xl overflow-hidden border bg-white hover:shadow-lg transition-all duration-300 active:scale-[0.98]">
+
+        {/* Image */}
+        <div className="relative  flex items-center justify-center p-4">
           <img
             src={product.image?.url}
             alt={product.productTitle}
-            className="h-64 w-full object-cover transform group-hover:scale-105 transition-transform duration-300 border-b"
+            className="h-56 object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </div>
 
-        <div className="flex flex-col justify-between p-4">
-          <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 font-[Lato]">
+        {/* Content */}
+        <div className="flex flex-col gap-3 p-4">
+          <h3 className="text-sm font-medium text-gray-800 line-clamp-2 leading-snug">
             {product.productTitle}
           </h3>
 
-          <span className="flex justify-between p-2 items-center">
-            <p className="text-lg font-bold font-[Bodoni Moda]">
-              $
-              {product.prices?.[0]?.salePrice?.minPrice ??
-                product.prices?.[0]?.regularPrice?.minPrice ??
-                "N/A"}
+          {/* Price */}
+          <div className="flex items-center justify-between">
+            <p className="text-xl font-semibold tracking-tight">
+              <span className="text-sm text-gray-500 mr-1">$</span>
+              {price ?? "N/A"}
             </p>
-          </span>
+
+            {/* Optional badge (future use) */}
+            {product.prices?.[0]?.salePrice && (
+              <span className="text-xs bg-gray-100 px-2 py-1 rounded-md text-gray-600">
+                Sale
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>
